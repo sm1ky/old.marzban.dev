@@ -1,0 +1,12 @@
+input: .
+output: .retype
+url: # Add your website address here
+locale: ru
+branding:
+  title: Marzban
+  label: Docs
+start:
+  pro: true
+footer:
+  copyright: © Copyright {{ year }} – Marzban TEAM – All rights reserved
+poweredByRetype: false
