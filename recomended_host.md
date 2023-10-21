@@ -11,7 +11,7 @@ https://www.hetzner.com/
 - Германия
 - Финляндия
 - Америка
-+++ Looking Glass
++++ LG
 https://speed.hetzner.de/
 +++ Примечание
 - Русских не регистрируют
@@ -25,7 +25,7 @@ https://bitcoinvps.cloud/
 - Германия
 - Финляндия
 - Америка
-+++ Looking Glass
++++ LG
 https://bitcoinvps.cloud/looking-glass
 +++ Примечание
 - Оплата криптой
@@ -37,7 +37,7 @@ https://bitcoinvps.cloud/looking-glass
 https://vscale.io/
 +++ Локации
 - Россия
-+++ Looking Glass
++++ LG
 пока нет
 +++ Примечание
 - Чистые IP адреса
