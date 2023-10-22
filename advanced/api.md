@@ -4,7 +4,16 @@ label: API
 icon: beaker
 ---
 ## Описание 
+![](/static/19.png)
+Marzban предоставляет REST API, который позволяет разработчикам программно взаимодействовать со службами Marzban. Чтобы просмотреть документацию по API в Swagger UI или ReDoc, установите переменную в файле env:
 
-Marzban предоставляет REST API, который позволяет разработчикам программно взаимодействовать со службами Marzban. Чтобы просмотреть документацию по API в Swagger UI или ReDoc, установите переменную конфигурации `DOCS=True`и перейдите к `/docs`и `/redoc`.
+```bash
+nano /opt/marzban/.env
+```
 
-СONTENT ADDED SOON
+Изменяем в нем следующие переменные
+
+```
+`DOCS=True`
+```
+Перейдите в браузере  `http://YOUR_DOMAIN/docs` или `http://YOUR_DOMAIN/redoc`.
