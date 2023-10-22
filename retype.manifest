@@ -1,0 +1,211 @@
+{
+  "version": "3.5.0",
+  "created": "2023-10-22T14:05:32Z",
+  "files": [
+    {
+      "path": ".nojekyll"
+    },
+    {
+      "path": "404.html"
+    },
+    {
+      "path": "advanced/all_inbounds/index.html"
+    },
+    {
+      "path": "advanced/api/index.html"
+    },
+    {
+      "path": "advanced/change-marzban-main-tree-on-dev/index.html"
+    },
+    {
+      "path": "advanced/cli/index.html"
+    },
+    {
+      "path": "advanced/env/index.html"
+    },
+    {
+      "path": "advanced/webhook/index.html"
+    },
+    {
+      "path": "base/about_always_on_vpn/index.html"
+    },
+    {
+      "path": "base/about_censor/index.html"
+    },
+    {
+      "path": "base/about_dns/index.html"
+    },
+    {
+      "path": "base/about_internet/index.html"
+    },
+    {
+      "path": "base/about_vpn/index.html"
+    },
+    {
+      "path": "examples/ads-remove-with-adguarddns/index.html"
+    },
+    {
+      "path": "examples/ads-remove-with-pihole/index.html"
+    },
+    {
+      "path": "examples/all-in-one-port/index.html"
+    },
+    {
+      "path": "examples/backup/index.html"
+    },
+    {
+      "path": "examples/change-bd-on-mysql/index.html"
+    },
+    {
+      "path": "examples/change-xray-version/index.html"
+    },
+    {
+      "path": "examples/cloudflare-warp/index.html"
+    },
+    {
+      "path": "examples/fix-403-error/index.html"
+    },
+    {
+      "path": "examples/snippets/index.html"
+    },
+    {
+      "path": "examples/support/index.html"
+    },
+    {
+      "path": "examples/url-scheme/index.html"
+    },
+    {
+      "path": "examples/user-template-in-telegram-bot/index.html"
+    },
+    {
+      "path": "examples/users_limit/index.html"
+    },
+    {
+      "path": "index.html"
+    },
+    {
+      "path": "recomended_host/index.html"
+    },
+    {
+      "path": "resources/css/retype.css"
+    },
+    {
+      "path": "resources/fonts/Inter-italic-latin-var.woff2"
+    },
+    {
+      "path": "resources/fonts/Inter-roman-latin-var.woff2"
+    },
+    {
+      "path": "resources/js/config.js"
+    },
+    {
+      "path": "resources/js/lunr.js"
+    },
+    {
+      "path": "resources/js/prism.js"
+    },
+    {
+      "path": "resources/js/retype.js"
+    },
+    {
+      "path": "resources/js/search.json"
+    },
+    {
+      "path": "resources/lunr.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/mermaid.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/prism.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/retype.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/retype.LICENSE.txt"
+    },
+    {
+      "path": "robots.txt"
+    },
+    {
+      "path": "sitemap.xml"
+    },
+    {
+      "path": "sitemap.xml.gz",
+      "old": true
+    },
+    {
+      "path": "start/first-look/index.html"
+    },
+    {
+      "path": "start/get-ssl/index.html"
+    },
+    {
+      "path": "start/host-settings/index.html"
+    },
+    {
+      "path": "start/install/index.html"
+    },
+    {
+      "path": "start/node-settings/index.html"
+    },
+    {
+      "path": "start/reality_app/index.html"
+    },
+    {
+      "path": "start/ssl-enable/index.html"
+    },
+    {
+      "path": "start/user_create/index.html"
+    },
+    {
+      "path": "static/1.png"
+    },
+    {
+      "path": "static/11.png"
+    },
+    {
+      "path": "static/12.png"
+    },
+    {
+      "path": "static/13.png"
+    },
+    {
+      "path": "static/14.png"
+    },
+    {
+      "path": "static/15.png"
+    },
+    {
+      "path": "static/16.png"
+    },
+    {
+      "path": "static/17.png"
+    },
+    {
+      "path": "static/18.png"
+    },
+    {
+      "path": "static/19.png"
+    },
+    {
+      "path": "static/2.png"
+    },
+    {
+      "path": "static/21.png"
+    },
+    {
+      "path": "static/3.png"
+    },
+    {
+      "path": "static/4.png"
+    },
+    {
+      "path": "static/5.png"
+    },
+    {
+      "path": "static/main.jpg"
+    }
+  ]
+}

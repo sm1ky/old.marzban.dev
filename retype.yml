@@ -2,6 +2,9 @@ input: .
 output: .retype
 url: # Add your website address here
 locale: ru
+include:
+  - "sitemap.xml"
+  - "robots.txt"
 branding:
   title: Marzban
   label: Docs
