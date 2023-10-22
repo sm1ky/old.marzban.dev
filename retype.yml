@@ -1,6 +1,6 @@
 input: .
 output: .retype
-url: # Add your website address here
+url: docs.marzban.ru
 locale: ru
 include:
   - "sitemap.xml"
