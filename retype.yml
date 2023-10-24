@@ -4,7 +4,8 @@ url: docs.marzban.ru
 locale: ru
 
 include:
-
+  - "sitemap.xml"
+  - "robots.txt"
 branding:
   title: Marzban
   label: Docs
