@@ -2,14 +2,10 @@ input: .
 output: .retype
 url: docs.marzban.ru
 locale: ru
-include:
-  - "sitemap.xml"
-  - "robots.txt"
 branding:
   title: Marzban
   label: Docs
 start:
-  pro: true
 footer:
   copyright: © Copyright {{ year }} – Marzban TEAM – All rights reserved
 poweredByRetype: false
