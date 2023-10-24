@@ -2,6 +2,10 @@ input: .
 output: .retype
 url: docs.marzban.ru
 locale: ru
+<<<<<<< HEAD
+=======
+include:
+>>>>>>> 96aecf27ae18d4e37630304ce477b8d9a5d9a90d
 branding:
   title: Marzban
   label: Docs
