@@ -3,9 +3,6 @@ output: .retype
 url: docs.marzban.ru
 locale: ru
 include:
-  - "sitemap.xml"
-  - "robots.txt"
-  - "sitemap.xml.gz"
 branding:
   title: Marzban
   label: Docs
