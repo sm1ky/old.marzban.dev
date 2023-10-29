@@ -102,9 +102,9 @@ docker compose up -d
 Для этого получаем сертификаты панели, и размещаем их на узле в папке  `/var/lib/marzban-node/`.
 Например:
 Сертификат Панель 1:
-`/var/lib/marzban-node/server_1.pem`.
+```/var/lib/marzban-node/server_1.pem```
 Сертификат Панель 2:
-`/var/lib/marzban-node/server_2.pem`.
+```/var/lib/marzban-node/server_2.pem```
 
 После необходимо отредактировать файл `docker-compose.yml`  следующим образом
 
