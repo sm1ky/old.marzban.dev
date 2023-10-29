@@ -94,3 +94,60 @@ docker compose up -d
 Жмем `Добавить узел`
 
 Если Вы не нажали галку `добавить узел в качестве нового хоста во все входящие`, Вы всегда сможете добавить узел в любой inbound, после ее подключения, просто указав ее адрес (IP или домен/суб-домен)
+
+
+## Использование ноды на нескольких панелях 
+
+Иногда, может возникнуть потребность запуска нескольких экзепляров узла на одном сервере, для подключения к нескольким панелям.
+Для этого получаем сертификаты панели, и размещаем их на узле в папке  `/var/lib/marzban-node/`.
+Например:
+Сертификат Панель 1:
+`/var/lib/marzban-node/server_1.pem`.
+Сертификат Панель 2:
+`/var/lib/marzban-node/server_2.pem`.
+
+После необходимо отредактировать файл `docker-compose.yml`  следующим образом
+
+```yaml
+services:
+  node-1:
+    # build: .
+    image: gozargah/marzban-node:latest
+    restart: always
+    network_mode: host
+
+    volumes:
+      - /var/lib/marzban-node:/var/lib/marzban-node
+      - /var/lib/marzban:/var/lib/marzban
+
+    environment:
+      SERVICE_PORT: 2000
+      XRAY_API_PORT: 2001
+      SSL_CLIENT_CERT_FILE: "/var/lib/marzban-node/server_1.pem"
+
+
+  node-2:
+    # build: .
+    image: gozargah/marzban-node:latest
+    restart: always
+    network_mode: host
+
+    volumes:
+      - /var/lib/marzban-node:/var/lib/marzban-node
+      - /var/lib/marzban:/var/lib/marzban
+
+    environment:
+      SERVICE_PORT: 3000
+      XRAY_API_PORT: 3001
+      SSL_CLIENT_CERT_FILE: "/var/lib/marzban-node/server_2.pem"
+```
+
+После перезагрузки контейнера,мы будем иметь следующее:
+
+| Переменная    | Node-1 | Node-2 |
+| ------------- | ------ | ------ |
+| SERVICE PORT  | 2000   | 3000   |
+| XRAY API PORT | 2001   | 3001   |
+
+
+И добавляем наши узлы исходя из вышеперечисленных данных
