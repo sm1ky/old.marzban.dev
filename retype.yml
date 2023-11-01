@@ -6,10 +6,12 @@ locale: ru
 include:
   - "sitemap.xml"
   - "robots.txt"
+  - "favicon.ico"
 branding:
   title: Marzban
   label: Docs
+  logo: static/white_logo.svg
 start:
 footer:
-  copyright: © Copyright {{ year }} – Marzban TEAM – All rights reserved
+  copyright: © Copyright {{ year }} – @iambabyninja
 poweredByRetype: false
