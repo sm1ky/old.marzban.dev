@@ -10,8 +10,10 @@ include:
 branding:
   title: Marzban
   label: Docs
-  logo: static/white_logo.svg
+  logo: /static/white_logo.svg
+  logoDark: /static/logo.svg
 start:
+favicon: /static/favicon.ico
 footer:
   copyright: © Copyright {{ year }} – @iambabyninja
 poweredByRetype: false
