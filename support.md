@@ -3,19 +3,21 @@ order: 1003
 label: Поддержка
 icon: star
 ---
-Развитие инфраструктуры xray-core полностью находится только в наших с Вами руках.
+{% hint style="info" %}
+Если Вы являетесь разработчиком продукта к xray-core, напишите [@iambabyninja](https://t.me/iambabyninja), что бы оказаться на этой странице
+{% endhint %}
+
+Так как разработка сторонних приложений и решений осуществляется полностью на некомерческой основе, развитие инфраструктуры xray-core находится только в наших с Вами руках.
 
 Если у Вас есть возможность, Вы всегда можете поддержать всех причастных к разработке инфраструктуры xray-core.
 
 Поддержка не всегда выражается в чем то материальном, Вы можете внести свои правки в любимый проект, сообщить о проблеме или просто выразить теплые слова поддержки :heart:
-{% hint style="info" %}
-Если Вы являетесь разработчиком продукта к xray-core, напишите [@iambabyninja](https://t.me/iambabyninja), что бы оказаться на этой странице
-{% endhint %}
+
 ### Marzban
 
 [https://github.com/Gozargah/Marzban#donation](https://github.com/Gozargah/Marzban#donation)
 
-### Документация docs.marzban.ru
+### Документация
 
 [https://www.tinkoff.ru/cf/9jOvjAgXLHX](https://www.tinkoff.ru/cf/9jOvjAgXLHX)
 
@@ -30,3 +32,4 @@ icon: star
 ### Hiddify-Next
 
 [https://github.com/hiddify/hiddify-next?tab=readme-ov-file#donation-and-support](https://github.com/hiddify/hiddify-next?tab=readme-ov-file#donation-and-support)
+
