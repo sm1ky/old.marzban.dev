@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2023-10-24T14:03:45Z",
+  "created": "2023-11-05T16:02:48Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -12,6 +12,9 @@
       "path": "advanced/all_inbounds/index.html"
     },
     {
+      "path": "advanced/all-in-one-port/index.html"
+    },
+    {
       "path": "advanced/api/index.html"
     },
     {
@@ -21,7 +24,13 @@
       "path": "advanced/cli/index.html"
     },
     {
+      "path": "advanced/cloudflare-warp/index.html"
+    },
+    {
       "path": "advanced/env/index.html"
+    },
+    {
+      "path": "advanced/users_limit/index.html"
     },
     {
       "path": "advanced/webhook/index.html"
@@ -51,10 +60,12 @@
       "path": "examples/ads-remove-with-pihole/index.html"
     },
     {
-      "path": "examples/all-in-one-port/index.html"
+      "path": "examples/all-in-one-port/index.html",
+      "old": true
     },
     {
-      "path": "examples/backup/index.html"
+      "path": "examples/backup/index.html",
+      "old": true
     },
     {
       "path": "examples/change-bd-on-mysql/index.html"
@@ -63,7 +74,8 @@
       "path": "examples/change-xray-version/index.html"
     },
     {
-      "path": "examples/cloudflare-warp/index.html"
+      "path": "examples/cloudflare-warp/index.html",
+      "old": true
     },
     {
       "path": "examples/fix-403-error/index.html"
@@ -72,7 +84,8 @@
       "path": "examples/snippets/index.html"
     },
     {
-      "path": "examples/support/index.html"
+      "path": "examples/support/index.html",
+      "old": true
     },
     {
       "path": "examples/url-scheme/index.html"
@@ -81,7 +94,11 @@
       "path": "examples/user-template-in-telegram-bot/index.html"
     },
     {
-      "path": "examples/users_limit/index.html"
+      "path": "examples/users_limit/index.html",
+      "old": true
+    },
+    {
+      "path": "favicon.ico"
     },
     {
       "path": "index.html"
@@ -139,6 +156,9 @@
       "old": true
     },
     {
+      "path": "start/backup/index.html"
+    },
+    {
       "path": "start/first-look/index.html"
     },
     {
@@ -158,6 +178,9 @@
     },
     {
       "path": "start/ssl-enable/index.html"
+    },
+    {
+      "path": "start/telegram_bot/index.html"
     },
     {
       "path": "start/user_create/index.html"
@@ -208,7 +231,82 @@
       "path": "static/5.png"
     },
     {
+      "path": "static/bot_botfather.jpg"
+    },
+    {
+      "path": "static/bot_create.jpg"
+    },
+    {
+      "path": "static/bot_env.jpg"
+    },
+    {
+      "path": "static/bot_main.jpg"
+    },
+    {
+      "path": "static/bot_myid_get.jpg"
+    },
+    {
+      "path": "static/bot_myid.jpg"
+    },
+    {
+      "path": "static/bot_token.jpg"
+    },
+    {
+      "path": "static/favicon.ico"
+    },
+    {
+      "path": "static/logo.svg"
+    },
+    {
       "path": "static/main.jpg"
+    },
+    {
+      "path": "static/mtls.jpg"
+    },
+    {
+      "path": "static/node_add.png"
+    },
+    {
+      "path": "static/node_connect.png"
+    },
+    {
+      "path": "static/node_download.png"
+    },
+    {
+      "path": "static/node_show.png"
+    },
+    {
+      "path": "static/node1.jpg"
+    },
+    {
+      "path": "static/node1.png"
+    },
+    {
+      "path": "static/node2.jpg"
+    },
+    {
+      "path": "static/node3.jpg"
+    },
+    {
+      "path": "static/node3.png"
+    },
+    {
+      "path": "static/node4.jpg"
+    },
+    {
+      "path": "static/node5.jpg"
+    },
+    {
+      "path": "static/node6.jpg"
+    },
+    {
+      "path": "static/tls.jpg"
+    },
+    {
+      "path": "static/white_logo.svg"
+    },
+    {
+      "path": "support/index.html"
     }
   ]
 }

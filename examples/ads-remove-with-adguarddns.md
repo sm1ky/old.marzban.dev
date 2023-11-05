@@ -1,4 +1,7 @@
-# Убираем рекламу с AdGuardDNS
+---
+label: Убираем рекламу с AdGuard
+icon: log
+---
 
 Для блокировки рекламы на стороне сервера, предлагается использовать программное решение AdGuard DNS
 
@@ -39,7 +42,6 @@ nano /etc/resolv.conf
 
 `nameserver 127.0.0.1`
 
-![](<../.gitbook/assets/image (6).png>)
 
 Измените DNS-сервер в файле конфигурации вашего `xray-config.json`
 
@@ -61,7 +63,6 @@ nano /var/lib/marzban/xray_config.json
 
 или сделав тоже самое через WebUI
 
-![](<../.gitbook/assets/image (7).png>)
 
 Перезагрузить marzban
 
@@ -80,5 +81,3 @@ tls://1dot1dot1dot1.cloudflare-dns.com
 ```
 
 Активируем шифрование и активируем ранее полученные сертификаты
-
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>

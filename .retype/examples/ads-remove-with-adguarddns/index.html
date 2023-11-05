@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751471418259">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752515362907">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Убираем рекламу с AdGuardDNS</title>
-    <meta name="title" content="Убираем рекламу с AdGuardDNS">
+    <title>Убираем рекламу с AdGuard</title>
+    <meta name="title" content="Убираем рекламу с AdGuard">
     <meta name="description" content="Для блокировки рекламы на стороне сервера, предлагается использовать программное решение AdGuard DNS">
 
     <!-- Canonical -->
@@ -19,23 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.marzban.ru/examples/ads-remove-with-adguarddns/">
-    <meta property="og:title" content="Убираем рекламу с AdGuardDNS">
+    <meta property="og:title" content="Убираем рекламу с AdGuard">
     <meta property="og:description" content="Для блокировки рекламы на стороне сервера, предлагается использовать программное решение AdGuard DNS">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.marzban.ru/examples/ads-remove-with-adguarddns/">
-    <meta property="twitter:title" content="Убираем рекламу с AdGuardDNS">
+    <meta property="twitter:title" content="Убираем рекламу с AdGuard">
     <meta property="twitter:description" content="Для блокировки рекламы на стороне сервера, предлагается использовать программное решение AdGuard DNS">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.751471418259" rel="stylesheet">
+    <link href="../../static/favicon.ico" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.5.0.752515362907" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751471418259" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.752515362907" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751471418259" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.751471418259" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.752515362907" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.752515362907" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,6 +52,10 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/white_logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.svg">
+                            </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Marzban</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -150,10 +155,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="убираем-рекламу-с-adguarddns" class="break-words">
+<doc-anchor-target id="убираем-рекламу-с-adguard" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#убираем-рекламу-с-adguarddns">#</doc-anchor-trigger>
-        <span>Убираем рекламу с AdGuardDNS</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#убираем-рекламу-с-adguard">#</doc-anchor-trigger>
+        <span>Убираем рекламу с AdGuard</span>
     </h1>
 </doc-anchor-target>
 <p>Для блокировки рекламы на стороне сервера, предлагается использовать программное решение AdGuard DNS</p>
@@ -183,11 +188,6 @@ sudo ./AdGuardHome -s install</code></pre>
 <pre class="language-bash"><code v-pre class="language-bash">nano /etc/resolv.conf</code></pre>
 </doc-codeblock></div>
 <p><code v-pre>nameserver 127.0.0.1</code></p>
-<p><figure class="content-center">
-    <img src="../.gitbook/assets/image-(6).png" alt="">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
 <p>Измените DNS-сервер в файле конфигурации вашего <code v-pre>xray-config.json</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">nano /var/lib/marzban/xray_config.json</code></pre>
@@ -201,11 +201,6 @@ sudo ./AdGuardHome -s install</code></pre>
   },</code></pre>
 </doc-codeblock></div>
 <p>или сделав тоже самое через WebUI</p>
-<p><figure class="content-center">
-    <img src="../.gitbook/assets/image-(7).png" alt="">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
 <p>Перезагрузить marzban</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">marzban restart</code></pre>
@@ -218,7 +213,6 @@ https://dns-unfiltered.adguard.com/dns-query
 tls://1dot1dot1dot1.cloudflare-dns.com</code></pre>
 </doc-codeblock></div>
 <p>Активируем шифрование и активируем ранее полученные сертификаты</p>
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
                                 
                                 <!-- Required only on API pages -->
@@ -256,7 +250,7 @@ tls://1dot1dot1dot1.cloudflare-dns.com</code></pre>
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023 – Marzban TEAM – All rights reserved</p></div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023 – @iambabyninja</p></div>
                             </footer>
                         </div>
                     </div>
@@ -285,6 +279,6 @@ tls://1dot1dot1dot1.cloudflare-dns.com</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Убираем рекламу с AdGuardDNS", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Убираем рекламу с AdGuard", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

@@ -4,7 +4,7 @@ url: docs.marzban.ru
 locale: ru
 
 include:
-  - "sitemap.xml"
+#  - "sitemap.xml"
   - "robots.txt"
   - "favicon.ico"
 branding:
