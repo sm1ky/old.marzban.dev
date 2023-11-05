@@ -6,9 +6,9 @@
 Обратите внимание, что для конфигураций Warp существует максимальное ограничение на подключение — 5 устройств одновременно, для решения проблемы вы можете использовать несколько конфигураций.
 {% endhint %}
 
-## Создание конфигурации Wireguard[​](https://gozargah.github.io/marzban/examples/warp#%D9%82%D8%AF%D9%85-%D8%A7%D9%88%D9%84-%D8%B3%D8%A7%D8%AE%D8%AA-%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF-wireguard)
+## Создание конфигурации Wireguard
 
-[​](https://gozargah.github.io/marzban/examples/warp#%D9%82%D8%AF%D9%85-%D8%A7%D9%88%D9%84-%D8%B3%D8%A7%D8%AE%D8%AA-%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF-wireguard)Для начала вам необходимо скачать `Asset`нужный из раздела [релизов , этот файл разный в зависимости от процессора.](https://github.com/ViRb3/wgcf/releases)
+Для начала вам необходимо скачать `Asset`нужный из раздела [релизов , этот файл разный в зависимости от процессора.](https://github.com/ViRb3/wgcf/releases)
 
 ```bash
 wget https://github.com/ViRb3/wgcf/releases/download/v2.2.16/wgcf_2.2.18_linux_amd64
@@ -31,7 +31,7 @@ wgcf generate
 
 ## Использование Warp+ (необязательно)
 
-Чтобы получить лицензию и использовать Warp+, вы можете получить `license key` через [этого](https://t.me/generatewarpplusbot) Telegram-бота&#x20;
+Чтобы получить лицензию и использовать Warp+, вы можете получить `license key` через [этого](https://t.me/generatewarpplusbot) Telegram-бота
 
 После его получения необходимо заменить `license_key` в файле `wgcf-account.toml`
 
@@ -47,7 +47,7 @@ wgcf update
 wgcf generate
 ```
 
-### Активация WARP  в Marzban[​](https://gozargah.github.io/marzban/examples/warp#%D9%82%D8%AF%D9%85-%D8%B3%D9%88%D9%85-%D9%81%D8%B9%D8%A7%D9%84%D8%B3%D8%A7%D8%B2%DB%8C-warp-%D8%B1%D9%88%DB%8C-%D9%85%D8%B1%D8%B2%D8%A8%D8%A7%D9%86) <a href="#qdm-swm-faalsazy-warp-rwy-mrzban" id="qdm-swm-faalsazy-warp-rwy-mrzban"></a>
+### Активация WARP  в Marzban
 
 {% hint style="info" %}
 Этот метод рекомендуется только для Xray версии 1.8.3 или выше. В более старых версиях вы, вероятно, столкнетесь с проблемой утечки памяти.
@@ -73,8 +73,7 @@ wgcf generate
 }
 ```
 
-## Настройки раздела маршрутизации[​](https://gozargah.github.io/marzban/examples/warp#%D9%82%D8%AF%D9%85-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA-%D8%A8%D8%AE%D8%B4-routing)
-
+## Настройки раздела маршрутизации
 Вам необходимо отредактировать ваш `xray_config.json` добавив в него новый `RULES` как в примере ниже, указав, какие сайты будут отправлять через `WARP`
 
 ```json
