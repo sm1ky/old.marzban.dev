@@ -37,7 +37,7 @@ curl https://get.acme.sh | sh -s email=EMAIL
 mkdir -p /var/lib/marzban/certs/
 ```
 
-Получаем сертификат
+Получаем сертификаты
 
 Введите ваш домен или субдомен в поле `DOMAIN`
 

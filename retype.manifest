@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2023-11-05T16:02:48Z",
+  "created": "2023-11-05T16:08:42Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -149,11 +149,11 @@
       "path": "robots.txt"
     },
     {
-      "path": "sitemap.xml"
+      "path": "sitemap.xml",
+      "old": true
     },
     {
-      "path": "sitemap.xml.gz",
-      "old": true
+      "path": "sitemap.xml.gz"
     },
     {
       "path": "start/backup/index.html"

@@ -4,8 +4,8 @@ url: docs.marzban.ru
 locale: ru
 
 include:
-#  - "sitemap.xml"
-#  - "robots.txt"
+  - "sitemap.xml"
+  - "robots.txt"
   - "favicon.ico"
 branding:
   title: Marzban
