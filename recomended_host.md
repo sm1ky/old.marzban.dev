@@ -7,6 +7,20 @@ icon: check-circle
 Если Вы предоставляете услуги хостинга и лояльно относитесь к размещению на Ваших площадках VPN сервисов, напишите [@iambabyninja](https://t.me/iambabyninja), что бы оказаться на этой странице
 {% endhint %}
 
+## :heart: BitcoinVPS
++++ Сайт
+https://bitcoinvps.cloud/
++++ Локации
+- Германия
+- Финляндия
+- Америка
++++ LG
+https://bitcoinvps.cloud/looking-glass
++++ Примечание
+- Оплата криптой
+- Весь диапазон IPv6 в блоке у гугла
++++
+
 ## Hetzner
 +++ Сайт
 https://www.hetzner.com/
@@ -21,19 +35,7 @@ https://speed.hetzner.de/
 - Весь диапазон IPv6 в блоке у гугла
 +++
 
-## BitcoinVPS
-+++ Сайт
-https://bitcoinvps.cloud/
-+++ Локации
-- Германия
-- Финляндия
-- Америка
-+++ LG
-https://bitcoinvps.cloud/looking-glass
-+++ Примечание
-- Оплата криптой
-- Весь диапазон IPv6 в блоке у гугла
-+++
+
 ## WebHorizon
 +++ Сайт
 https://webhorizon.net/
