@@ -1,5 +1,5 @@
 ---
-order: 894
+order: 880
 label: CLI
 icon: browser
 ---

@@ -1,5 +1,5 @@
 ---
-order: 895
+order: 885
 label: Коофицент узла
 icon: graph
 ---
