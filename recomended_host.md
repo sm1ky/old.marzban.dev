@@ -36,25 +36,7 @@ https://speed.hetzner.de/
 +++
 
 
-## WebHorizon
-+++ Сайт
-https://webhorizon.net/
-+++ Локации
-- Норвегия
-- Нидерланды
-- Германия
-- Сингапур
-- Япония
-+++ LG
-- [Sandefjord, Norway](http://lg-no-trf.webhorizon.net/) 
-- [Doetinchem, Netherlands](http://lg-nl-dtc.webhorizon.net/) 
-- [Frankfurt, Germany](http://lg-de-fra.webhorizon.net/) 
-- [Singapore](http://lg-sg-sin.webhorizon.net/) 
-- [Tokyo, Japan](http://lg-jp-tyo.webhorizon.net/) 
 
-+++ Примечание
-- Чистые IP адреса
-+++
 
 ## vscale
 +++ Сайт

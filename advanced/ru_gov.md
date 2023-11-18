@@ -1,5 +1,5 @@
 ---
-order: 895
+order: 893
 label: Соблюдение законодательства
 icon: blocked
 ---
