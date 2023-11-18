@@ -15,5 +15,5 @@ branding:
 start:
 favicon: /static/favicon.ico
 footer:
-  copyright: © Copyright {{ year }} – @iambabyninja
+  copyright: © Copyright {{ year }} – Marzban
 poweredByRetype: false

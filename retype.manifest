@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2023-11-05T16:08:42Z",
+  "created": "2023-11-18T17:06:25Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -30,10 +30,28 @@
       "path": "advanced/env/index.html"
     },
     {
+      "path": "advanced/node_usage_coefficient/index.html"
+    },
+    {
+      "path": "advanced/ru_gov/index.html"
+    },
+    {
+      "path": "advanced/set_time_zone/index.html"
+    },
+    {
+      "path": "advanced/ufw_main_panel/index.html"
+    },
+    {
+      "path": "advanced/ufw_node/index.html"
+    },
+    {
       "path": "advanced/users_limit/index.html"
     },
     {
       "path": "advanced/webhook/index.html"
+    },
+    {
+      "path": "advanced/xanmod_install/index.html"
     },
     {
       "path": "base/about_always_on_vpn/index.html"
@@ -98,7 +116,8 @@
       "old": true
     },
     {
-      "path": "favicon.ico"
+      "path": "favicon.ico",
+      "old": true
     },
     {
       "path": "index.html"
@@ -169,6 +188,9 @@
     },
     {
       "path": "start/install/index.html"
+    },
+    {
+      "path": "start/node-settings-old/index.html"
     },
     {
       "path": "start/node-settings/index.html"
@@ -252,7 +274,13 @@
       "path": "static/bot_token.jpg"
     },
     {
+      "path": "static/cc"
+    },
+    {
       "path": "static/favicon.ico"
+    },
+    {
+      "path": "static/fix_v2_ip_limit.zip"
     },
     {
       "path": "static/logo.svg"
@@ -300,13 +328,44 @@
       "path": "static/node6.jpg"
     },
     {
+      "path": "static/time.jpg"
+    },
+    {
       "path": "static/tls.jpg"
+    },
+    {
+      "path": "static/usage/1.jpg"
+    },
+    {
+      "path": "static/usage/2.jpg"
+    },
+    {
+      "path": "static/usage/3.jpg"
+    },
+    {
+      "path": "static/usage/4.jpg"
+    },
+    {
+      "path": "static/usage/5.jpg"
+    },
+    {
+      "path": "static/usage/6.jpg"
+    },
+    {
+      "path": "static/usage/7.jpg"
     },
     {
       "path": "static/white_logo.svg"
     },
     {
-      "path": "support/index.html"
+      "path": "static/xanmod.jpg"
+    },
+    {
+      "path": "support/index.html",
+      "old": true
+    },
+    {
+      "path": "talking_about_vless/index.html"
     }
   ]
 }

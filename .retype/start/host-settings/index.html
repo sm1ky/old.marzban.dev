@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752515715428">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753642378163">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.752515715428" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.753642378163" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.752515715428" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.753642378163" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.752515715428" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.753642378163" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -184,7 +184,7 @@
 <li>Fingerprint</li>
 </ul>
 <p>С помощью настроек в этом разделе вы можете настроить порт соединения, SNI, хост и т.д. по своему усмотрению.</p>
-<p>По умолчанию, IP-адрес сервера используется в качестве значения для поля Address, а настройки по умолчанию для входящего соединения (порт и т.д.) устанавливаются для каждой конфигурации. </p>
+<p>По умолчанию, IP-адрес сервера используется в качестве значения для поля Address, а настройки по умолчанию для входящего соединения (порт и т.д.) устанавливаются для каждой конфигурации.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -198,7 +198,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Настройки хоста имеют более высокий приоритет по сравнению с другими настройками. </p>
+<p>Настройки хоста имеют более высокий приоритет по сравнению с другими настройками.</p>
 <p>Значения, заданные в этом разделе, имеют наивысший приоритет при создании конфигураций.</p>
         </div>
     </div>
@@ -231,7 +231,7 @@
 <doc-anchor-target id="описание-переменных">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#описание-переменных">#</doc-anchor-trigger>
-        <span>Описание переменных <a href="#variables-description" id="variables-description"></a></span>
+        <span>Описание переменных</span>
     </h3>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -268,8 +268,20 @@
 <td>Оставшееся кол-во дней</td>
 </tr>
 <tr>
-<td><code v-pre>{PROTOCOL}</code></td>
-<td>Протокол (e.g. Vless)</td>
+<td><code v-pre>{EXPIRE_DATE}</code></td>
+<td>Дата истечения срока</td>
+</tr>
+<tr>
+<td><code v-pre>{JALALI_EXPIRE_DATE}</code></td>
+<td>Дата истечения срока по солнечному календарю</td>
+</tr>
+<tr>
+<td><code v-pre>{TIME_LEFT}</code></td>
+<td>Оставшееся время использования</td>
+</tr>
+<tr>
+<td><code v-pre>{STATUS_EMOJI}</code></td>
+<td>Статус пользователя в виде смайлика (<span class="docs-emoji">&#x2705;</span>,<span class="docs-emoji">&#x231B;</span>️,🪫,<span class="docs-emoji">&#x274C;</span>)</td>
 </tr>
 <tr>
 <td><code v-pre>{TRANSPORT}</code></td>
@@ -329,7 +341,7 @@
         <span>Несколько хостов и SNI</span>
     </h3>
 </doc-anchor-target>
-<p>Если необходимо установить несколько разных адресов для Host и SNI, вы можете разделить эти адреса с помощью <code v-pre>,</code> </p>
+<p>Если необходимо установить несколько разных адресов для Host и SNI, вы можете разделить эти адреса с помощью <code v-pre>,</code></p>
 <p>Один из этих адресов будет выбран случайным образом для каждого пользователя.</p>
 
                                 
