@@ -15,7 +15,7 @@ timedatectl set-timezone Europe/Moscow
 
 Открываем файл docker-compose.yml
 ```bash
-nano /var/lib/marzban/docker-compose.yml
+nano /opt/marzban/docker-compose.yml
 ```
 
 добавляем значение `/etc/localtime:/etc/localtime:ro` в раздел `volumes`
