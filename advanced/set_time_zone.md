@@ -21,12 +21,8 @@ nano /var/lib/marzban/docker-compose.yml
 добавляем значение `/etc/localtime:/etc/localtime:ro` в раздел `volumes`
 ![](/static/time.jpg)
 ```yaml
-
-...
 	volumes:
 		- /etc/localtime:/etc/localtime:ro
-...
-
 ```
 
 
