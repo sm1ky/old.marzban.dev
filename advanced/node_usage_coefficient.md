@@ -1,6 +1,6 @@
 ---
 order: 885
-label: Коофицент узла
+label: Коэффициент узла
 icon: graph
 ---
 {% hint style="info" %}
