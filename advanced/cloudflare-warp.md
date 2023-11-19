@@ -25,7 +25,7 @@ cd && bash <(curl -fsSL git.io/warp.sh) proxy
 
 ```json
  {
-      "tag": "WARP",
+      "tag": "warp",
       "protocol": "socks",
       "settings": {
         "servers": [
