@@ -7,7 +7,7 @@
 #### Streisand
 
 ```
-streisand://import/URL
+streisand://import/URL#NAME
 ```
 
 #### FoxRay
