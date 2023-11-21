@@ -10,53 +10,8 @@ icon: cloud
 Обратите внимание, что для конфигураций Warp+ существует максимальное ограничение на подключение — 5 устройств одновременно, для решения проблемы вы можете использовать несколько конфигураций.
 {% endhint %}
 
+
 ## Вариант 1
-### Создание тунеля
-
-Устанавливаем WARP-cli
-
-```bash
-cd && bash <(curl -fsSL git.io/warp.sh) proxy
-```
-
-### Активация WARP  в Marzban
-
-Вам необходимо отредактировать ваш `xray_config.json` добавив в него новый `OUTBOUND` как в примере ниже
-
-```json
- {
-      "tag": "warp",
-      "protocol": "socks",
-      "settings": {
-        "servers": [
-          {
-            "address": "127.0.0.1",
-            "port": 40000
-          }
-        ]
-      }
-    }
-```
-
-### Настройки раздела маршрутизации
-Вам необходимо отредактировать ваш `xray_config.json` добавив в него новый `RULES` как в примере ниже, указав, какие сайты будут отправлять через `WARP`
-
-```json
-{
-    "outboundTag": "warp",
-    "domain": [
-        "geosite:google"
-        "openai.com",
-        "ai.com",
-        "ipinfo.io",
-        "iplocation.net",
-        "spotify.com"
-    ],
-    "type": "field"
-}
-```
-
-## Вариант 2
 ### Создание конфигурации Wireguard
 
 Для начала вам необходимо скачать нужный [`Asset`](https://github.com/ViRb3/wgcf/releases) из раздела релизов , этот файл разный в зависимости от процессора.
@@ -122,6 +77,52 @@ wgcf generate
     ]
   }
 }
+```
+
+### Настройки раздела маршрутизации
+Вам необходимо отредактировать ваш `xray_config.json` добавив в него новый `RULES` как в примере ниже, указав, какие сайты будут отправлять через `WARP`
+
+```json
+{
+    "outboundTag": "warp",
+    "domain": [
+        "geosite:google"
+        "openai.com",
+        "ai.com",
+        "ipinfo.io",
+        "iplocation.net",
+        "spotify.com"
+    ],
+    "type": "field"
+}
+```
+
+## Вариант 2
+### Создание тунеля
+
+Устанавливаем WARP-cli
+
+```bash
+cd && bash <(curl -fsSL git.io/warp.sh) proxy
+```
+
+### Активация WARP  в Marzban
+
+Вам необходимо отредактировать ваш `xray_config.json` добавив в него новый `OUTBOUND` как в примере ниже
+
+```json
+ {
+      "tag": "warp",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "127.0.0.1",
+            "port": 40000
+          }
+        ]
+      }
+    }
 ```
 
 ### Настройки раздела маршрутизации
