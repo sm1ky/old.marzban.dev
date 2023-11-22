@@ -1,6 +1,32 @@
 # Исправляем ошибку 403
 
-## Отключаем IPv6 <a href="#disable-ipv6" id="disable-ipv6"></a>
+## Вариант 1: Настраваем роутинг
+### Часть OUTBOUND
+```json
+{
+      "tag": "IPv4",
+      "protocol": "freedom",
+      "settings": {
+      "domainStrategy": "UseIPv4"
+      }
+    }
+
+```
+### Часть RULES
+```json
+{
+        "type": "field",
+        "outboundTag": "IPv4",
+        "domain": [
+          "geosite:google",
+          "geoip:google",
+          "domain:google.com"
+        ]
+      }
+
+```
+
+## Вариант 2: Отключаем IPv6 
 
 При получении ошибки 403 на различных сайтах, настоятельно рекомендую отключить IPv6 на вашем сервере.
 
