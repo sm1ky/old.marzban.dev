@@ -73,7 +73,5 @@ Marzban удобен в использовании, многофункциона
 <a href="https://github.com/Gozargah/Marzban/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Gozargah/Marzban" />
 </a>
-
-Made with [contrib.rocks](https://contrib.rocks).
 </p>
 
