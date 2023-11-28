@@ -25,9 +25,7 @@ sudo nano /var/lib/marzban/xray_config.json
         "type": "field",
         "outboundTag": "IPv4",
         "domain": [
-          "geosite:google",
-          "geoip:google",
-          "domain:google.com"
+          "geosite:google"
         ]
       }
 
