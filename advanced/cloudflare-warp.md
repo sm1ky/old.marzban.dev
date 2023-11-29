@@ -23,7 +23,7 @@ wget https://github.com/ViRb3/wgcf/releases/download/v2.2.19/wgcf_2.2.19_linux_a
 Перемещаем скачанный файл в  `/usr/bin/`  и меняем его имя на `wgcf`
 
 ```bash
-mv wgcf_2.2.18_linux_amd64 /usr/bin/wgcf && chmod +x /usr/bin/wgcf
+mv wgcf_2.2.19_linux_amd64 /usr/bin/wgcf && chmod +x /usr/bin/wgcf
 ```
 
 Затем создайте конфигурацию, используя эти две команды
