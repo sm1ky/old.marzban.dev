@@ -25,3 +25,11 @@ icon: people
 Этот скрипт работает иначе. Например, если ограничение IP установлено на одно подключение, и два пользователя пытаются подключиться к одной учетной записи, второй IP будет заблокирован через таблицу IP на указанный период времени, но первый IP останется подключенным. Таким образом,  будет отключен только второй пользователь, а не будет отключена вся учетная запись
 
 [https://github.com/mmdzov/luIP-marzban](https://github.com/mmdzov/luIP-marzban)
+
+## RU_luIP-UFW
+
+Этот скрипт является прямым продолжением предыдущего, но с испольщованием UFW и множеством других изменений.
+
+[https://github.com/sm1ky/luIP-marzban/tree/main](https://github.com/sm1ky/luIP-marzban/tree/main)
+
+[https://github.com/sm1ky/luIP-marzban-node/tree/main](https://github.com/sm1ky/luIP-marzban-node/tree/main)
