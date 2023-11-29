@@ -132,12 +132,8 @@ cd && bash <(curl -fsSL git.io/warp.sh) proxy
 {
     "outboundTag": "warp",
     "domain": [
-        "geosite:google"
-        "openai.com",
-        "ai.com",
-        "ipinfo.io",
-        "iplocation.net",
-        "spotify.com"
+        "geosite:google",
+        "openai.com"
     ],
     "type": "field"
 }
