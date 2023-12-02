@@ -27,7 +27,9 @@ nano /opt/marzban/.env
 ```
 
 Изменяем в нем следующие переменные
-
+{% hint style="info" %}
+знак `#` в начале каждой изменяемой переменной нужно удалить, иначе значение переменной не будет установленно, так как будет считаться закомментированным
+{% endhint %}
 ```
 UVICORN_PORT = 443
 UVICORN_SSL_CERTFILE = "/var/lib/marzban/certs/fullchain.pem"
