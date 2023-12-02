@@ -86,7 +86,7 @@ wgcf generate
 {
     "outboundTag": "warp",
     "domain": [
-        "geosite:google"
+        "geosite:google",
         "openai.com",
         "ai.com",
         "ipinfo.io",
