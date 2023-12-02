@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753642378163">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754846436684">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.753642378163" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754846436684" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.753642378163" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754846436684" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.753642378163" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.753642378163" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754846436684" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.754846436684" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -185,64 +185,6 @@
         <span>Вариант 1</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="создание-тунеля">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#создание-тунеля">#</doc-anchor-trigger>
-        <span>Создание тунеля</span>
-    </h3>
-</doc-anchor-target>
-<p>Устанавливаем WARP-cli</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">cd &amp;&amp; bash &lt;(curl -fsSL git.io/warp.sh) proxy</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="активация-warp--в-marzban">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#активация-warp--в-marzban">#</doc-anchor-trigger>
-        <span>Активация WARP  в Marzban</span>
-    </h3>
-</doc-anchor-target>
-<p>Вам необходимо отредактировать ваш <code v-pre>xray_config.json</code> добавив в него новый <code v-pre>OUTBOUND</code> как в примере ниже</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json"> {
-      &quot;tag&quot;: &quot;WARP&quot;,
-      &quot;protocol&quot;: &quot;socks&quot;,
-      &quot;settings&quot;: {
-        &quot;servers&quot;: [
-          {
-            &quot;address&quot;: &quot;127.0.0.1&quot;,
-            &quot;port&quot;: 40000
-          }
-        ]
-      }
-    }</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="настройки-раздела-маршрутизации">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#настройки-раздела-маршрутизации">#</doc-anchor-trigger>
-        <span>Настройки раздела маршрутизации</span>
-    </h3>
-</doc-anchor-target>
-<p>Вам необходимо отредактировать ваш <code v-pre>xray_config.json</code> добавив в него новый <code v-pre>RULES</code> как в примере ниже, указав, какие сайты будут отправлять через <code v-pre>WARP</code></p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-    &quot;outboundTag&quot;: &quot;warp&quot;,
-    &quot;domain&quot;: [
-        &quot;geosite:google&quot;
-        &quot;openai.com&quot;,
-        &quot;ai.com&quot;,
-        &quot;ipinfo.io&quot;,
-        &quot;iplocation.net&quot;,
-        &quot;spotify.com&quot;
-    ],
-    &quot;type&quot;: &quot;field&quot;
-}</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="вариант-2">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#вариант-2">#</doc-anchor-trigger>
-        <span>Вариант 2</span>
-    </h2>
-</doc-anchor-target>
 <doc-anchor-target id="создание-конфигурации-wireguard">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#создание-конфигурации-wireguard">#</doc-anchor-trigger>
@@ -255,7 +197,7 @@
 </doc-codeblock></div>
 <p>Перемещаем скачанный файл в  <code v-pre>/usr/bin/</code>  и меняем его имя на <code v-pre>wgcf</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">mv wgcf_2.2.18_linux_amd64 /usr/bin/wgcf</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mv wgcf_2.2.19_linux_amd64 /usr/bin/wgcf &amp;&amp; chmod +x /usr/bin/wgcf</code></pre>
 </doc-codeblock></div>
 <p>Затем создайте конфигурацию, используя эти две команды</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -279,9 +221,9 @@ wgcf generate</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">wgcf generate</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="активация-warp--в-marzban-1">
+<doc-anchor-target id="активация-warp--в-marzban">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#активация-warp--в-marzban-1">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#активация-warp--в-marzban">#</doc-anchor-trigger>
         <span>Активация WARP  в Marzban</span>
     </h3>
 </doc-anchor-target>
@@ -320,6 +262,60 @@ wgcf generate</code></pre>
   }
 }</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="настройки-раздела-маршрутизации">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#настройки-раздела-маршрутизации">#</doc-anchor-trigger>
+        <span>Настройки раздела маршрутизации</span>
+    </h3>
+</doc-anchor-target>
+<p>Вам необходимо отредактировать ваш <code v-pre>xray_config.json</code> добавив в него новый <code v-pre>RULES</code> как в примере ниже, указав, какие сайты будут отправлять через <code v-pre>WARP</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;outboundTag&quot;: &quot;warp&quot;,
+    &quot;domain&quot;: [
+        &quot;geosite:google&quot;,
+        &quot;openai.com&quot;
+    ],
+    &quot;type&quot;: &quot;field&quot;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="вариант-2">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#вариант-2">#</doc-anchor-trigger>
+        <span>Вариант 2</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="создание-тунеля">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#создание-тунеля">#</doc-anchor-trigger>
+        <span>Создание тунеля</span>
+    </h3>
+</doc-anchor-target>
+<p>Устанавливаем WARP-cli</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">cd &amp;&amp; bash &lt;(curl -fsSL git.io/warp.sh) proxy</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="активация-warp--в-marzban-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#активация-warp--в-marzban-1">#</doc-anchor-trigger>
+        <span>Активация WARP  в Marzban</span>
+    </h3>
+</doc-anchor-target>
+<p>Вам необходимо отредактировать ваш <code v-pre>xray_config.json</code> добавив в него новый <code v-pre>OUTBOUND</code> как в примере ниже</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json"> {
+      &quot;tag&quot;: &quot;warp&quot;,
+      &quot;protocol&quot;: &quot;socks&quot;,
+      &quot;settings&quot;: {
+        &quot;servers&quot;: [
+          {
+            &quot;address&quot;: &quot;127.0.0.1&quot;,
+            &quot;port&quot;: 40000
+          }
+        ]
+      }
+    }</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="настройки-раздела-маршрутизации-1">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#настройки-раздела-маршрутизации-1">#</doc-anchor-trigger>
@@ -331,12 +327,8 @@ wgcf generate</code></pre>
 <pre class="language-json"><code v-pre class="language-json">{
     &quot;outboundTag&quot;: &quot;warp&quot;,
     &quot;domain&quot;: [
-        &quot;geosite:google&quot;
-        &quot;openai.com&quot;,
-        &quot;ai.com&quot;,
-        &quot;ipinfo.io&quot;,
-        &quot;iplocation.net&quot;,
-        &quot;spotify.com&quot;
+        &quot;geosite:google&quot;,
+        &quot;openai.com&quot;
     ],
     &quot;type&quot;: &quot;field&quot;
 }</code></pre>
@@ -378,7 +370,7 @@ wgcf generate</code></pre>
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023 – @iambabyninja</p></div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023 – Marzban</p></div>
                             </footer>
                         </div>
                     </div>

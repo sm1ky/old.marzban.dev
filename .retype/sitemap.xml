@@ -2,18 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://docs.marzban.ru/</loc>
-    <lastmod>2023-11-11T14:19:13Z</lastmod>
+    <lastmod>2023-12-02T14:59:07Z</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/talking_about_vless/</loc>
     <lastmod>2023-11-11T18:28:21Z</lastmod>
     <priority>0.79</priority>
-  </url>
-  <url>
-    <loc>https://docs.marzban.ru/recomended_host/</loc>
-    <lastmod>2023-11-18T12:49:47Z</lastmod>
-    <priority>0.78</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/start/node-settings/</loc>
@@ -23,7 +18,7 @@
   <url>
     <loc>https://docs.marzban.ru/base/about_internet/</loc>
     <lastmod>2023-10-21T17:57:56Z</lastmod>
-    <priority>0.57</priority>
+    <priority>0.58</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/base/about_dns/</loc>
@@ -33,7 +28,7 @@
   <url>
     <loc>https://docs.marzban.ru/base/about_censor/</loc>
     <lastmod>2023-10-21T18:11:53Z</lastmod>
-    <priority>0.56</priority>
+    <priority>0.57</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/base/about_vpn/</loc>
@@ -43,7 +38,7 @@
   <url>
     <loc>https://docs.marzban.ru/base/about_always_on_vpn/</loc>
     <lastmod>2023-10-21T18:23:21Z</lastmod>
-    <priority>0.55</priority>
+    <priority>0.56</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/start/install/</loc>
@@ -53,7 +48,7 @@
   <url>
     <loc>https://docs.marzban.ru/start/get-ssl/</loc>
     <lastmod>2023-11-05T17:02:02Z</lastmod>
-    <priority>0.54</priority>
+    <priority>0.55</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/start/ssl-enable/</loc>
@@ -63,7 +58,7 @@
   <url>
     <loc>https://docs.marzban.ru/start/first-look/</loc>
     <lastmod>2023-11-05T17:05:49Z</lastmod>
-    <priority>0.53</priority>
+    <priority>0.54</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/start/user_create/</loc>
@@ -72,8 +67,8 @@
   </url>
   <url>
     <loc>https://docs.marzban.ru/start/host-settings/</loc>
-    <lastmod>2023-11-18T14:20:32Z</lastmod>
-    <priority>0.52</priority>
+    <lastmod>2023-12-02T14:59:07Z</lastmod>
+    <priority>0.53</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/start/telegram_bot/</loc>
@@ -83,7 +78,7 @@
   <url>
     <loc>https://docs.marzban.ru/start/backup/</loc>
     <lastmod>2023-11-05T16:54:53Z</lastmod>
-    <priority>0.51</priority>
+    <priority>0.52</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/start/reality_app/</loc>
@@ -98,21 +93,21 @@
   <url>
     <loc>https://docs.marzban.ru/advanced/env/</loc>
     <lastmod>2023-11-11T16:26:50Z</lastmod>
-    <priority>0.49</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/advanced/cloudflare-warp/</loc>
-    <lastmod>2023-11-18T07:37:11Z</lastmod>
+    <lastmod>2023-12-02T14:59:06Z</lastmod>
     <priority>0.49</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/advanced/all-in-one-port/</loc>
     <lastmod>2023-11-05T15:58:56Z</lastmod>
-    <priority>0.48</priority>
+    <priority>0.49</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/advanced/users_limit/</loc>
-    <lastmod>2023-11-18T08:51:44Z</lastmod>
+    <lastmod>2023-12-02T14:59:06Z</lastmod>
     <priority>0.48</priority>
   </url>
   <url>
@@ -121,8 +116,13 @@
     <priority>0.48</priority>
   </url>
   <url>
+    <loc>https://docs.marzban.ru/advanced/logs/</loc>
+    <lastmod>2023-12-02T15:28:16Z</lastmod>
+    <priority>0.48</priority>
+  </url>
+  <url>
     <loc>https://docs.marzban.ru/advanced/ufw_main_panel/</loc>
-    <lastmod>2023-11-18T09:20:00Z</lastmod>
+    <lastmod>2023-12-02T14:59:06Z</lastmod>
     <priority>0.47</priority>
   </url>
   <url>
@@ -132,7 +132,7 @@
   </url>
   <url>
     <loc>https://docs.marzban.ru/advanced/ru_gov/</loc>
-    <lastmod>2023-11-18T09:10:07Z</lastmod>
+    <lastmod>2023-11-18T19:56:07Z</lastmod>
     <priority>0.46</priority>
   </url>
   <url>
@@ -166,13 +166,13 @@
     <priority>0.44</priority>
   </url>
   <url>
-    <loc>https://docs.marzban.ru/examples/url-scheme/</loc>
-    <lastmod>2023-10-21T16:04:34Z</lastmod>
+    <loc>https://docs.marzban.ru/examples/fix-403-error/</loc>
+    <lastmod>2023-12-02T14:59:06Z</lastmod>
     <priority>0.43</priority>
   </url>
   <url>
-    <loc>https://docs.marzban.ru/examples/fix-403-error/</loc>
-    <lastmod>2023-10-21T16:04:34Z</lastmod>
+    <loc>https://docs.marzban.ru/examples/url-scheme/</loc>
+    <lastmod>2023-12-02T14:59:07Z</lastmod>
     <priority>0.42</priority>
   </url>
   <url>
@@ -186,14 +186,9 @@
     <priority>0.41</priority>
   </url>
   <url>
-    <loc>https://docs.marzban.ru/examples/user-template-in-telegram-bot/</loc>
-    <lastmod>2023-10-21T16:04:34Z</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
     <loc>https://docs.marzban.ru/examples/snippets/</loc>
     <lastmod>2023-10-21T16:04:34Z</lastmod>
-    <priority>0.4</priority>
+    <priority>0.41</priority>
   </url>
   <url>
     <loc>https://docs.marzban.ru/examples/ads-remove-with-adguarddns/</loc>
@@ -203,6 +198,11 @@
   <url>
     <loc>https://docs.marzban.ru/examples/ads-remove-with-pihole/</loc>
     <lastmod>2023-11-05T15:59:42Z</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://docs.marzban.ru/examples/node-ir/</loc>
+    <lastmod>2023-12-02T14:59:07Z</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>

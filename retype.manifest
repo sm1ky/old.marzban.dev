@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2023-11-18T17:06:25Z",
+  "created": "2023-12-02T15:34:03Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -28,6 +28,9 @@
     },
     {
       "path": "advanced/env/index.html"
+    },
+    {
+      "path": "advanced/logs/index.html"
     },
     {
       "path": "advanced/node_usage_coefficient/index.html"
@@ -99,6 +102,9 @@
       "path": "examples/fix-403-error/index.html"
     },
     {
+      "path": "examples/node-ir/index.html"
+    },
+    {
       "path": "examples/snippets/index.html"
     },
     {
@@ -109,7 +115,8 @@
       "path": "examples/url-scheme/index.html"
     },
     {
-      "path": "examples/user-template-in-telegram-bot/index.html"
+      "path": "examples/user-template-in-telegram-bot/index.html",
+      "old": true
     },
     {
       "path": "examples/users_limit/index.html",
@@ -123,7 +130,8 @@
       "path": "index.html"
     },
     {
-      "path": "recomended_host/index.html"
+      "path": "recomended_host/index.html",
+      "old": true
     },
     {
       "path": "resources/css/retype.css"
