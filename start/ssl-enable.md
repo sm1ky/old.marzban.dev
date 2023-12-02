@@ -34,5 +34,10 @@ UVICORN_SSL_CERTFILE = "/var/lib/marzban/certs/fullchain.pem"
 UVICORN_SSL_KEYFILE = "/var/lib/marzban/certs/key.pem"
 XRAY_SUBSCRIPTION_URL_PREFIX = https://YOUR_DOMAIN
 ```
+Сохраняем внесенные изменения.
 
+Для того, что бы изменения вступили в силу, необходимо перезапустить панель 
+```bash
+marzban restart
+``` 
 Теперь панель управления Marzban будет доступна на вашем домене или субдомене по https.
