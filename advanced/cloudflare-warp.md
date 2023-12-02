@@ -87,11 +87,7 @@ wgcf generate
     "outboundTag": "warp",
     "domain": [
         "geosite:google",
-        "openai.com",
-        "ai.com",
-        "ipinfo.io",
-        "iplocation.net",
-        "spotify.com"
+        "openai.com"
     ],
     "type": "field"
 }
