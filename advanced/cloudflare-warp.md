@@ -148,7 +148,7 @@ cd && bash <(curl -fsSL git.io/warp.sh) proxy
     "outboundTag": "warp",
     "domain": [
         "geosite:google",
-        "openai.com"
+        "geosite:openai"
     ],
     "type": "field"
 }
