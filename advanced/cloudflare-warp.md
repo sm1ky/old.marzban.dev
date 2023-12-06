@@ -55,10 +55,6 @@ wgcf generate
 
 ### Активация WARP  в Marzban
 
-{% hint style="info" %}
-Этот метод рекомендуется только для Xray версии 1.8.3 или выше. В более старых версиях вы, вероятно, столкнетесь с проблемой утечки памяти.
-{% endhint %}
-
 Вам необходимо отредактировать ваш `xray_config.json` добавив в него новый `OUTBOUND` как в примере ниже, заполнив его данными из`wgcf-profile.conf`
 
 ```json
@@ -78,7 +74,30 @@ wgcf generate
   }
 }
 ```
-
+{% hint style="warning" %}
+При испольщовании  Xray версии 1.8.6 или выше, необходимо установить параметр kernelmode в false
+{% endhint %}
+```json
+{
+      "tag": "WARP",
+      "protocol": "wireguard",
+      "settings": {
+        "secretKey": "",
+        "DNS": "1.1.1.1",
+        "address": [
+          "172.16.0.2/32",
+          "2606:4700:110:8381:7328:468f:78ff:a1f5/128"
+        ],
+        "peers": [
+          {
+            "publicKey": "",
+            "endpoint": "engage.cloudflareclient.com:2408"
+          }
+        ],
+        "kernelMode": false
+      }
+    },
+``` 
 ### Настройки раздела маршрутизации
 Вам необходимо отредактировать ваш `xray_config.json` добавив в него новый `RULES` как в примере ниже, указав, какие сайты будут отправлять через `WARP`
 
