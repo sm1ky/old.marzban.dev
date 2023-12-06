@@ -106,7 +106,7 @@ wgcf generate
     "outboundTag": "warp",
     "domain": [
         "geosite:google",
-        "openai.com"
+        "geosite:openai"
     ],
     "type": "field"
 }
