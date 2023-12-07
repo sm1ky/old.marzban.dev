@@ -75,7 +75,7 @@ wgcf generate
 }
 ```
 {% hint style="warning" %}
-При испольщовании  Xray версии 1.8.6 или выше, необходимо установить параметр kernelmode в false
+При использовании  Xray версии 1.8.6 или выше, необходимо установить параметр `kernelmode` в `false`
 {% endhint %}
 ```json
 {
