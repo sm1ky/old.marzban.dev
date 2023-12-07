@@ -18,8 +18,8 @@ wget -O https://s3.marzban.ru/files/zapret.dat
 ```
 
 Имеет две ветки:
-1) zapret.dat:zapret - Все что заблокировано РКНы
-1) zapret.dat:zapret-zapad - Рессурсы не обслуживающие Русские IP
+1) zapret.dat:zapret - Все что заблокировано РКН
+1) zapret.dat:zapret-zapad - Ресурсы не обслуживающие Русских 
 
 ## Установка для сервера
 
