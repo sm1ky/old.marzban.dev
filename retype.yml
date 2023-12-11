@@ -10,6 +10,8 @@ include:
 integration:
   googleAnalytics: 
     id: G-65M2DKEZ7E
+  googleTagManager:
+    id: G-65M2DKEZ7E
 branding:
   title: Marzban
   label: Docs
