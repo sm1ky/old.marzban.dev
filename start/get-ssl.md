@@ -63,3 +63,7 @@ mkdir -p /var/lib/marzban/certs/
 ```sh
 ~/.acme.sh/acme.sh --list
 ```
+### Продлить сертификаты, до момента авто продления
+```sh
+~/.acme.sh --renew -d DOMAIN --force
+``` 
