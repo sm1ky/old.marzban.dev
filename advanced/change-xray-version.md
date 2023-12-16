@@ -1,4 +1,7 @@
-# Меняем ядро xray
+---
+label: Меняем ядро xray
+icon: meter
+---
 
 С помощью следующих инструкций вы можете изменить ядро вашего Xray-core в Marzban или Marzban Node.
 

@@ -1,4 +1,7 @@
-# Переход на MySQL
+---
+label: Переход на MySQL
+icon: database
+---
 
 Если у Вас есть потребность в использовании базы данных MySQL, а не SQLite, Вы можете сделать следующим образом
 
@@ -14,7 +17,7 @@ apt-get update
 nano /opt/marzban/docker-compose.yml
 ```
 
-Замените содержимое файла на&#x20;
+Замените содержимое файла на
 
 ```yaml
 services:
