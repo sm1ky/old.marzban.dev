@@ -1,12 +1,18 @@
 {
   "version": "3.5.0",
-  "created": "2023-12-02T15:34:03Z",
+  "created": "2023-12-16T09:58:46Z",
   "files": [
     {
       "path": ".nojekyll"
     },
     {
       "path": "404.html"
+    },
+    {
+      "path": "advanced/ads-remove-with-adguarddns/index.html"
+    },
+    {
+      "path": "advanced/ads-remove-with-pihole/index.html"
     },
     {
       "path": "advanced/all_inbounds/index.html"
@@ -18,7 +24,13 @@
       "path": "advanced/api/index.html"
     },
     {
+      "path": "advanced/change-bd-on-mysql/index.html"
+    },
+    {
       "path": "advanced/change-marzban-main-tree-on-dev/index.html"
+    },
+    {
+      "path": "advanced/change-xray-version/index.html"
     },
     {
       "path": "advanced/cli/index.html"
@@ -28,6 +40,9 @@
     },
     {
       "path": "advanced/env/index.html"
+    },
+    {
+      "path": "advanced/fix-403-error/index.html"
     },
     {
       "path": "advanced/logs/index.html"
@@ -46,6 +61,12 @@
     },
     {
       "path": "advanced/ufw_node/index.html"
+    },
+    {
+      "path": "advanced/url-scheme/index.html"
+    },
+    {
+      "path": "advanced/user_template/index.html"
     },
     {
       "path": "advanced/users_limit/index.html"
@@ -75,10 +96,12 @@
       "path": "CNAME"
     },
     {
-      "path": "examples/ads-remove-with-adguarddns/index.html"
+      "path": "examples/ads-remove-with-adguarddns/index.html",
+      "old": true
     },
     {
-      "path": "examples/ads-remove-with-pihole/index.html"
+      "path": "examples/ads-remove-with-pihole/index.html",
+      "old": true
     },
     {
       "path": "examples/all-in-one-port/index.html",
@@ -89,30 +112,36 @@
       "old": true
     },
     {
-      "path": "examples/change-bd-on-mysql/index.html"
+      "path": "examples/change-bd-on-mysql/index.html",
+      "old": true
     },
     {
-      "path": "examples/change-xray-version/index.html"
+      "path": "examples/change-xray-version/index.html",
+      "old": true
     },
     {
       "path": "examples/cloudflare-warp/index.html",
       "old": true
     },
     {
-      "path": "examples/fix-403-error/index.html"
+      "path": "examples/fix-403-error/index.html",
+      "old": true
     },
     {
-      "path": "examples/node-ir/index.html"
+      "path": "examples/node-ir/index.html",
+      "old": true
     },
     {
-      "path": "examples/snippets/index.html"
+      "path": "examples/snippets/index.html",
+      "old": true
     },
     {
       "path": "examples/support/index.html",
       "old": true
     },
     {
-      "path": "examples/url-scheme/index.html"
+      "path": "examples/url-scheme/index.html",
+      "old": true
     },
     {
       "path": "examples/user-template-in-telegram-bot/index.html",
@@ -334,6 +363,99 @@
     },
     {
       "path": "static/node6.jpg"
+    },
+    {
+      "path": "static/old/image-(1)-(1).png"
+    },
+    {
+      "path": "static/old/image-(1).png"
+    },
+    {
+      "path": "static/old/image-(10).png"
+    },
+    {
+      "path": "static/old/image-(11).png"
+    },
+    {
+      "path": "static/old/image-(12).png"
+    },
+    {
+      "path": "static/old/image-(13).png"
+    },
+    {
+      "path": "static/old/image-(14).png"
+    },
+    {
+      "path": "static/old/image-(15).png"
+    },
+    {
+      "path": "static/old/image-(16).png"
+    },
+    {
+      "path": "static/old/image-(17).png"
+    },
+    {
+      "path": "static/old/image-(18).png"
+    },
+    {
+      "path": "static/old/image-(19).png"
+    },
+    {
+      "path": "static/old/image-(2)-(1).png"
+    },
+    {
+      "path": "static/old/image-(2).png"
+    },
+    {
+      "path": "static/old/image-(20).png"
+    },
+    {
+      "path": "static/old/image-(21).png"
+    },
+    {
+      "path": "static/old/image-(22).png"
+    },
+    {
+      "path": "static/old/image-(23).png"
+    },
+    {
+      "path": "static/old/image-(24).png"
+    },
+    {
+      "path": "static/old/image-(25).png"
+    },
+    {
+      "path": "static/old/image-(26).png"
+    },
+    {
+      "path": "static/old/image-(3).png"
+    },
+    {
+      "path": "static/old/image-(4).png"
+    },
+    {
+      "path": "static/old/image-(5).png"
+    },
+    {
+      "path": "static/old/image-(6).png"
+    },
+    {
+      "path": "static/old/image-(7).png"
+    },
+    {
+      "path": "static/old/image-(8).png"
+    },
+    {
+      "path": "static/old/image-(9).png"
+    },
+    {
+      "path": "static/old/image.png"
+    },
+    {
+      "path": "static/old/openapi.json"
+    },
+    {
+      "path": "static/old/photo_2023-09-23_16-23-38.jpg"
     },
     {
       "path": "static/time.jpg"
