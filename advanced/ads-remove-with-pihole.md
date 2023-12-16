@@ -19,7 +19,7 @@ sudo apt update && apt upgrade -y
 curl -sSL https://install.pi-hole.net | bash
 ```
 
-При достижения этапа STATIC IP, нам необходимо выбрать вариант "Продолжить" слева Продолжайте вводить "Yes" до завершения установки&#x20;
+При достижения этапа STATIC IP, нам необходимо выбрать вариант "Продолжить" слева Продолжайте вводить "Yes" до завершения установки
 
 ![](</static/old/image (1) (1).png>)
 
@@ -89,7 +89,7 @@ nano /var/lib/marzban/xray_config.json
 
 или сделав тоже самое через WebUI
 
-![](</static/old//image (7).png>)
+![](</static/old/image (7).png>)
 
 Перезагрузить marzban
 

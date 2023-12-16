@@ -89,7 +89,6 @@ TELEGRAM_ADMIN_ID = YOUR_ID
 
 Переходим в бота и нажимаем «`Create User From Template`»:
 ![](</static/old/image (18).png>)
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 Выбираем созданный ранее шаблон пользователя:
 ![](</static/old/image (19).png>)
