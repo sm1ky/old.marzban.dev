@@ -17,13 +17,13 @@ icon: shield
 
 ## Получение сертификата с acme.sh
 
-Устанавливаем нужный софт
+### Устанавливаем нужный софт
 
 ```sh
 apt install cron  && apt install socat
 ```
 
-Устанавливаем acme.sh
+### Устанавливаем acme.sh
 
 EMAIL = Ваш email(можно любую случайную почту)
 
@@ -31,13 +31,13 @@ EMAIL = Ваш email(можно любую случайную почту)
 curl https://get.acme.sh | sh -s email=EMAIL
 ```
 
-Создаем директорию для сертификатов
+### Создаем директорию для сертификатов
 
 ```sh
 mkdir -p /var/lib/marzban/certs/
 ```
 
-Получаем сертификаты
+### Получаем сертификаты
 
 Введите ваш домен или субдомен в поле `DOMAIN`
 
@@ -47,23 +47,57 @@ mkdir -p /var/lib/marzban/certs/
 --fullchain-file /var/lib/marzban/certs/fullchain.pem
 ```
 
-В случае, если вам необходимо получить сертификаты для ваших поддоменов, команда получения сертификата будет выглядеть так
+## Получение wildcard сертификата с acme.sh
+В случае, если вам необходимо получить wildcard сертификаты для всех ваших поддоменов
+
+### Устанавливаем нужный софт
 
 ```sh
-~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --standalone \
--d DOMAIN \
--d SUBDOMAIN1.DOMAIN \
--d SUBDOMAIN2.DOMAIN \
---key-file /var/lib/marzban/certs/key.pem \
---fullchain-file /var/lib/marzban/certs/fullchain.pem
+apt install cron  && apt install socat
 ```
 
-### Посмотреть список выпущенных сертификатов
+### Устанавливаем acme.sh
+
+EMAIL = Ваш email(можно любую случайную почту)
+
+```sh
+curl https://get.acme.sh | sh -s email=EMAIL
+```
+
+### Создаем директорию для сертификатов
+
+```sh
+mkdir -p /var/lib/marzban/certs/
+```
+
+### Получаем ключ API  Cloudflare
+
+Войдите в свой аккаунт Cloudflare и получите Global API Key. Этот ключ понадобится для автоматической настройки DNS записей
+Настройка переменных окружения
+
+### Настраиваем переменные окружения
+
+```sh
+export CF_Key="ваш_cloudflare_api_key"
+export CF_Email="ваш_email"
+```
+### Выпуск wildcard сертификата
+Введите ваш домен в поле `DOMAIN`
+
+```sh
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf  \
+-d DOMAIN \
+-d *.DOMAIN \
+--key-file /var/lib/marzban/certs/key.pem \
+--fullchain-file /var/lib/marzban/certs/fullchain.pem 
+```
+
+## Посмотреть список выпущенных сертификатов
 
 ```sh
 ~/.acme.sh/acme.sh --list
 ```
-### Продлить сертификаты, до момента авто продления
+## Продлить сертификаты, до момента авто продления
 ```sh
 ~/.acme.sh --renew -d DOMAIN --force
 ``` 
