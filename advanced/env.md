@@ -59,7 +59,12 @@ icon: eye
 {% endhint %}
 ## XRAY_SUBSCRIPTION_PATH
 значение по умолчанию: `/sub/` 
+
 Путь к странице полписки 
+
+{% hint style="info" %}
+Пример: "/SomeRandomSUB/"
+{% endhint %}
 ## XRAY_EXECUTABLE_PATH:
 
 Адрес исполняемого файла Xray.
