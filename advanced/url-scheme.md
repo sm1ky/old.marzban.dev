@@ -15,13 +15,13 @@ streisand://import/URL#NAME
 ### FoxRay
 
 ```
-foxray://yiguo.dev/sub/add/?url=URL#name
+foxray://yiguo.dev/sub/add/?url=URL#NAME
 ```
 
 ### v2box
 
 ```
-v2box://install-sub?url=URL&name=subsName
+v2box://install-sub?url=URL&name=NAME
 ```
 
 ### ShadowRocket
@@ -35,7 +35,7 @@ sub://URL
 ### NekoRay
 
 ```
-sn://subscription?url=URL&name=SUBNAME
+sn://subscription?url=URL&name=NAME
 ```
 
 ### V2rayNG
@@ -58,7 +58,7 @@ clashx://install-config?url=URL
 clash://install-config?url=URL
 ```
 
-###Hiddify
+### Hiddify
 ```
 hiddify://install-config/?url=URL
 ```
