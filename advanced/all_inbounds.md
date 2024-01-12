@@ -7,12 +7,22 @@ icon: plug
 {% hint style="warning" %}
 Рекомендуется использовать только вариант VLESS TCP REALITY с включенным потоком
 {% endhint %}
+
 {% hint style="info" %}
 Рекомендуется изменить и настроить указанные в примерах порты, SNI и другие данные под себя
 {% endhint %}
 
 ## VLESS
+{% hint style="info" %}
+получение закрытого  и открытого ключа для Reality
 
+`docker exec marzban-marzban-1 xray x25519`
+{% endhint %}
+{% hint style="info" %}
+получение ShortID
+
+`openssl rand -hex 8`
+{% endhint %}
 ### VLESS **TCP** REALITY
 
 ```json
