@@ -13,10 +13,12 @@ icon: plug
 {% endhint %}
 {% hint style="info" %}
 получение закрытого  и открытого ключа для Reality
+
 `docker exec marzban-marzban-1 xray x25519`
 {% endhint %}
 {% hint style="info" %}
-получение ShortID
+получение ShortID для Reality
+
 `openssl rand -hex 8`
 {% endhint %}
 ## VLESS
