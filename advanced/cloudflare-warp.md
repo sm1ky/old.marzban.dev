@@ -17,13 +17,13 @@ icon: cloud
 Для начала вам необходимо скачать нужный [`Asset`](https://github.com/ViRb3/wgcf/releases) из раздела релизов , этот файл разный в зависимости от процессора.
 
 ```bash
-wget https://github.com/ViRb3/wgcf/releases/download/v2.2.20/wgcf_2.2.20_linux_amd64
+wget https://github.com/ViRb3/wgcf/releases/download/v2.2.21/wgcf_2.2.21_linux_amd64
 ```
 
 Перемещаем скачанный файл в  `/usr/bin/`  и меняем его имя на `wgcf`
 
 ```bash
-mv wgcf_2.2.20_linux_amd64 /usr/bin/wgcf && chmod +x /usr/bin/wgcf
+mv wgcf_2.2.21_linux_amd64 /usr/bin/wgcf && chmod +x /usr/bin/wgcf
 ```
 
 Затем создайте конфигурацию, используя эти две команды
