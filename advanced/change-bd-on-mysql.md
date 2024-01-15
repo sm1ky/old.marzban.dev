@@ -15,8 +15,11 @@ nano /opt/marzban/.env
 Прокомментируйте строку ниже `#SQLALCHEMY_DATABASE_URL="sqlite:////var/lib/marzban/db.sqlite3"`
 
 Поместите следующую строку в `env` заполнив ее, своими данными
-
-SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://<username>:<password>@<host>:<port>/<database>'
+{% hint style="warning" %}
+Обратите внимание, что для обьявления значения строки мы должны использовать символ `'`, а не `"`
+т.к. может быть проблема при испольщовании спец символов в пароле
+{% endhint %}
+SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://username:password@host:port/database'
 
 Здесь:
 
