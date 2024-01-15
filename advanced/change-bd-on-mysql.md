@@ -5,6 +5,26 @@ icon: database
 
 Если у Вас есть потребность в использовании базы данных MySQL, а не SQLite, Вы можете сделать следующим образом
 
+## Подключение к внешней БД
+Откройте файл окружения
+
+```bash
+nano /opt/marzban/.env
+```
+
+Прокомментируйте строку ниже `#SQLALCHEMY_DATABASE_URL="sqlite:////var/lib/marzban/db.sqlite3"`
+
+Поместите следующий код в `env` и введите желаемый пароль вместо слова `DB_PASSWORD` (повторяется дважды).
+
+`SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:DB_PASSWORD@127.0.0.1/marzban"
+
+
+Остановите и запустите Marzban и подождите 1 минуту (не обращайте внимания на ошибки)
+
+```bash
+marzban restart
+```
+## Подключение к локальной БД
 Обновление Linux:
 
 ```bash
