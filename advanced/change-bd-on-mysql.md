@@ -14,16 +14,31 @@ nano /opt/marzban/.env
 
 Прокомментируйте строку ниже `#SQLALCHEMY_DATABASE_URL="sqlite:////var/lib/marzban/db.sqlite3"`
 
-Поместите следующий код в `env` и введите желаемый пароль вместо слова `DB_PASSWORD` (повторяется дважды).
+Поместите следующую строку в `env` заполнив ее, своими данными
 
-`SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:DB_PASSWORD@127.0.0.1/marzban"
+SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://<username>:<password>@<host>:<port>/<database>'
 
+Здесь:
 
-Остановите и запустите Marzban и подождите 1 минуту (не обращайте внимания на ошибки)
+	•	mysql+pymysql: это диалект и драйвер, используемые SQLAlchemy для подключения к MySQL. pymysql - это один из драйверов, которые вы можете использовать.
+	•	<username>: имя пользователя для вашей базы данных MySQL.
+	•	<password>: пароль для указанного пользователя.
+	•	<host>: адрес хоста, где размещена ваша база данных (например, localhost, IP-адрес или доменное имя).
+	•	<port>: порт, на котором работает сервер MySQL. Стандартный порт для MySQL - 3306.
+	•	<database>: имя базы данных, к которой вы хотите подключиться.
+
+Пример:
+
+SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://myuser:mypassword@228.228.228.228:3306/mydatabase'
+
+Не забудьте заменить myuser, mypassword, 228.228.228.228, 3306 и mydatabase на реальные данные вашей базы 
+
+Перезапустите контейнер
 
 ```bash
 marzban restart
 ```
+
 ## Подключение к локальной БД
 Обновление Linux:
 
