@@ -4,7 +4,7 @@ icon: meter
 ---
 
 С помощью следующих инструкций вы можете изменить ядро вашего Xray-core в Marzban или Marzban Node.
-
+## Смена ядра на сервере панели
 {% hint style="info" %}
 Во всех приведенных ниже примерах файлы `docker-compose.yml` и `.env` можно найти по пути `/opt/marzban`, а файл `xray_config.json` - по пути `/var/lib/marzban`
 {% endhint %}
@@ -58,7 +58,7 @@ nano /opt/marzban/.env
 marzban restart
 ```
 
-Изменение ядра в Marzban Node:
+## Смена ядра на сервере узла
 
 В Marzban Node также необходимо установить значение `XRAY_EXECUTABLE_PATH` и добавить папку /var/lib/marzban в службу, как показано ниже.
 
