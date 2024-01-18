@@ -1,6 +1,7 @@
 ---
 author: iambabyninja
 date: 2024-01-18
+title: Про фрагментацию
 ---
 
 
