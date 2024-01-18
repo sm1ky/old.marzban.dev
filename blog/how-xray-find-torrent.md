@@ -3,7 +3,7 @@ author: iambabyninja
 date: 2024-01-18
 title: Как мы находим BitTorrent трафик
 ---
-
+![](https://s3.marzban.ru/img/blog/IMG_20240118_041912.jpg)
 ## Как определяется BitTorrent 
 
 Сегодня мы рассмотрим как Xray-core определяет BitTorrent трафик на уровне пакетов и заголовков.
