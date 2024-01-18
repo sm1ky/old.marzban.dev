@@ -2,7 +2,8 @@ input: .
 output: .retype
 url: docs.marzban.ru
 locale: ru
-
+meta:
+  title: " | MARZBAN | XRAY-CORE"
 include:
   - "sitemap.xml"
   - "robots.txt"
