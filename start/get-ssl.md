@@ -19,29 +19,29 @@ icon: shield
 
 ### Устанавливаем нужный софт
 
-```sh
-apt install cron  && apt install socat
+```bash
+sudo apt install cron  && apt install socat
 ```
 
 ### Устанавливаем acme.sh
 
 EMAIL = Ваш email(можно любую случайную почту)
 
-```sh
+```bash
 curl https://get.acme.sh | sh -s email=EMAIL
 ```
 
 ### Создаем директорию для сертификатов
 
-```sh
-mkdir -p /var/lib/marzban/certs/
+```bash
+sudo mkdir -p /var/lib/marzban/certs/
 ```
 
 ### Получаем сертификаты
 
 Введите ваш домен или субдомен в поле `DOMAIN`
 
-```sh
+```bash
 ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt  --issue --standalone -d DOMAIN \
 --key-file /var/lib/marzban/certs/key.pem \
 --fullchain-file /var/lib/marzban/certs/fullchain.pem
@@ -52,22 +52,22 @@ mkdir -p /var/lib/marzban/certs/
 
 ### Устанавливаем нужный софт
 
-```sh
-apt install cron  && apt install socat
+```bash
+sudo apt install cron  && apt install socat
 ```
 
 ### Устанавливаем acme.sh
 
 EMAIL = Ваш email(можно любую случайную почту)
 
-```sh
+```bash
 curl https://get.acme.sh | sh -s email=EMAIL
 ```
 
 ### Создаем директорию для сертификатов
 
-```sh
-mkdir -p /var/lib/marzban/certs/
+```bash
+sudo mkdir -p /var/lib/marzban/certs/
 ```
 
 ### Получаем ключ API  Cloudflare
@@ -77,14 +77,14 @@ mkdir -p /var/lib/marzban/certs/
 
 ### Настраиваем переменные окружения
 
-```sh
+```bash
 export CF_Key="ваш_cloudflare_api_key"
 export CF_Email="ваш_email"
 ```
 ### Выпуск wildcard сертификата
 Введите ваш домен в поле `DOMAIN`
 
-```sh
+```bash
 ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf  \
 -d DOMAIN \
 -d *.DOMAIN \
@@ -94,10 +94,10 @@ export CF_Email="ваш_email"
 
 ## Посмотреть список выпущенных сертификатов
 
-```sh
+```bash
 ~/.acme.sh/acme.sh --list
 ```
 ## Продлить сертификаты, до момента авто продления
-```sh
+```bash
 ~/.acme.sh --renew -d DOMAIN --force
 ``` 
