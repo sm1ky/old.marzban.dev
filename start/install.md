@@ -22,7 +22,7 @@ sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/
 Далее, Вам нужно создать главного администратора для входа в панель управления Marzban, выполнив следующую команду: 
 
 ```bash
-marzban cli admin create --sudo
+sudo marzban cli admin create --sudo
 ```
 
 Готово! Теперь Вы можете войти, используя данные своей учетной записи.
@@ -30,5 +30,5 @@ marzban cli admin create --sudo
 Для того, чтобы увидеть справочное сообщение от скрипта Marzban, выполните команду:
 
 ```bash
-marzban --help
+sudo marzban --help
 ```
