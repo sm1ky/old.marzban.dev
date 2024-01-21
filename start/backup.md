@@ -30,7 +30,7 @@ icon: briefcase
 Скачиваем скрипт на сервер и запускаем его
 
 ```bash
-bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
+sudo bash <(curl -Ls https://github.com/AC-Lover/backup/raw/main/backup.sh)
 ```
 
 Введите токен вашего бота, который будет выполнять эту задачу,
