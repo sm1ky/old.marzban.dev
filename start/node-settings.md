@@ -46,7 +46,7 @@ sudo apt-get update && sudo apt-get upgrade
 Устанавливаем нужный софт
 
 ```bash
-apt install socat -y && apt install curl socat -y && apt install git -y
+sudo apt install socat -y && apt install curl socat -y && apt install git -y
 ```
 
 Клонируем репозиторий
@@ -68,7 +68,7 @@ curl -fsSL https://get.docker.com | sh
 ```
 Создаем папку, куда поместим наш сертификат
 ```bash
-mkdir -p /var/lib/marzban-node/
+sudo mkdir -p /var/lib/marzban-node/
 ```
 
 Теперь нам необходимо разместить ключ центальной панели на узле, для этого мы можем скопировать ранее полученный ключ по пути `/var/lib/marzban-node/ssl_client_cert.pem`
