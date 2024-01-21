@@ -23,7 +23,7 @@ Marzban запускается по умолчанию с помощью`Uvicorn
 {% endhint %}
 
 ```bash
-nano /opt/marzban/.env
+sudo nano /opt/marzban/.env
 ```
 
 Изменяем в нем следующие переменные
@@ -44,6 +44,6 @@ XRAY_SUBSCRIPTION_URL_PREFIX = https://YOUR_DOMAIN
 
 Для того, что бы изменения вступили в силу, необходимо перезапустить панель 
 ```bash
-marzban restart
+sudo marzban restart
 ``` 
 Теперь панель управления Marzban будет доступна на вашем домене или субдомене по https.
