@@ -30,6 +30,10 @@ nano /opt/marzban/.env
 {% hint style="info" %}
 знак `#` в начале каждой изменяемой переменной нужно удалить, иначе значение переменной не будет установленно, так как будет считаться закомментированным
 {% endhint %}
+::: tip ПОДСКАЗКА 1
+Обратите внимание, если Вы испольузете wildcard домен, в `XRAY_SUBSCRIPTION_URL_PREFIX` Вы можете задать подстановочный знак `*`, например:
+`https://*.DOMAIN.com`, что в свою очередь каждый раз будет генерировать случайное значение по типу: `https://830aa395df41ae5a.DOMAIN.com`
+:::
 ```
 UVICORN_PORT = 443
 UVICORN_SSL_CERTFILE = "/var/lib/marzban/certs/fullchain.pem"
