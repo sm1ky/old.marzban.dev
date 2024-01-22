@@ -4,18 +4,19 @@ label: Варианты подключений
 icon: plug
 ---
 В данном примере мы рассмотрим все варианты inbound доступные в xray-core&#x20;
-{% hint style="warning" %}
-Рекомендуется использовать только вариант VLESS TCP REALITY с включенным потоком
-{% endhint %}
+::: hint ПОДСКАЗКА
+В текущих реалиях, рекомендуется использовать только вариант VLESS TCP REALITY с включенным потоком
+:::
 
 {% hint style="info" %}
 Рекомендуется изменить и настроить указанные в примерах порты, SNI и другие данные под себя
 {% endhint %}
-{% hint style="info" %}
-получение закрытого  и открытого ключа для Reality
+{% hint style="warning" %}
+для Reality необходимо сгенерировать закрытый и открытый ключ 
 
 `docker exec marzban-marzban-1 xray x25519`
 {% endhint %}
+
 {% hint style="info" %}
 получение ShortID для Reality
 
