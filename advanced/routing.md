@@ -2,6 +2,7 @@
 order: 892
 label: Маршрутизация
 icon: iterations
+visibility: hidden
 ---
 {% hint style="warning" %}
 Статья находится в режиме написания. Со временем будет дополняться и изменяться. 
