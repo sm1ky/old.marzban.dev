@@ -27,7 +27,6 @@ v2box://install-sub?url=URL&name=NAME
 
 ```
 sing-box://import-remote-profile?url=URL#NAME
-
 ```
 ### ShadowRocket
 
