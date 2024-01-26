@@ -23,7 +23,12 @@ foxray://yiguo.dev/sub/add/?url=URL#NAME
 ```
 v2box://install-sub?url=URL&name=NAME
 ```
+### SingBox
 
+```
+sing-box://import-remote-profile?url=URL#NAME
+
+```
 ### ShadowRocket
 
 ```
