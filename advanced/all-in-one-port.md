@@ -49,8 +49,8 @@ listen front
  tcp-request inspect-delay 5s
  tcp-request content accept if { req_ssl_hello_type 1 }
 
- use_backend panel if { req.ssl_sni -m end panel.example.com }
- use_backend reality if { req.ssl_sni -m end reality.com }
+ use_backend panel if { req.ssl_sni -m end ВАШ_ДОМЕН }
+ use_backend reality if { req.ssl_sni -m end КАМУФЛЯЖНЫЙ_САЙТ }
  default_backend fallback
 
 backend panel
@@ -112,10 +112,10 @@ systemctl restart haproxy
     "security": "reality",
     "realitySettings": {
       "show": false,
-      "dest": "x",
+      "dest": "НАЗНАЧЕНИЕ:443",
       "xver": 0,
       "serverNames": [
-        "reality.com"
+        "КАМУФЛЯЖНЫЙ САЙТ"
       ],
       "privateKey": "x",
       "shortIds": [
