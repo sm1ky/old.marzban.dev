@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Блог</title>
+    <link>https://docs.marzban.ru/blog/</link>
+    <description>Блог</description>
+    <copyright>© Copyright 2024 – Marzban</copyright>
+    <lastBuildDate>Thu, 18 Jan 2024 00:00:00 GMT</lastBuildDate>
+    <generator>https://retype.com</generator>
+    <atom:link rel="self" type="application/rss+xml" href="https://docs.marzban.ru/blog/feed.xml" />
+    <image>
+      <title>Блог</title>
+      <link>https://docs.marzban.ru/blog/</link>
+      <url>https://docs.marzban.ru/favicon.ico</url>
+    </image>
+    <item>
+      <title>Как мы находим BitTorrent трафик</title>
+      <guid isPermaLink="true">https://docs.marzban.ru/blog/how-xray-find-torrent/</guid>
+      <description>Сегодня мы рассмотрим как Xray-core определяет BitTorrent трафик на уровне пакетов и заголовков. В нашем арсенале имеется две функции:</description>
+      <author>iambabyninja</author>
+      <pubDate>Thu, 18 Jan 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Про фрагментацию</title>
+      <guid isPermaLink="true">https://docs.marzban.ru/blog/fragmentation/</guid>
+      <description>Протокол TLS обеспечивает конфиденциальность, подлинность и целостность интернет-трафика в клиент-серверной среде.</description>
+      <author>nikolas</author>
+      <pubDate>Thu, 18 Jan 2024 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

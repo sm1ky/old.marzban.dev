@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2023-12-16T09:58:46Z",
+  "created": "2024-01-27T18:18:42Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -51,6 +51,9 @@
       "path": "advanced/node_usage_coefficient/index.html"
     },
     {
+      "path": "advanced/routing/index.html"
+    },
+    {
       "path": "advanced/ru_gov/index.html"
     },
     {
@@ -93,74 +96,22 @@
       "path": "base/about_vpn/index.html"
     },
     {
+      "path": "blog/feed.xml"
+    },
+    {
+      "path": "blog/fragmentation/index.html"
+    },
+    {
+      "path": "blog/how-xray-find-torrent/index.html"
+    },
+    {
+      "path": "blog/index.html"
+    },
+    {
       "path": "CNAME"
     },
     {
-      "path": "examples/ads-remove-with-adguarddns/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/ads-remove-with-pihole/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/all-in-one-port/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/backup/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/change-bd-on-mysql/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/change-xray-version/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/cloudflare-warp/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/fix-403-error/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/node-ir/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/snippets/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/support/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/url-scheme/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/user-template-in-telegram-bot/index.html",
-      "old": true
-    },
-    {
-      "path": "examples/users_limit/index.html",
-      "old": true
-    },
-    {
-      "path": "favicon.ico",
-      "old": true
-    },
-    {
       "path": "index.html"
-    },
-    {
-      "path": "recomended_host/index.html",
-      "old": true
     },
     {
       "path": "resources/css/retype.css"
@@ -176,6 +127,9 @@
     },
     {
       "path": "resources/js/lunr.js"
+    },
+    {
+      "path": "resources/js/mermaid.js"
     },
     {
       "path": "resources/js/prism.js"
@@ -203,10 +157,6 @@
     },
     {
       "path": "robots.txt"
-    },
-    {
-      "path": "sitemap.xml",
-      "old": true
     },
     {
       "path": "sitemap.xml.gz"
@@ -491,11 +441,13 @@
       "path": "static/xanmod.jpg"
     },
     {
-      "path": "support/index.html",
-      "old": true
+      "path": "talking_about_vless/index.html"
     },
     {
-      "path": "talking_about_vless/index.html"
+      "path": "xray-core/dns/index.html"
+    },
+    {
+      "path": "xray-core/routing/index.html"
     }
   ]
 }

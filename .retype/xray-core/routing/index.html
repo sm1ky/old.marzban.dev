@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759694713865">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Маршрутизация | MARZBAN | XRAY-CORE</title>
+    <meta name="title" content="Маршрутизация | MARZBAN | XRAY-CORE">
+    <meta name="description" content="Модуль функций маршрутизации может отправлять входящие данные по различным правилам через разные исходящие соединения.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.marzban.ru/xray-core/routing/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.marzban.ru/xray-core/routing/">
+    <meta property="og:title" content="Маршрутизация | MARZBAN | XRAY-CORE">
+    <meta property="og:description" content="Модуль функций маршрутизации может отправлять входящие данные по различным правилам через разные исходящие соединения.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.marzban.ru/xray-core/routing/">
+    <meta property="twitter:title" content="Маршрутизация | MARZBAN | XRAY-CORE">
+    <meta property="twitter:description" content="Модуль функций маршрутизации может отправлять входящие данные по различным правилам через разные исходящие соединения.">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../static/favicon.ico" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.5.0.759694713865" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759694713865" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/white_logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.svg">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Marzban</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Поиск">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Фильтр">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="маршрутизация" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#маршрутизация">#</doc-anchor-trigger>
+        <span>Маршрутизация</span>
+    </h1>
+</doc-anchor-target>
+<p>Модуль функций маршрутизации может отправлять входящие данные по различным правилам через разные исходящие соединения.
+Обычное использование включает в себя разделение трафика внутри и за пределами страны. Xray может определять трафик различных регионов с помощью внутренних механизмов и отправлять их через разные исходящие прокси.</p>
+<doc-anchor-target id="объект-маршрутизации-routingobject">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#объект-маршрутизации-routingobject">#</doc-anchor-trigger>
+        <span>Объект маршрутизации (RoutingObject)</span>
+    </h2>
+</doc-anchor-target>
+<p>RoutingObject соответствует элементу <code v-pre>routing</code> в конфигурационном файле.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;routing&quot;: {
+    &quot;domainStrategy&quot;: &quot;AsIs&quot;,
+    &quot;domainMatcher&quot;: &quot;hybrid&quot;,
+    &quot;rules&quot;: [],
+    &quot;balancers&quot;: []
+  }
+}</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>domainStrategy</code>: &quot;AsIs&quot; | &quot;IPIfNonMatch&quot; | &quot;IPOnDemand&quot;
+Стратегия разрешения доменов. В зависимости от установки используются различные стратегии.</p>
+<ul>
+<li>&quot;AsIs&quot;: Использовать только доменное имя для выбора маршрута. Значение по умолчанию.</li>
+<li>&quot;IPIfNonMatch&quot;: Если доменное имя не соответствует ни одному правилу, разрешить домен в IP (записи A или AAAA) и повторно сопоставить;
+<ul>
+<li>Если у домена есть несколько записей A, попробуйте сопоставить все записи A, пока одна из них не совпадет с каким-либо правилом;</li>
+<li>Разрешенный IP действует только при выборе маршрута, в перенаправляемых пакетах данных по-прежнему используется оригинальное доменное имя;</li>
+</ul>
+</li>
+<li>&quot;IPOnDemand&quot;: Если при сопоставлении встречается любое правило, основанное на IP, немедленно разрешить доменное имя в IP для сопоставления;</li>
+</ul>
+<p><code v-pre>domainMatcher</code>: &quot;hybrid&quot; | &quot;linear&quot;
+Алгоритм сопоставления доменов. В зависимости от установки используются различные алгоритмы. Этот параметр влияет на все объекты RuleObject, которые не указывают собственный алгоритм сопоставления.</p>
+<ul>
+<li>&quot;hybrid&quot;: Использовать новый алгоритм сопоставления доменов, который быстрее и требует меньше ресурсов. Значение по умолчанию.</li>
+<li>&quot;linear&quot;: Использовать первоначальный алгоритм сопоставления доменов.</li>
+</ul>
+<p><code v-pre>rules</code>: [RuleObject]
+Соответствует массиву, каждый элемент которого является правилом.
+Для каждого соединения маршрутизация будет судить по этим правилам сверху вниз, и когда оно встретит первое действующее правило, то направит это соединение к указанному outboundTag или balancerTag.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Если не совпадает ни с одним правилом, трафик по умолчанию отправляется первым outbound.</h5>
+        </div>
+    </div>
+</div>
+<p><code v-pre>balancers</code>: [ BalancerObject ]</p>
+<p>Массив, каждый элемент которого является конфигурацией балансировщика нагрузки.
+Когда правило указывает на балансировщик, Xray выбирает один outbound через этот балансировщик для перенаправления трафика.</p>
+<doc-anchor-target id="объект-правил-ruleobject">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#объект-правил-ruleobject">#</doc-anchor-trigger>
+        <span>Объект правил (RuleObject)</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;domainMatcher&quot;: &quot;hybrid&quot;,
+  &quot;type&quot;: &quot;field&quot;,
+  &quot;domain&quot;: [&quot;baidu.com&quot;, &quot;qq.com&quot;, &quot;geosite:cn&quot;],
+  &quot;ip&quot;: [&quot;0.0.0.0/8&quot;, &quot;10.0.0.0/8&quot;, &quot;fc00::/7&quot;, &quot;fe80::/10&quot;, &quot;geoip:cn&quot;],
+  &quot;port&quot;: &quot;53,443,1000-2000&quot;,
+  &quot;sourcePort&quot;: &quot;53,443,1000-2000&quot;,
+  &quot;network&quot;: &quot;tcp&quot;,
+  &quot;source&quot;: [&quot;10.0.0.1&quot;],
+  &quot;user&quot;: [&quot;love@xray.com&quot;],
+  &quot;inboundTag&quot;: [&quot;tag-vmess&quot;],
+  &quot;protocol&quot;: [&quot;http&quot;, &quot;tls&quot;, &quot;bittorrent&quot;],
+  &quot;attrs&quot;: { &quot;:method&quot;: &quot;GET&quot; },
+  &quot;outboundTag&quot;: &quot;direct&quot;,
+  &quot;balancerTag&quot;: &quot;balancer&quot;
+}</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-red-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
+                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Когда одновременно указаны несколько атрибутов, эти атрибуты должны быть одновременно удовлетворены, чтобы правило было активным.</h5>
+        </div>
+    </div>
+</div>
+<p><code v-pre>domainMatcher</code>: &quot;hybrid&quot; | &quot;linear&quot;
+Алгоритм сопоставления доменов. Этот параметр имеет приоритет над настройкой domainMatcher в RoutingObject.</p>
+<ul>
+<li>&quot;hybrid&quot;: Использовать новый алгоритм сопоставления доменов, который быстрее и требует меньше ресурсов. Значение по умолчанию.</li>
+<li>&quot;linear&quot;: Использовать первоначальный алгоритм сопоставления доменов.</li>
+</ul>
+<p><code v-pre>type</code>: &quot;field&quot;
+В настоящее время поддерживается только опция &quot;field&quot;.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>В Xray-core v1.8.7 или более новых версиях эту строку можно опустить.</h5>
+        </div>
+    </div>
+</div>
+<p><code v-pre>domain</code>: [string]
+Массив, каждый элемент которого соответствует сопоставлению домена. Возможные формы:</p>
+<ul>
+<li>Простая строка: Если эта строка соответствует любой части целевого домена, то правило активируется. Например, &quot;sina.com&quot; совпадает с &quot;sina.com&quot;, &quot;sina.com.cn&quot; и &quot;www.sina.com&quot;, но не с &quot;sina.cn&quot;.</li>
+<li>Регулярное выражение: Начинается с &quot;regexp:&quot;, остальная часть - регулярное выражение. Если оно соответствует целевому домену, правило активируется. Например, &quot;regexp:\.goo.*\.com$&quot; совпадает с &quot;www.google.com&quot; или &quot;fonts.googleapis.com&quot;, но не с &quot;google.com&quot;.</li>
+<li>Поддомен (рекомендуется): Начинается с &quot;domain:&quot;, остальная часть - домен. Если этот домен является целевым доменом или его поддоменом, правило активируется. Например, &quot;domain:xray.com&quot; совпадает с &quot;www.xray.com&quot;, &quot;xray.com&quot;, но не с &quot;wxray.com&quot;.</li>
+<li>Полное соответствие: Начинается с &quot;full:&quot;, остальная часть - домен. Если этот домен полностью совпадает с целевым доменом, правило активируется. Например, &quot;full:xray.com&quot; совпадает с &quot;xray.com&quot;, но не с &quot;www.xray.com&quot;.</li>
+<li>Предопределенный список доменов: Начинается с &quot;geosite:&quot;, остальная часть - имя, например, geosite:google или geosite:cn.
+Имена и списки доменов смотрите в Предопределенных списках доменов.</li>
+<li>Загрузка доменов из файла: Формат &quot;ext:file:tag&quot;, должен начинаться с &quot;ext:&quot; (в нижнем регистре), за которым следует имя файла и тег. Файл должен находиться в Ресурсной директории, его формат должен быть аналогичен geosite.dat, тег должен присутствовать в файле.</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>&quot;ext:geoip.dat:cn&quot; эквивалентно &quot;geoip:cn&quot;</h5>
+        </div>
+    </div>
+</div>
+<p><code v-pre>ip</code>: [string]
+Массив, каждый элемент которого представляет собой диапазон IP. Если один из элементов соответствует целевому IP, правило активируется. Возможные формы:</p>
+<ul>
+<li>IP: Например, &quot;127.0.0.1&quot;.</li>
+<li>CIDR: Например, &quot;10.0.0.0/8&quot;.</li>
+<li>Предопределенный список IP: Включен в каждую установку Xray, файл называется geoip.dat. Используется, например, как &quot;geoip:cn&quot;, должен начинаться с &quot;geoip:&quot; (в нижнем регистре), за которым следует двухбуквенный код страны.
+<ul>
+<li>Специальное значение: &quot;geoip:private&quot; включает все частные адреса, такие как 127.0.0.1.</li>
+<li>Функция исключения (!): &quot;geoip:!cn&quot; означает результаты, не включенные в &quot;geoip:cn&quot;.</li>
+</ul>
+</li>
+<li>Загрузка IP из файла: Формат &quot;ext:file:tag&quot;, должен начинаться с &quot;ext:&quot; (в нижнем регистре), за которым следует имя файла и тег. Файл должен находиться в Ресурсной директории, его формат должен быть аналогичен geoip.dat, тег должен присутствовать в файле.</li>
+</ul>
+<p><code v-pre>port</code>: number | string
+Диапазон целевых портов, возможные формы:</p>
+<ul>
+<li>&quot;a-b&quot;: a и b - положительные целые числа, меньше 65536. Диапазон включает оба конца, правило активируется, если целевой порт находится в этом диапазоне.</li>
+<li>a: a - положительное целое число, меньше 65536. Правило активируется, если целевой порт равен a.</li>
+<li>Комбинация обоих форм, разделенная запятыми, например: &quot;53,443,1000-2000&quot;.</li>
+</ul>
+<p><code v-pre>sourcePort</code>: number | string
+Порт источника, возможные формы:</p>
+<ul>
+<li>&quot;a-b&quot;: a и b - положительные целые числа, меньше 65536. Диапазон включает оба конца, правило активируется, если порт источника находится в этом диапазоне.</li>
+<li>a: a - положительное целое число, меньше 65536. Правило активируется, если порт источника равен a.</li>
+<li>Комбинация обоих форм, разделенная запятыми, например: &quot;53,443,1000-2000&quot;.</li>
+</ul>
+<p><code v-pre>network</code>: &quot;tcp&quot; | &quot;udp&quot; | &quot;tcp,udp&quot;
+Возможные значения: &quot;tcp&quot;, &quot;udp&quot;, &quot;tcp,udp&quot;. Правило активируется, если тип соединения совпадает с указанным.</p>
+<p><code v-pre>source</code>: [string]
+Массив, каждый элемент которого представляет собой диапазон IP для источника. Форматы включают IP, CIDR, GeoIP и загрузку IP из файла. Правило активируется, если один из элементов соответствует IP источника.</p>
+<p><code v-pre>user</code>: [string]
+Массив, каждый элемент которого - это электронный адрес. Правило активируется, если один из элементов совпадает с пользователем-источником.</p>
+<p><code v-pre>inboundTag</code>: [string]
+Массив, каждый элемент которого является идентификатором. Правило активируется, если один из элементов совпадает с тегом входящего протокола.</p>
+<p><code v-pre>protocol</code>: [ &quot;http&quot; | &quot;tls&quot; | &quot;bittorrent&quot; ]
+Массив, каждый элемент которого обозначает тип протокола. Правило активируется, если тип протокола соединения совпадает с одним из указанных.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Для активации правила по типу протокола необходимо включить опцию sniffing в настройках входящего прокси.</h5>
+        </div>
+    </div>
+</div>
+<p><code v-pre>attrs</code>: object
+JSON-объект, ключи и значения которого являются строками, используемыми для определения атрибутов трафика. Если заголовки HTTP содержат все указанные ключи и значения содержат указанные подстроки, то правило считается совпавшим. Регистр ключей не учитывается. Значения могут быть представлены в виде регулярных выражений.
+На данный момент только HTTP-входящий прокси устанавливает этот атрибут.
+Примеры:</p>
+<ul>
+<li>Для обнаружения HTTP GET: <code v-pre>{:method&quot;: &quot;GET&quot;}</code></li>
+<li>Для обнаружения HTTP Path: <code v-pre>{:path&quot;: &quot;/test&quot;}</code></li>
+<li>Для обнаружения Content Type: <code v-pre>{&quot;accept&quot;: &quot;text/html&quot;}</code></li>
+</ul>
+<p><code v-pre>outboundTag</code>: string
+Соответствует тегу исходящего соединения.</p>
+<p><code v-pre>balancerTag</code>: string
+Соответствует тегу балансировщика.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5><code v-pre>balancerTag</code> и <code v-pre>outboundTag</code> должны быть выбраны один из двух. Если указаны оба, используется <code v-pre>outboundTag</code>.</h5>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="объект-балансировщика-balancerobject">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#объект-балансировщика-balancerobject">#</doc-anchor-trigger>
+        <span>Объект балансировщика (BalancerObject)</span>
+    </h2>
+</doc-anchor-target>
+<p>Конфигурация балансировщика. Когда балансировщик активен, он выбирает один из наиболее подходящих исходящих соединений для перенаправления трафика.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;tag&quot;: &quot;balancer&quot;,
+  &quot;selector&quot;: [],
+  &quot;strategy&quot;: {
+    &quot;type&quot;: &quot;roundRobin&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>tag</code>: string
+Идентификатор балансировщика, используемый для соответствия тегу балансировщика в RuleObject.</p>
+<p><code v-pre>selector</code>: [ string ]
+Массив строк, каждая из которых используется для сопоставления с префиксом тега исходящего соединения. Например, если есть исходящие соединения с тегами [&quot;a&quot;, &quot;ab&quot;, &quot;c&quot;, &quot;ba&quot;], то <code v-pre>selector: [&quot;a&quot;]</code> будет соответствовать [&quot;a&quot;, &quot;ab&quot;].
+Если найдено несколько исходящих соединений, балансировщик выбирает одно из них случайным образом.</p>
+<p><code v-pre>strategy</code>: object
+Стратегия выбора исходящего соединения. <code v-pre>&quot;type&quot;: &quot;roundRobin&quot;</code> означает последовательный выбор среди подходящих тегов исходящих соединений. Если поле <code v-pre>strategy</code> не указано, выбор осуществляется случайно.</p>
+<p>Пример конфигурации:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">    &quot;routing&quot;: {
+        &quot;rules&quot;: [
+            {
+                &quot;inboundTag&quot;: [
+                    &quot;in&quot;
+                ],
+                &quot;balancerTag&quot;: &quot;round&quot;
+            }
+        ],
+        &quot;balancers&quot; : [
+            {
+                &quot;selector&quot;: [
+                    &quot;out&quot;
+                ],
+                &quot;strategy&quot;: {
+                    &quot;type&quot;:&quot;roundRobin&quot;
+                },
+                &quot;tag&quot;: &quot;round&quot;
+            }
+        ]
+    }
+
+    &quot;inbounds&quot;: [
+        {
+            
+            &quot;tag&quot;: &quot;in&quot;
+        }
+    ]
+
+    &quot;outbounds&quot;: [
+        {
+            
+            &quot;tag&quot;: &quot;out1&quot;
+        },
+        {
+          
+            &quot;tag&quot;: &quot;out2&quot;
+        }
+    ]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="предопределенные-списки-доменов">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#предопределенные-списки-доменов">#</doc-anchor-trigger>
+        <span>Предопределенные списки доменов</span>
+    </h2>
+</doc-anchor-target>
+<p>Эти списки включены в каждую установку Xray, файл называется <code v-pre>geosite.dat</code>. Файл содержит наборы часто используемых доменов, которые можно использовать для маршрутизации или фильтрации DNS с помощью синтаксиса <code v-pre>geosite:filename</code>. Например, <code v-pre>geosite:google</code> представляет домены Google, включенные в файл.</p>
+<p>Часто используемые категории доменов включают:</p>
+<ul>
+<li><code v-pre>category-ads</code>: Содержит распространенные рекламные домены.</li>
+<li><code v-pre>category-ads-all</code>: Включает в себя распространенные рекламные домены и домены рекламных провайдеров.</li>
+<li><code v-pre>cn</code>: Эквивалентно сочетанию <code v-pre>geolocation-cn</code> и <code v-pre>tld-cn</code>.</li>
+<li><code v-pre>apple</code>: Включает большинство доменов Apple.</li>
+<li><code v-pre>google</code>: Включает большинство доменов Google.</li>
+<li><code v-pre>microsoft</code>: Включает большинство доменов Microsoft.</li>
+<li><code v-pre>facebook</code>: Включает большинство доменов Facebook.</li>
+<li><code v-pre>twitter</code>: Включает большинство доменов Twitter.</li>
+<li><code v-pre>telegram</code>: Включает большинство доменов Telegram.</li>
+<li><code v-pre>geolocation-cn</code>: Включает распространенные домены континентального Китая.</li>
+<li><code v-pre>geolocation-!cn</code>: Включает распространенные домены за пределами континентального Китая и <code v-pre>tld-!cn</code>.</li>
+<li><code v-pre>tld-cn</code>: Включает домены, управляемые CNNIC, используемые в континентальном Китае, например, домены, заканчивающиеся на .cn, .中国.</li>
+<li><code v-pre>tld-!cn</code>: Включает домены, не используемые в континентальном Китае, например, домены, заканчивающиеся на .hk (Гонконг), .tw (Тайвань), .jp (Япония), .sg (Сингапур), .us (США), .ca (Канада) и т.д.</li>
+</ul>
+<p>Полный список доменов можно найти в сообществе списков доменов [Domain list community].</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../advanced/ads-remove-with-pihole/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Назад</span>
+                                                <span class="block mt-1">Убираем рекламу с Pi-​Hole</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../xray-core/dns/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Далее</span>
+                                                <span class="block mt-1">DNS</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024 – Marzban</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Маршрутизация", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
