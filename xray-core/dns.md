@@ -1,4 +1,8 @@
-
+---
+order: 680
+label: DNS
+icon: log
+---
 
 # Встроенный DNS-сервер
 
