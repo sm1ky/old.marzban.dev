@@ -46,7 +46,7 @@ sudo apt-get update && sudo apt-get upgrade
 Устанавливаем нужный софт
 
 ```bash
-sudo apt install socat -y && apt install curl socat -y && apt install git -y
+sudo apt install socat -y && sudo apt install curl socat -y && apt install git -y
 ```
 
 Клонируем репозиторий
