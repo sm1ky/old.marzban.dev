@@ -8,7 +8,6 @@ icon: home
     Унифицированное решение с графическим интерфейсом, устойчивое к цензуре, на базе <a href="https://github.com/XTLS/Xray-core">xray-core</a>
 </p>
 
-
 <p align="center">
     <a href="#">
         <img src="https://img.shields.io/github/actions/workflow/status/gozargah/marzban/build.yml?style=flat-square" />
