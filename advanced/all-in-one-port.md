@@ -78,7 +78,7 @@ listen front
 # Обьявляем backend reality c адресом:портом принимаюшей стороны при срабатывания правила
 backend reality
     mode tcp
-    server srv1 127.0.0.1:12000 send-proxy
+    server srv1 127.0.0.1:12000 send-proxy-v2 tfo
 # Обьявляем backend fallback c адресом:портом принимаюшей стороны при срабатывания правила
 backend fallback
     mode tcp
