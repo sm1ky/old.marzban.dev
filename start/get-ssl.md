@@ -60,7 +60,7 @@ sudo mkdir -p /var/lib/marzban/certs/
 ### Устанавливаем нужный софт
 
 ```bash
-sudo apt install cron  && apt install socat
+sudo apt install cron  && sudo apt install socat
 ```
 
 ### Устанавливаем acme.sh
