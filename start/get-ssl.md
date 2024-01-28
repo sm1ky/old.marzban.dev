@@ -108,6 +108,6 @@ export CF_Email="ваш_email"
 ::: tip ПОДСКАЗКА
 Продлить сертификаты, до момента авто продления
 ```bash
-~/.acme.sh --renew -d DOMAIN --force
+~/.acme.sh/acme.sh --renew -d DOMAIN --force
 ``` 
 :::
