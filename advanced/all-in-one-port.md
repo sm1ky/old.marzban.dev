@@ -52,6 +52,11 @@ nano /etc/haproxy/haproxy.cfg
 ::: tip Уточнение
 Если у Вас панель и подписка на одном домене или на одном домене без саб-доменов, или Вы не используете CDN, Вы можете смело удалять соответсвующие правила и бэкенды 
 :::
+::: tip Совет
+Вы можете использовать `or` для перечисления правил:
+
+`use_backend reality if { req.ssl_sni -i end reality_domain.com } or { req.ssl_sni -i end another_reality_domain.com }`
+:::
 
 ```yaml
 listen front
