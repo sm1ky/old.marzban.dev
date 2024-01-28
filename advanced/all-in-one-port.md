@@ -61,15 +61,19 @@ listen front
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
 
+    # Правило ухода на бекенд reality если SNI reality_domain.com
+    use_backend reality if { req.ssl_sni -i end reality_domain.com }
     # Правило ухода на бекенд cdn если SNI cdn.example.com
     use_backend cdn if { req.ssl_sni -i end  cdn.example.com }
     # Правило ухода на бекенд panel если SNI sub.example.com
     use_backend sub if { req.ssl_sni -i end  sub.example.com }
     # Правило ухода на бекенд panel если SNI panel.example.com
     use_backend panel if { req.ssl_sni -i end  panel.example.com }
-    # Правило ухода на бекенд reality если SNI reality_domain.com
-    use_backend reality if { req.ssl_sni -i end reality_domain.com }
 
+# Обьявляем backend reality c адресом:портом принимаюшей стороны при срабатывания правила
+backend reality
+    mode tcp
+    server srv1 127.0.0.1:12000 send-proxy
 # Обьявляем backend cdn c адресом:портом принимаюшей стороны при срабатывания правила
 backend cdn
     mode tcp
@@ -82,10 +86,7 @@ backend sub
 backend panel
     mode tcp
     server srv1 127.0.0.1:10000
-# Обьявляем backend reality c адресом:портом принимаюшей стороны при срабатывания правила
-backend reality
-    mode tcp
-    server srv1 127.0.0.1:12000 send-proxy
+
 ```
 
 После замены своих доменов и размещения этой конфигурации в конце указанного файла, выполните следующую команду для перезапуска HAProxy и завершения данного этапа настройки.
