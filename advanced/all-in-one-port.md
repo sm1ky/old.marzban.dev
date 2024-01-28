@@ -68,8 +68,8 @@ listen front
 
     # Правило ухода на бэкенд reality если SNI reality_domain.com
     use_backend reality if { req.ssl_sni -i end reality_domain.com }
-    # Правило ухода на бэкенд cdn если SNI cdn.example.com
-    use_backend cdn if { req.ssl_sni -i end  cdn.example.com }
+    # Правило ухода на бэкенд fallback если SNI cdn.example.com
+    use_backend fallback if { req.ssl_sni -i end  cdn.example.com }
     # Правило ухода на бэкенд panel если SNI sub.example.com
     use_backend sub if { req.ssl_sni -i end  sub.example.com }
     # Правило ухода на бэкенд panel если SNI panel.example.com
@@ -80,7 +80,7 @@ backend reality
     mode tcp
     server srv1 127.0.0.1:12000 send-proxy
 # Обьявляем backend cdn c адресом:портом принимаюшей стороны при срабатывания правила
-backend cdn
+backend fallback
     mode tcp
     server srv1 127.0.0.1:11000
 # Обьявляем backend sub c адресом:портом принимаюшей стороны при срабатывания правила
@@ -112,7 +112,7 @@ systemctl restart haproxy
 обратите внимание на строки 3, 4 и 13
 {% endhint %}
 {% hint style="danger" %}
-Если конфигурация имеет "send-proxy" в конце  бэкенда HAProxy , но не имеет "acceptProxyProtocol": true, соединение не будет установлено.
+Если конфигурация имеет `send-proxy` в конце  бэкенда HAProxy , но не имеет `acceptProxyProtocol: true`, соединение не будет установлено.
 {% endhint %}
 
 {% hint style="warning" %}
