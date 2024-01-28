@@ -79,7 +79,7 @@ listen front
 backend reality
     mode tcp
     server srv1 127.0.0.1:12000 send-proxy
-# Обьявляем backend cdn c адресом:портом принимаюшей стороны при срабатывания правила
+# Обьявляем backend fallback c адресом:портом принимаюшей стороны при срабатывания правила
 backend fallback
     mode tcp
     server srv1 127.0.0.1:11000
@@ -232,11 +232,10 @@ fallback работает следующим образом: если входя
 
 Итак, инбаунд с fallback отправляет трафик на другие инбаунды в зависимости от пути каждого из входящих трафиков:
 
-```
-path = /lw     ->    listen: "@vless-ws"
-path = /mw     ->    listen: "@vmess-ws"
-path = /tw     ->    listen: "@trojan-ws"
-```
+* path = /lw     ->    listen: "@vless-ws"
+* path = /mw     ->    listen: "@vmess-ws"
+* path = /tw     ->    listen: "@trojan-ws"
+
 
 Итак, в соответствии с приведенным выше примером, вам просто нужно сделать разделы listen и path ваших конфигураций входящих соответствующими конфигурации fallback, чтобы все конфигурации выполнялись на одном порту.
 
