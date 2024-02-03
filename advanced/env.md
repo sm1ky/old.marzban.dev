@@ -164,6 +164,9 @@ URL базы данных для SQLAlchemy.
 ## WEBHOOK_ADDRESS:
 
 Значение по умолчанию: `DEFAULT`
+{% hint style="info" %}
+Вы можете задать несколько адресов через `,`
+{% endhint %}
 
 ## WEBHOOK_SECRET:
 
