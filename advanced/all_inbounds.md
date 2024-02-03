@@ -37,7 +37,21 @@ icon: plug
       }
 ```
 :::
-
+::: tip ПОДСКАЗКА
+Правильное место для указания хоста http-запроса находится в разделе host, а не в заголовках.
+Пример для `vless-h2-Reality`
+```json  
+"transport": {
+        "type": "http",
+        "host": [
+          "www.dell.com"
+        ],
+        "path": "/de-de",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      }
+```
+:::
 ## VLESS
 
 ### VLESS **TCP** REALITY
