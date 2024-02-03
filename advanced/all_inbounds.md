@@ -22,6 +22,21 @@ icon: plug
 
 `openssl rand -hex 8`
 {% endhint %}
+
+{% hint style="info" %}
+Для WS конфигов Вы можете задать Early Data и для *ray-core и для Sing-box
+```json
+"transport": {
+        "type": "ws",
+        "path": "/test/path",
+        "max_early_data": "2048",
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "YOURDOMAINSERVER"
+        }
+      }
+```
+{% endhint %}
 ## VLESS
 
 ### VLESS **TCP** REALITY
