@@ -23,7 +23,7 @@ icon: plug
 `openssl rand -hex 8`
 {% endhint %}
 
-{% hint style="info" %}
+::: tip ПОДСКАЗКА
 Для WS конфигов Вы можете задать Early Data и для *ray-core и для Sing-box
 ```json
 "transport": {
@@ -36,7 +36,8 @@ icon: plug
         }
       }
 ```
-{% endhint %}
+:::
+
 ## VLESS
 
 ### VLESS **TCP** REALITY
