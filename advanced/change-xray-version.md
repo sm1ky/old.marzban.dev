@@ -63,7 +63,7 @@ marzban restart
 В Marzban Node также необходимо установить значение `XRAY_EXECUTABLE_PATH` и добавить папку /var/lib/marzban в службу, как показано ниже.
 
 ```bash
-nano /Marzban-node/docker-compose.yml
+nano docker-compose.yml
 ```
 
 ```yaml
