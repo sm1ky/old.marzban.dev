@@ -3,111 +3,117 @@ order: 999
 label: Получение SSL
 icon: shield
 ---
+
 ::: tip СОВЕТ
 
-Хоть это и не обязательно, но я настоятельно рекомендую Вам получить и настроить SSL сертификаты для Вашей панели.
-В частности, для безопастности передаваемых данных панели и исключения атаки "человек-по-середине", для работы TLS подключений, функционирования подписок, создания зашифрованного канала и множества других функций.
+Рекомендуется получить и настроить SSL сертификат для обеспечения безопасности передачи данных панели и защиты от атак "человек-по-середине", работы TLS подключений, функционирования подписок и многого другого.
 :::
 
 {% hint style="info" %}
-Файлы сертификатов должны быть доступны по адресу `/var/lib/marzban/certs`, чтобы Marzban мог получить к ним доступ.
+Для доступа Marzban к файлам сертификатов они должны быть размещены в `/var/lib/marzban/certs`.
 {% endhint %}
 
 {% hint style="warning" %}
-Прежде чем приступить к получению SSL-сертификата, вы должны настроить DNS-записи домена(A и(или) АААА записи)
+Перед получением SSL-сертификата настройте DNS-записи вашего домена (A и/или AAAA записи).
 
-В случае, если Вы только зарегистрировали домен и тут же вписали A и(или) AAAA записи вашего домена, необходимо немного подождать для обновления всех записей.
-проверить статус Вы всегда можете на https://www.whatsmydns.net
+Если вы только что зарегистрировали домен и добавили DNS-записи, возможно, потребуется время для их обновления. Статус можно проверить на https://www.whatsmydns.net.
 {% endhint %}
+
 ::: tip СОВЕТ
-В теущих реалиях, для новых (да и старых) доменов, лучше сразу же указывать NS сервера CLOUDFLARE и взаиодействовать с ним там
+Для новых и существующих доменов рекомендуется использовать NS сервера Cloudflare и управлять DNS-записями через их сервисы.
 :::
+
 ## Получение сертификата с acme.sh
 
-### Устанавливаем нужный софт
+### Установка необходимого ПО
 
 ```bash
-sudo apt install cron  && sudo apt install socat
+sudo apt install cron socat
 ```
 
-### Устанавливаем acme.sh
+### Установка acme.sh
 
-EMAIL = Ваш email(можно любую случайную почту)
+EMAIL — ваш email (можно указать любой).
 
 ```bash
 curl https://get.acme.sh | sh -s email=EMAIL
 ```
 
-### Создаем директорию для сертификатов
+### Создание директории для сертификатов
 
 ```bash
 sudo mkdir -p /var/lib/marzban/certs/
 ```
 
-### Получаем сертификаты
+### Получение сертификатов
 
-Введите ваш домен или субдомен в поле `DOMAIN`
+Замените `DOMAIN` на ваш домен или субдомен.
 
 ```bash
-~/.acme.sh/acme.sh --set-default-ca --server letsencrypt  --issue --standalone -d DOMAIN \
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --standalone -d DOMAIN \
 --key-file /var/lib/marzban/certs/key.pem \
 --fullchain-file /var/lib/marzban/certs/fullchain.pem
 ```
 
 ## Получение wildcard сертификата с acme.sh
-В случае, если вам необходимо получить wildcard сертификаты для всех ваших поддоменов
 
-### Устанавливаем нужный софт
+Если вам нужны wildcard сертификаты для всех поддоменов.
+
+### Установка необходимого ПО
 
 ```bash
-sudo apt install cron  && sudo apt install socat
+sudo apt install cron socat
 ```
 
-### Устанавливаем acme.sh
+### Установка acme.sh
 
-EMAIL = Ваш email(можно любую случайную почту)
+EMAIL — ваш email (можно указать любой).
 
 ```bash
 curl https://get.acme.sh | sh -s email=EMAIL
 ```
 
-### Создаем директорию для сертификатов
+### Создание директории для сертификатов
 
 ```bash
 sudo mkdir -p /var/lib/marzban/certs/
 ```
 
-### Получаем ключ API  Cloudflare
+### Получение ключа API Cloudflare
 
-Войдите в свой аккаунт Cloudflare и получите Global API Key. Этот ключ понадобится для автоматической настройки DNS записей
-Настройка переменных окружения
+Получите Global API Key в аккаунте Cloudflare для автоматической настройки DNS-записей.
 
-### Настраиваем переменные окружения
+### Настройка переменных окружения
 
 ```bash
 export CF_Key="ваш_cloudflare_api_key"
 export CF_Email="ваш_email"
 ```
+
 ### Выпуск wildcard сертификата
-Введите ваш домен в поле `DOMAIN`
+
+Замените `DOMAIN` на ваш домен.
 
 ```bash
-~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf  \
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf \
 -d DOMAIN \
 -d *.DOMAIN \
 --key-file /var/lib/marzban/certs/key.pem \
---fullchain-file /var/lib/marzban/certs/fullchain.pem 
+--fullchain-file /var/lib/marzban/certs/fullchain.pem
 ```
 
 ::: tip ПОДСКАЗКА
-Посмотреть список выпущенных сертификатов
+Для просмотра списка выпущенных сертификатов:
+
 ```bash
 ~/.acme.sh/acme.sh --list
 ```
 :::
+
 ::: tip ПОДСКАЗКА
-Продлить сертификаты, до момента авто продления
+Для ручного продления сертификатов:
+
 ```bash
 ~/.acme.sh/acme.sh --renew -d DOMAIN --force
-``` 
+```
 :::
