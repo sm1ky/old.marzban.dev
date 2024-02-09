@@ -14,7 +14,7 @@ icon: blocked
 
 Актуальная версия всегда доступна по адресу 
 ```bash
-wget -O https://s3.marzban.ru/files/zapret.dat
+wget -O https://s3.marzban.dev/files/zapret.dat
 ```
 
 Имеет две ветки:
