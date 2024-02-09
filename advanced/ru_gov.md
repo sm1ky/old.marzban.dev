@@ -29,7 +29,7 @@ mkdir -p /var/lib/marzban/assets/
 ```
 Скачиваем 
 ```bash
-wget -O /var/lib/marzban/assets/zapret.dat https://s3.marzban.ru/files/zapret.dat
+wget -O /var/lib/marzban/assets/zapret.dat https://s3.marzban.dev/files/zapret.dat
 ```
 Устанавливаем значение в .env файле
 
