@@ -24,7 +24,7 @@ https://xanmod.org
 
 Устанавливаем ядро
 ```bash
-sudo python3 -c "$(curl -sL https://s3.marzban.ru/scripts/optimiser/xanmod_install.py)"
+sudo python3 -c "$(curl -sL https://s3.marzban.dev/scripts/optimiser/xanmod_install.py)"
 ``` 
 перезагрузка
 ```bash
@@ -32,7 +32,7 @@ reboot now
 ```
 Применяем изменения
 ```bash
-sudo python3 -c "$(curl -sL https://s3.marzban.ru/scripts/optimiser/xanmod_apply.py)"
+sudo python3 -c "$(curl -sL https://s3.marzban.dev/scripts/optimiser/xanmod_apply.py)"
 ``` 
 
 
