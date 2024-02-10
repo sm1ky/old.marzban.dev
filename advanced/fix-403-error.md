@@ -29,6 +29,12 @@ sudo nano /var/lib/marzban/xray_config.json
 ```
 
 ### Часть RULES
+{% hint style="info" %}
+Убедитесь что в части `routing` обьявлено 
+```
+"domainStrategy": "IPIfNonMatch",
+```
+{% endhint %}
 ```json
 {
         "type": "field",
