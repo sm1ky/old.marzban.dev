@@ -29,12 +29,14 @@ sudo nano /var/lib/marzban/xray_config.json
 ```
 
 ### Часть RULES
-{% hint style="info" %}
+{% hint style="warning" %}
 Убедитесь что в части `routing` обьявлено 
 ```
 "domainStrategy": "IPIfNonMatch",
 ```
 {% endhint %}
+
+поместите ниже указанное правило в секцию `rules`
 ```json
 {
         "type": "field",
@@ -43,5 +45,4 @@ sudo nano /var/lib/marzban/xray_config.json
           "geosite:google"
         ]
       }
-
 ```
