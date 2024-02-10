@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759694713865">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760862101569">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,32 +11,46 @@
     <!-- Primary Meta Tags -->
     <title>Установка | MARZBAN | XRAY-CORE</title>
     <meta name="title" content="Установка | MARZBAN | XRAY-CORE">
-    <meta name="description" content="Выполните быструю установку с помощью следующей команды:">
+    <meta name="description" content="Выполните быструю установку, используя следующую команду:">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.marzban.ru/start/install/">
+    <link rel="canonical" href="https://docs.marzban.dev/start/install/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.marzban.ru/start/install/">
+    <meta property="og:url" content="https://docs.marzban.dev/start/install/">
     <meta property="og:title" content="Установка | MARZBAN | XRAY-CORE">
-    <meta property="og:description" content="Выполните быструю установку с помощью следующей команды:">
+    <meta property="og:description" content="Выполните быструю установку, используя следующую команду:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.marzban.ru/start/install/">
+    <meta property="twitter:url" content="https://docs.marzban.dev/start/install/">
     <meta property="twitter:title" content="Установка | MARZBAN | XRAY-CORE">
-    <meta property="twitter:description" content="Выполните быструю установку с помощью следующей команды:">
+    <meta property="twitter:description" content="Выполните быструю установку, используя следующую команду:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.759694713865" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.760862101569" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759694713865" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760862101569" defer></script>
+
+    <style>
+        .sample {
+            text-align: center;
+            color: #1956AF;
+            background-color: #E1EDFF;
+            border: 1px solid #1956AF;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <div class = "sample" >
+        <p>C 1 марта документация будет доступна только на https://marzban.dev </p>
+    </div>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -167,16 +181,16 @@
         <span>Быстрая установка</span>
     </h2>
 </doc-anchor-target>
-<p>Выполните быструю установку с помощью следующей команды:</p>
+<p>Выполните быструю установку, используя следующую команду:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo bash -c &quot;$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban.sh)&quot; @ install</code></pre>
 </doc-codeblock></div>
-<p>Когда установка будет завершена:</p>
+<p>После завершения установки:</p>
 <ul>
-<li>Файлы Marzban будут размещены по адресу <code v-pre>/opt/marzban</code>.</li>
-<li>Файл конфигурации будет размещен по адресу <code v-pre>/opt/marzban/.env</code></li>
-<li>Файлы с данными будут размещены по адресу <code v-pre>/var/lib/marzban</code>.</li>
-<li>Вы можете получить доступ к панели управления, введя в адресной строке <code v-pre>http://YOUR_SERVER_IP:8000/dashboard/</code> (заменив YOUR_SERVER_IP на актуальный IP адрес вашего сервера).</li>
+<li>Файлы Marzban будут находиться в директории <code v-pre>/opt/marzban</code>.</li>
+<li>Файл конфигурации будет находиться в <code v-pre>/opt/marzban/.env</code>.</li>
+<li>Данные будут размещены в <code v-pre>/var/lib/marzban</code>.</li>
+<li>Доступ к панели управления осуществляется через <code v-pre>http://YOUR_SERVER_IP:8000/dashboard/</code> (замените YOUR_SERVER_IP на IP-адрес вашего сервера).</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
@@ -191,18 +205,21 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>ПОДСКАЗКА</h5>
-<p>После успешной установки, Вы увидите логи, которые можно остановить, нажав <code v-pre>Ctrl+C</code> или закрыв терминал.</p>
+<p>После установки, для остановки вывода логов воспользуйтесь комбинацией <code v-pre>Ctrl+C</code> или закройте терминал.</p>
         </div>
     </div>
 </div>
-<p>Далее, Вам нужно создать главного администратора для входа в панель управления Marzban, выполнив следующую команду:</p>
+<p>Для создания учетной записи главного администратора и доступа к панели управления Marzban выполните:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo marzban cli admin create --sudo</code></pre>
 </doc-codeblock></div>
-<p>Готово! Теперь Вы можете войти, используя данные своей учетной записи.</p>
-<p>Для того, чтобы увидеть справочное сообщение от скрипта Marzban, выполните команду:</p>
+<p>Теперь вы можете войти, используя данные вашей учетной записи.</p>
+<p>Чтобы получить справку по использованию скрипта Marzban, введите команду:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo marzban --help</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">apt udate</code></pre>
 </doc-codeblock></div>
 
                                 

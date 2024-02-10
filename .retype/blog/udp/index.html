@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760862101569">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Про UDP | MARZBAN | XRAY-CORE</title>
+    <meta name="title" content="Про UDP | MARZBAN | XRAY-CORE">
+    <meta name="description" content="Большинство людей абсолютно не имеют представления о части UDP в протоколах прокси, и в настоящее время многие опытные пользователи и даже...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.marzban.dev/blog/udp/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.marzban.dev/blog/udp/">
+    <meta property="og:title" content="Про UDP | MARZBAN | XRAY-CORE">
+    <meta property="og:description" content="Большинство людей абсолютно не имеют представления о части UDP в протоколах прокси, и в настоящее время многие опытные пользователи и даже...">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.marzban.dev/blog/udp/">
+    <meta property="twitter:title" content="Про UDP | MARZBAN | XRAY-CORE">
+    <meta property="twitter:description" content="Большинство людей абсолютно не имеют представления о части UDP в протоколах прокси, и в настоящее время многие опытные пользователи и даже...">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Блог >> Feed" href="https://docs.marzban.dev/blog/feed.xml">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../static/favicon.ico" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.5.0.760862101569" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760862101569" defer></script>
+
+    <style>
+        .sample {
+            text-align: center;
+            color: #1956AF;
+            background-color: #E1EDFF;
+            border: 1px solid #1956AF;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <div class = "sample" >
+        <p>C 1 марта документация будет доступна только на https://marzban.dev </p>
+    </div>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/white_logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.svg">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Marzban</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Поиск">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="relative flex mx-auto bg-white max-w-core">
+            <div class="md:hidden">
+                <!-- Sidebar Skeleton -->
+                <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+                
+                    <!-- Render this div, if config.showSidebarFilter is `true` -->
+                    <div class="flex items-center h-16 px-6">
+                        <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Фильтр">
+                    </div>
+                
+                    <div class="pl-6 mt-1 mb-4">
+                        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    </div>
+                
+                    <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Sidebar component -->
+                <doc-sidebar v-cloak>
+                    <template #sidebar-footer>
+                        <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+                
+                            <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                                <span class="text-xs whitespace-nowrap">Powered by</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                            </a>
+                        </div>
+                    </template>
+                </doc-sidebar>
+            </div>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render page content -->
+                <div class="grow min-w-0 px-6">
+                    <main class="relative pt-6 pb-16">
+                        <div class="docs-markdown" id="docs-content">
+                            <!-- Rendered if sidebar right is enabled -->
+                            <div id="docs-sidebar-right-toggle"></div>
+                            <!-- Page content  -->
+<doc-anchor-target id="про-udp" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#про-udp">#</doc-anchor-trigger>
+        <span>Про UDP</span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div></div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">rprx</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Опубликовано&nbsp;<span>2024-02-07</span></div>
+</div>
+
+<p>Большинство людей абсолютно не имеют представления о части UDP в протоколах прокси, и в настоящее время многие опытные пользователи и даже разработчики становятся в тупик при столкновении с UDP, что приводит к тому, что большинство проблем, связанных с UDP, остаются нерешенными. Учитывая, что UDP играет всё более и более важную роль, но нет ни одной статьи о UDP в протоколах прокси, была написана эта статья.
+Цель этой статьи - изменить текущую ситуацию и позволить всем полностью разобраться в UDP, чтобы использовать Xray-core или другое программное обеспечение для прокси более свободно.</p>
+<doc-anchor-target id="простое-понимание-ip-packet-tcp-connection-пятиэлементных-наборов-портов-user-datagram-protocol">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#простое-понимание-ip-packet-tcp-connection-пятиэлементных-наборов-портов-user-datagram-protocol">#</doc-anchor-trigger>
+        <span>Простое понимание IP Packet, TCP Connection, пятиэлементных наборов, портов, User Datagram Protocol</span>
+    </h2>
+</doc-anchor-target>
+<p>Это основные концепции, которые необходимо освоить, на самом деле они очень просты.
+IP Packet: отдельные пакеты данных, соответствующие протоколу IP, допускающие потерю пакетов, разрешающие изменение порядка (то есть порядок приема отличается от порядка отправки), относящиеся к ненадежной передаче.
+Это не самый нижний уровень, здесь не нужно углубляться, главное - знать его характеристики. Пакеты данных IP не могут напрямую обеспечить надежную передачу, что, конечно, неудобно для приложений, поэтому существует протокол TCP, ориентированный на соединение, который основан на пакетах данных IP, но реализует механизм соединения и надежной передачи, большинство других протоколов могут быть просто размещены на TCP.
+Определение TCP-соединения - это &quot;пятиэлементный набор&quot;:</p>
+<ol>
+<li>Идентификатор самого протокола TCP</li>
+<li>Собственный IP-адрес</li>
+<li>Используемый собственный порт (Port)</li>
+<li>IP-адрес другой стороны</li>
+<li>Порт, используемый другой стороной</li>
+</ol>
+<p>После установления TCP-соединения обе стороны могут отправлять прикладные данные с собственных портов на порты другой стороны, это полнодуплексная передача, то есть обе стороны могут одновременно отправлять и принимать данные.
+Концепция &quot;порта&quot; всем знакома, она часто появляется вместе с IP, но на самом деле она не относится к протоколу IP (удивительно, не так ли? jpg), она принадлежит к более высоким протоколам TCP, UDP. TCP и UDP реализуют механизм &quot;порта&quot;, поэтому порты этих двух протоколов не влияют друг на друга. Протокол, используемый ping, - ICMP, он также основан на пакетах данных IP и похож на TCP, UDP, но у ICMP нет концепции &quot;порта&quot;. Кстати, обычные протоколы прокси мог ут проксировать только TCP или добавлять UDP, но не могут проксировать ICMP, поэтому ping невозможен, для этого нужно использовать традиционный VPN.
+Теперь настала очередь нашего главного героя выйти на сцену: UDP (User Datagram Protocol)
+Хотя UDP, как и TCP, основан на пакетах данных IP, он чрезвычайно прост, прямо полностью наследует характеристики пакетов данных IP:</p>
+<ol>
+<li>Допускает потерю пакетов</li>
+<li>Разрешает изменение порядка</li>
+<li>Очевидно, относится к ненадежной передаче</li>
+</ol>
+<p>Вы можете просто понимать это так: протокол UDP просто добавляет механизм портов и проверку к протоколу IP.
+Для UDP механизм &quot;соединения&quot; TCP также отсутствует, то есть после получения локального UDP-порта можно напрямую отправлять прикладные данные на любой UDP-порт любого IP без необходимости рукопожатия/установления соединения. Не нужно заботиться о том, получил ли другая сторона данные, другая сторона тоже не скажет вам, получила ли она данные. (Стоит отметить: существует промежуточное состояние connected UDP, это просто определение адреса назначения перед отправкой данных, без реального рукопожатия)
+Эти характеристики UDP породили три способа применения:</p>
+<ol>
+<li>Сосредоточение на эффективности, например, запросы DNS (не требуется предварительное рукопожатие)</li>
+<li>Сосредоточение на реальном времени, например, прямые трансляции, голосовые данные (допускается потеря пакетов, не требуется ожидание переотправки)</li>
+<li>Оба эти аспекта + P2P, например, некоторые онлайн-игры, голосовые данные. Обратите внимание, что это полное использование вышеупомянутой особенности UDP, что также является ключевой точкой этой статьи.</li>
+</ol>
+<p>Конечно, существует ещё один способ использования UDP: создание новых универсальных надежных транспортных протоколов на его основе, таких как KCP, QUIC. Почему эти новые протоколы не основаны напрямую на протоколе IP, а базируются на UDP? Потому что первое часто требует от операторов на всех уровнях изменения оборудования и систем для поддержки, что, очевидно, не совсем реалистично, поэтому UDP стал более подходящим выбором.</p>
+<doc-anchor-target id="так-что-же-такое-fullcone-и-symmetric">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#так-что-же-такое-fullcone-и-symmetric">#</doc-anchor-trigger>
+        <span>Так что же такое FullCone и Symmetric?</span>
+    </h2>
+</doc-anchor-target>
+<p>Эти два термина относятся к поведению NAT, где NAT означает Network Address Translation, то есть преобразование сетевых адресов, которое выполняется вашим домашним маршрутизатором и провайдерами на всех уровнях: преобразование адресов. Широкое распространение NAT обусловлено нехваткой адресов IPv4, а также тем, что он может защищать устройства в локальной сети.
+Для TCP поведение NAT не так важно, поскольку TCP представляет собой двусторонний поток, и при каждом установлении TCP-соединения обычно используется новый временный порт, что соответствует новому пятиэлементному набору.
+Однако для UDP поведение NAT крайне важно, так как UDP представляет собой пакеты с неопределенным направлением, и очень распространено использование одного и того же локального UDP-порта для отправки пакетов разным целевым двуэлементным наборам.
+Двуэлементный набор: IP и Port, любое отличие рассматривается как разные двуэлементные наборы
+Так как же маршрутизатор должен перенаправлять UDP-пакеты, когда они достигают его? Это зависит от поведения NAT маршрутизатора.
+На самом деле существует множество видов поведения NAT, но давайте рассмотрим наиболее представительные случаи. Для начала представим следующие сценарии:</p>
+<ol>
+<li>Локальный исходный двуэлементный набор A отправляет несколько пакетов удаленному целевому двуэлементному набору M</li>
+<li>Локальный исходный двуэлементный набор A отправляет несколько пакетов другому удаленному целевому двуэлементному набору N</li>
+</ol>
+<p>Если из-за различия целевых двуэлементных наборов маршрутизатор отображает A-&gt;M и A-&gt;N как A1-&gt;M и A2-&gt;N соответственно (обычно используя два разных порта для отправки пакетов) и строго ограничивает источник обратных пакетов, это относится к Symmetric. Не трудно заметить, что в этом случае коммуникация становится похожей на TCP &quot;соединение&quot;, что является практикой большинства провайдеров.
+Если маршрутизатор смотрит только на исходный двуэлементный набор A и всегда отображает его как свой A1 для отправки пакетов к M и N, это относится к Cone NAT; далее, если A1 получает обратный пакет, маршрутизатор отправляет его обратно к A, не обращая внимания на источник, это относится к FullCone, которое является лучшим уровнем NAT для программного обеспечения прокси и необходимым атрибутом для P2P игр (GTA NAT открыт)
+Приведенные выше примеры упрощены, и на практике провайдеры вряд ли предоставят вам публичный IP-адрес напрямую, что означает, что прохождение через несколько уровней NAT и получение Symmetric является нормой. Поч ему же использование протоколов прокси, таких как Shadowsocks или Trojan от Xray-core, позволяет получить FullCone?
+Это просто, потому что в этом случае используется публичный IP вашего VPS, который не связан с вашей локальной средой NAT.
+Вот почему важно специально настроить брандмауэр VPS: по умолчанию он будет фильтровать источник возвращаемых пакетов, что приведет к тому, что вы получите какой-то вид Restricted Cone, а не FullCone.
+Для простых потребностей UDP, таких как запросы DNS, Symmetric также может быть использован. Но для более сложных требований к UDP, таких как различные P2P сценарии, реализация FullCone становится крайне важной, так как приложению необходимо использовать фиксированный порт для отправки пакетов к любой цели и получения пакетов от любой цели без ограничений (по крайней мере, не ошибитесь в определении текущего типа NAT, что будет объяснено далее). Если ваша основная цель - игры, вы можете позволить UDP работать через протокол SS, поскольку он обладает нативными характеристиками UDP.
+Здесь стоит отметить, что Xray-core планирует внедрение протоколов, более подходящих для игр.</p>
+<p>Теперь перейдем к основной теме - деталям UDP в Xray-core и некоторых прокси-протоколах.
+Xray-core поддерживает как FullCone, так и Symmetric режимы, и предоставляет очень широкую поддержку протоколов, что делает его идеальным примером.
+Поддержка FullCone реализована для:</p>
+<ul>
+<li>Shadowsocks на входе и выходе</li>
+<li>Trojan на входе и выходе</li>
+<li>Socks на входе и выходе</li>
+<li>Dokodemo-door TPROXY на входе (прозрачный прокси)</li>
+<li>Freedom на выходе, поддержка разрешения доменных имен</li>
+</ul>
+<p>Поддержка только Symmetric реализована для:</p>
+<ul>
+<li>VMess, поскольку структура протокола не поддерживает FullCone</li>
+<li>Текущий Mux, также из-за структуры протокола</li>
+<li>VLESS (FullCone в разработке)</li>
+</ul>
+<p>Известно, что поддержка UDP в v2ray оставляет желать лучшего, поэтому Xray-core был перестроен с учетом связанных архитектур и кода для входящих и исходящих соединений, а также после многократных тестов и устранения множества деталей и ошибок, была достигнута полная поддержка FullCone (за исключением случаев, когда протокол не поддерживает, для которых предусмотрен адекватный Symmetric, у VMess в Clash есть проблемы).</p>
+<p>В заметках к релизу Xray-core содержится много полезной информации:</p>
+<ol>
+<li>Socks5 и Shadowsocks используют нативный UDP, и их UDP-трафик не идет через нижележащий транспорт.</li>
+<li>VLESS, Trojan, VMess, Mux используют UDP over TCP и идут через нижележащий транспорт.</li>
+<li>HTTP на входе и выходе не поддерживает проксирование UDP, Socks до версии 5 также не поддерживает UDP.</li>
+<li>Здесь FullCone относится к поведению NAT для UDP; при настройке особое внимание уделяется настройке брандмауэра.</li>
+<li>Для реализации FullCone в цепочке прокси, как правило, все звенья должны поддерживать FullCone.</li>
+<li>Для реализации FullCone в Docker, сетевой режим связанных контейнеров должен быть Host.</li>
+</ol>
+<p>Дополнение: Socks и SS используют нативный UDP, и их UDP-трафик не подвергается специальной обработке при использовании TLS/WSS, если только не включен Mux. UDP-плагины SIP003 для SS также не управляются.</p>
+<p>UDP over TCP, сокращенно UoT, важно заметить, что даже если используются mKCP или QUIC в качестве нижележащего транспорта, UoT не будет демонстрировать те же характеристики, что и нативный UDP.</p>
+<p>Проблемы, существующие в v2ray-core, здесь разъясняются, чтобы сделать UDP менее загадочным:</p>
+<ol>
+<li>Архитектурно v2ray-core поддерживает только Symmetric NAT, поэтому любой протокол, используемый в v2ray-core, будет работать только в режиме Symmetric.</li>
+<li>Обработка UDP в v2ray-core похожа на логику TCP, и невозможно реализовать специфическое для UDP поведение FullCone.</li>
+<li>При обработке входящих пакетов в выходном модуле Freedom v2ray-core не фильтрует источник в соответствии с принципом Symmetric, что и является основной причиной &quot;мистики&quot;.</li>
+<li>В v2ray-core время неактивности для поддержания отношений маппинга UDP очень короткое, что легко приводит к обрывам потока данных.</li>
+</ol>
+<p>По поводу третьего пункта, проще говоря:</p>
+<ol>
+<li>В нормальной ситуации Symmetric NAT, если A отправил пакеты M, он может получать пакеты только от M, а остальные будут отфильтрованы.</li>
+<li>Если между ними вставлен v2ray, даже если A не отправлял пакеты N, A всё равно может получать пакеты от N.</li>
+<li>Главное, что адрес N при этом теряется, и A будет думать, что пакеты от M, что является уникальным источником путаницы.</li>
+</ol>
+<p>Такое поведение не ожидается, и в сочетании с некоторыми нестандартными тестовыми серверами это может привести к тому, что v2ray и VMess показывают FullCone, который на самом деле не работает.</p>
+<p>В конце июля прошлого года я обсуждал эту проблему в группе разработчиков (нестандартные тестовые серверы, такие как серверы Google, и запутанное поведение UDP в v2ray), после чего обновление NatTypeTester оставило только пять стандартных тестовых серверов и специально проверило исходящие адреса пакетов, что привело к отображению результатов для v2ray как UnsupportedServer.</p>
+<p>Кроме того, некоторые приложения Google сначала тестируют тип NAT текущей сети самостоятельно, и если обнаруживается ложный FullCone, это может привести к различным странным проблемам.
+Действительно, поведение NAT не ограничивается только FullCone и Symmetric, хотя это два крайних случая. Фактически, поведение NAT определяется двумя аспектами: &quot;маппингом при отправке пакетов&quot; и &quot;фильтрацией при получении пакетов&quot;. FullCone является самым открытым в обоих аспектах, в то время как Symmetric является самым строгим.</p>
+<p>RFC 3489 определяет четыре классических типа поведения NAT, и v2ray на самом деле не подпадает ни под один из них напрямую, но его поведение наиболее близко к Address and Port-Dependent Mapping с Endpoint-Independent Filtering, что соответствует NAT Type 7 по RFC 5780. Однако v2ray может неправильно обрабатывать источник возвращаемых пакетов.</p>
+<p>Эти четыре классических типа включают:</p>
+<ul>
+<li>Full Cone: Любой внешний хост может отправлять пакеты на внутренний IP-адрес и порт, если внутренний хост уже отправил пакеты наружу.</li>
+<li>Address Restricted Cone: Внешний хост может отправлять пакеты на внутренний IP-адрес и порт только если внутренний хост уже отправлял пакеты этому внешнему хосту.</li>
+<li>Port Restricted Cone: Похоже на Address Restricted Cone, но внешний хост должен отправлять пакеты на тот же порт, с которого внутренний хост отправлял пакеты на внешний хост.</li>
+<li>Symmetric: Внутренний хост использует разные маппинги для каждого внешнего хоста и порта, с которыми он общается, и только пакеты, отправленные на адрес</li>
+</ul>
+<doc-anchor-target id="как-xray-core-реализует-протокол-прокси-с-fullcone">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#как-xray-core-реализует-протокол-прокси-с-fullcone">#</doc-anchor-trigger>
+        <span>Как Xray-core реализует протокол прокси с FullCone</span>
+    </h2>
+</doc-anchor-target>
+<p>на самом деле, принцип довольно прост: он отображает один из ваших локальных UDP-портов на UDP-порт VPS, обеспечивая им одинаковое поведение.</p>
+<p>Давайте рассмотрим самый простой сценарий: Socks на входе + Freedom на выходе.</p>
+<ol>
+<li>Socks на входе получает Socks UDP-пакет от двуэлементного набора A, который содержит оригинальный пейлоад и его исходную цель M, и направляет его в Freedom на выходе.</li>
+<li>Freedom на выходе использует случайный порт для отправки оригинального пейлоада на его исходную цель M, предположим, что Freedom использует двуэлементный набор A1.</li>
+<li>Отношение отображения уже установлено, и в течение некоторого времени Socks на входе снова получает прокси-пакет от A, и Freedom продолжит отправлять его на цель, используя A1.</li>
+<li>Аналогично, если Freedom с A1 получает пакет от N, Socks отправит оригинальный пейлоад и информацию о N обратно к A.</li>
+</ol>
+<p>Разумеется, для достижения FullCone вызывающей стороне необходимо правильно использовать протокол прокси Socks, и обычно реализации tun2socks работают без проблем.</p>
+<p>Теперь добавим в сценарий Shadowsocks на входе и выходе:</p>
+<ol>
+<li>Трафик направляется на выход Shadowsocks, который также использует случайный порт для отправки зашифрованного &quot;пейлоада и цели&quot; на серверный вход Shadowsocks.</li>
+<li>Вход Shadowsocks на сервере получает Shadowsocks UDP-пакет от клиентского выхода Shadowsocks, расшифровывает его, и дальнейший процесс идентичен описанному выше.</li>
+</ol>
+<p>Протокол Trojan для UDP работает по аналогичному принципу, но каждый исходный двуэлементный набор соответствует одному TCP-соединению, по которому передается &quot;пейлоад и цель&quot; UDP.</p>
+<p>Почему же VMess, который также использует UoT, не может реализовать FullCone?
+Основная причина заключается в том, что структура протокола UoT VMess позволяет передать &quot;цель&quot; только в самом начале, а последующие пакеты могут передавать только &quot;пейлоад&quot; без &quot;цели&quot;. Сервер будет отправлять все последующие пакеты на исходную &quot;цель&quot;. Сервер отправляет пакеты обратно клиенту по той же логике: структура протокола содержит только &quot;пейлоад&quot;, и клиент будет считать, что все возвращенные пакеты исходят из первоначальной &quot;цели&quot;. Это продолжение проблемы дизайна v2ray, и, конечно, встроенный Mux работает таким же образом. (VLESS также затрагивается, но уже в процессе изменений).</p>
+<p>Таким образом, для VMess, Mux и VLESS Xray-core в настоящее время использует маршрутизацию по принципу Symmetric. В противном случае, если использовать режим FullCone, последующие пакеты будут отправляться на адрес первого пакета, что является проблемой Clash с VMess, но это сложно исправить. Кроме того, когда такая проблема существует, VMess может быть ошибочно идентифицирован как FullCone, что неверно.</p>
+<p>Принцип прозрачного проксирования UDP через TPROXY заключается в следующем: чтобы использовать Xray-core для реализации FullCone для игровых консолей, обычно требуется Linux-устройство для настройки прозрачного прокси, например, Raspberry Pi.</p>
+<p>Почему для прозрачного проксирования UDP предпочтительнее использовать TPROXY, а не REDIRECT?</p>
+<ol>
+<li>REDIRECT изменяет целевой двуэлементный набор UDP-пакетов, и в этом случае Linux не предоставляет механизм, позволяющий программе-прокси узнать исходный адрес назначения UDP-пакета.</li>
+<li>TPROXY работает наоборот: он не изменяет UDP-пакеты, и Linux предоставляет простой механизм, позволяющий программе-прокси узнать исходный адрес назначения UDP-пакета.</li>
+</ol>
+<p>Когда необходимо отправить пакет обратно, программное обеспечение-прокси сначала создает локальный сокет, имитирующий &quot;исходный двуэлементный набор источника возвращаемого UDP-пакета&quot;, и использует этот сокет для отправки пакета обратно. Это и есть принцип, из-за которого может возникнуть ошибка &quot;слишком много открытых файлов&quot;. По сравнению с другим программным обеспечением, Xray-core имеет специальные оптимизации для этой ситуации, обеспечивая более элегантное и производительное решение.</p>
+<p>Если вы тестируете NAT прозрачного прокси в Windows, обязательно установите текущую сеть как &quot;Частную сеть&quot;. Это распространенная ошибка, на которую многие уже наступили, включая меня.</p>
+<p>Отдельно стоит упомянуть о QUIC: когда активирован XTLS в Xray-core, трафик, идущий на UDP-порт 443, по умолчанию блокируется (блокировка QUIC), так что приложения не будут использовать QUIC, а будут использовать TLS, благодаря чему XTLS будет действительно работать. На самом деле, QUIC сам по себе не подходит для проксирования, так как он уже включает в себя функции TCP, и использование UoT в этом случае означало бы двойное использование TCP.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">apt udate</code></pre>
+</doc-codeblock></div>
+
+                            
+                            <!-- Required only on API pages -->
+                            <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                        </div>
+                        <footer class="clear-both">
+                        
+                            <nav class="flex mt-14">
+                                <div class="w-1/2">
+                                </div>
+                        
+                                <div class="w-1/2">
+                                    <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../blog/how-xray-find-torrent/">
+                                        <span>
+                                            <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Позже</span>
+                                            <span class="block mt-1">Как мы находим Bit​Torrent трафик</span>
+                                        </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                    </a>
+                                </div>
+                            </nav>
+                        </footer>
+                    </main>
+                </div>
+
+            </div>
+        </div>
+    
+        <div class="border-t dark:border-dark-650">
+            <div class="max-w-core mx-auto px-6 py-6">
+                <footer>
+                    <div class="flex flex-wrap items-center justify-between">
+                        <div class="pt-3">
+                            <ul class="flex flex-wrap items-center text-sm">
+                            </ul>
+                        </div>
+                        <div class="docs-copyright pt-3 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024 – Marzban</p></div>
+                    </div>
+                
+                    <div class="flex sm:justify-center">
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Про UDP", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

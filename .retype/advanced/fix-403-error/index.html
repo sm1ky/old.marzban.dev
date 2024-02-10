@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759694713865">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760862101569">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,29 +14,43 @@
     <meta name="description" content="При получении ошибки 403 на различных сайтах, Вы можете настройтить роутинг на ipv4">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.marzban.ru/advanced/fix-403-error/">
+    <link rel="canonical" href="https://docs.marzban.dev/advanced/fix-403-error/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.marzban.ru/advanced/fix-403-error/">
+    <meta property="og:url" content="https://docs.marzban.dev/advanced/fix-403-error/">
     <meta property="og:title" content="403 ошибка | MARZBAN | XRAY-CORE">
     <meta property="og:description" content="При получении ошибки 403 на различных сайтах, Вы можете настройтить роутинг на ipv4">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.marzban.ru/advanced/fix-403-error/">
+    <meta property="twitter:url" content="https://docs.marzban.dev/advanced/fix-403-error/">
     <meta property="twitter:title" content="403 ошибка | MARZBAN | XRAY-CORE">
     <meta property="twitter:description" content="При получении ошибки 403 на различных сайтах, Вы можете настройтить роутинг на ipv4">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.759694713865" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.760862101569" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759694713865" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760862101569" defer></script>
+
+    <style>
+        .sample {
+            text-align: center;
+            color: #1956AF;
+            background-color: #E1EDFF;
+            border: 1px solid #1956AF;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <div class = "sample" >
+        <p>C 1 марта документация будет доступна только на https://marzban.dev </p>
+    </div>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -162,12 +176,6 @@
     </h1>
 </doc-anchor-target>
 <p>При получении ошибки 403 на различных сайтах, Вы можете настройтить роутинг на ipv4</p>
-<doc-anchor-target id="вариант-1-настраваем-роутинг">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#вариант-1-настраваем-роутинг">#</doc-anchor-trigger>
-        <span>Вариант 1: Настраваем роутинг</span>
-    </h2>
-</doc-anchor-target>
 <p>Открываем <code v-pre>xray_config.conf</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo nano /var/lib/marzban/xray_config.json</code></pre>
@@ -221,42 +229,8 @@
       }
 </code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="вариант-2-отключаем-ipv6">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#вариант-2-отключаем-ipv6">#</doc-anchor-trigger>
-        <span>Вариант 2: Отключаем IPv6</span>
-    </h2>
-</doc-anchor-target>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Не рекомендуется. Используйте только тогда, когда понимаете что делаете</p>
-        </div>
-    </div>
-</div>
-<p>При получении ошибки 403 на различных сайтах, настоятельно рекомендую отключить IPv6 на вашем сервере.</p>
-<p>Открываем <code v-pre>sysctl.conf</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo nano /etc/sysctl.conf</code></pre>
-</doc-codeblock></div>
-<p>Добавляем (изменяем) запись запрещающую использование IPv6 на всех адаптерах</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">net.ipv6.conf.all.disable_ipv6=1
-net.ipv6.conf.default.disable_ipv6=1
-net.ipv6.conf.lo.disable_ipv6=1</code></pre>
-</doc-codeblock></div>
-<p>Для применения изменений перезапускаем <code v-pre>sysctl</code> </p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo sysctl -p</code></pre>
+<pre class="language-json"><code v-pre class="language-json">apt udate</code></pre>
 </doc-codeblock></div>
 
                                 

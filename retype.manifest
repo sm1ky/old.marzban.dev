@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-01-27T18:18:42Z",
+  "created": "2024-02-10T06:35:11Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -108,7 +108,13 @@
       "path": "blog/index.html"
     },
     {
+      "path": "blog/udp/index.html"
+    },
+    {
       "path": "CNAME"
+    },
+    {
+      "path": "favicon.ico"
     },
     {
       "path": "index.html"

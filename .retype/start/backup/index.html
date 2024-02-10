@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759694713865">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760862101569">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,29 +14,43 @@
     <meta name="description" content="Необходимо регулярно создавать резервные копии ваших файлов Marzban, чтобы предотвратить потерю данных в случае сбоев системы или случайного...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.marzban.ru/start/backup/">
+    <link rel="canonical" href="https://docs.marzban.dev/start/backup/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.marzban.ru/start/backup/">
+    <meta property="og:url" content="https://docs.marzban.dev/start/backup/">
     <meta property="og:title" content="Бэкап | MARZBAN | XRAY-CORE">
     <meta property="og:description" content="Необходимо регулярно создавать резервные копии ваших файлов Marzban, чтобы предотвратить потерю данных в случае сбоев системы или случайного...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.marzban.ru/start/backup/">
+    <meta property="twitter:url" content="https://docs.marzban.dev/start/backup/">
     <meta property="twitter:title" content="Бэкап | MARZBAN | XRAY-CORE">
     <meta property="twitter:description" content="Необходимо регулярно создавать резервные копии ваших файлов Marzban, чтобы предотвратить потерю данных в случае сбоев системы или случайного...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.759694713865" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.760862101569" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759694713865" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760862101569" defer></script>
+
+    <style>
+        .sample {
+            text-align: center;
+            color: #1956AF;
+            background-color: #E1EDFF;
+            border: 1px solid #1956AF;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <div class = "sample" >
+        <p>C 1 марта документация будет доступна только на https://marzban.dev </p>
+    </div>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -257,6 +271,9 @@
 <p>Затем вам будет предложено настроить cron-задачу, чтобы определить, когда робот будет создавать резервную копию и отправлять ее. Формат следующий: <code v-pre>0 1</code> Первое значение, равное <code v-pre>0</code>, - это минута, а второе значение, равное <code v-pre>1</code>, - это час. Минимальное значение для минуты - 0, максимальное - <code v-pre>60</code>. Минимальное значение для часа - <code v-pre>0</code>, максимальное - <code v-pre>24</code>. Введите 0 для обоих значений, чтобы создавать резервную копию каждую минуту. В приведенном выше примере резервная копия создается каждый час. Обратите внимание, что между обоими значениями должен быть пробел.</p>
 <p>Следующий шаг попросит вас выбрать панель, которую вы хотите создать резервную копию. Вам нужно выбрать одну из marzbn, x-ui и hiddify. Значение <code v-pre>m</code> соответствует marzban,  Введите опцию <code v-pre>m</code></p>
 <p>Затем вам будет задан вопрос, хотите ли вы удалить ранее определенные cron-задачи или нет? Введите <code v-pre>y</code>, если вы хотите удалить их, в противном случае введите <code v-pre>n</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">apt udate</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->

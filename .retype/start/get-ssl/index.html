@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759694713865">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760862101569">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,32 +11,46 @@
     <!-- Primary Meta Tags -->
     <title>Получение SSL | MARZBAN | XRAY-CORE</title>
     <meta name="title" content="Получение SSL | MARZBAN | XRAY-CORE">
-    <meta name="description" content="Хоть это и не обязательно, но я настоятельно рекомендую Вам получить и настроить SSL сертификаты для Вашей панели.">
+    <meta name="description" content="Рекомендуется получить и настроить SSL сертификат для обеспечения безопасности передачи данных панели и защиты от атак \"человек-по-середине\", работы...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.marzban.ru/start/get-ssl/">
+    <link rel="canonical" href="https://docs.marzban.dev/start/get-ssl/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.marzban.ru/start/get-ssl/">
+    <meta property="og:url" content="https://docs.marzban.dev/start/get-ssl/">
     <meta property="og:title" content="Получение SSL | MARZBAN | XRAY-CORE">
-    <meta property="og:description" content="Хоть это и не обязательно, но я настоятельно рекомендую Вам получить и настроить SSL сертификаты для Вашей панели.">
+    <meta property="og:description" content="Рекомендуется получить и настроить SSL сертификат для обеспечения безопасности передачи данных панели и защиты от атак \"человек-по-середине\", работы...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.marzban.ru/start/get-ssl/">
+    <meta property="twitter:url" content="https://docs.marzban.dev/start/get-ssl/">
     <meta property="twitter:title" content="Получение SSL | MARZBAN | XRAY-CORE">
-    <meta property="twitter:description" content="Хоть это и не обязательно, но я настоятельно рекомендую Вам получить и настроить SSL сертификаты для Вашей панели.">
+    <meta property="twitter:description" content="Рекомендуется получить и настроить SSL сертификат для обеспечения безопасности передачи данных панели и защиты от атак \"человек-по-середине\", работы...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../static/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.5.0.759694713865" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.760862101569" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759694713865" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759694713865" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760862101569" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760862101569" defer></script>
+
+    <style>
+        .sample {
+            text-align: center;
+            color: #1956AF;
+            background-color: #E1EDFF;
+            border: 1px solid #1956AF;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <div class = "sample" >
+        <p>C 1 марта документация будет доступна только на https://marzban.dev </p>
+    </div>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,8 +188,7 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>СОВЕТ</h5>
-<p>Хоть это и не обязательно, но я настоятельно рекомендую Вам получить и настроить SSL сертификаты для Вашей панели.
-В частности, для безопастности передаваемых данных панели и исключения атаки &quot;человек-по-середине&quot;, для работы TLS подключений, функционирования подписок, создания зашифрованного канала и множества других функций.</p>
+<p>Рекомендуется получить и настроить SSL сертификат для обеспечения безопасности передачи данных панели и защиты от атак &quot;человек-по-середине&quot;, работы TLS подключений, функционирования подписок и многого другого.</p>
         </div>
     </div>
 </div>
@@ -192,7 +205,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Файлы сертификатов должны быть доступны по адресу <code v-pre>/var/lib/marzban/certs</code>, чтобы Marzban мог получить к ним доступ.</p>
+<p>Для доступа Marzban к файлам сертификатов они должны быть размещены в <code v-pre>/var/lib/marzban/certs</code>.</p>
         </div>
     </div>
 </div>
@@ -208,9 +221,8 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Прежде чем приступить к получению SSL-сертификата, вы должны настроить DNS-записи домена(A и(или) АААА записи)</p>
-<p>В случае, если Вы только зарегистрировали домен и тут же вписали A и(или) AAAA записи вашего домена, необходимо немного подождать для обновления всех записей.
-проверить статус Вы всегда можете на <a href="https://www.whatsmydns.net">https://www.whatsmydns.net</a></p>
+<p>Перед получением SSL-сертификата настройте DNS-записи вашего домена (A и/или AAAA записи).</p>
+<p>Если вы только что зарегистрировали домен и добавили DNS-записи, возможно, потребуется время для их обновления. Статус можно проверить на <a href="https://www.whatsmydns.net">https://www.whatsmydns.net</a>.</p>
         </div>
     </div>
 </div>
@@ -227,7 +239,7 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>СОВЕТ</h5>
-<p>В теущих реалиях, для новых (да и старых) доменов, лучше сразу же указывать NS сервера CLOUDFLARE и взаиодействовать с ним там</p>
+<p>Для новых и существующих доменов рекомендуется использовать NS сервера Cloudflare и управлять DNS-записями через их сервисы.</p>
         </div>
     </div>
 </div>
@@ -237,43 +249,43 @@
         <span>Получение сертификата с acme.sh</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="устанавливаем-нужный-софт">
+<doc-anchor-target id="установка-необходимого-по">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#устанавливаем-нужный-софт">#</doc-anchor-trigger>
-        <span>Устанавливаем нужный софт</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#установка-необходимого-по">#</doc-anchor-trigger>
+        <span>Установка необходимого ПО</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo apt install cron  &amp;&amp; apt install socat</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">sudo apt install cron socat</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="устанавливаем-acmesh">
+<doc-anchor-target id="установка-acmesh">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#устанавливаем-acmesh">#</doc-anchor-trigger>
-        <span>Устанавливаем acme.sh</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#установка-acmesh">#</doc-anchor-trigger>
+        <span>Установка acme.sh</span>
     </h3>
 </doc-anchor-target>
-<p>EMAIL = Ваш email(можно любую случайную почту)</p>
+<p>EMAIL — ваш email (можно указать любой).</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">curl https://get.acme.sh | sh -s email=EMAIL</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="создаем-директорию-для-сертификатов">
+<doc-anchor-target id="создание-директории-для-сертификатов">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#создаем-директорию-для-сертификатов">#</doc-anchor-trigger>
-        <span>Создаем директорию для сертификатов</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#создание-директории-для-сертификатов">#</doc-anchor-trigger>
+        <span>Создание директории для сертификатов</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo mkdir -p /var/lib/marzban/certs/</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="получаем-сертификаты">
+<doc-anchor-target id="получение-сертификатов">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#получаем-сертификаты">#</doc-anchor-trigger>
-        <span>Получаем сертификаты</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#получение-сертификатов">#</doc-anchor-trigger>
+        <span>Получение сертификатов</span>
     </h3>
 </doc-anchor-target>
-<p>Введите ваш домен или субдомен в поле <code v-pre>DOMAIN</code></p>
+<p>Замените <code v-pre>DOMAIN</code> на ваш домен или субдомен.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/.acme.sh/acme.sh --set-default-ca --server letsencrypt  --issue --standalone -d DOMAIN \
+<pre class="language-bash"><code v-pre class="language-bash">~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --standalone -d DOMAIN \
 --key-file /var/lib/marzban/certs/key.pem \
 --fullchain-file /var/lib/marzban/certs/fullchain.pem</code></pre>
 </doc-codeblock></div>
@@ -283,47 +295,46 @@
         <span>Получение wildcard сертификата с acme.sh</span>
     </h2>
 </doc-anchor-target>
-<p>В случае, если вам необходимо получить wildcard сертификаты для всех ваших поддоменов</p>
-<doc-anchor-target id="устанавливаем-нужный-софт-1">
+<p>Если вам нужны wildcard сертификаты для всех поддоменов.</p>
+<doc-anchor-target id="установка-необходимого-по-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#устанавливаем-нужный-софт-1">#</doc-anchor-trigger>
-        <span>Устанавливаем нужный софт</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#установка-необходимого-по-1">#</doc-anchor-trigger>
+        <span>Установка необходимого ПО</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">sudo apt install cron  &amp;&amp; apt install socat</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">sudo apt install cron socat</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="устанавливаем-acmesh-1">
+<doc-anchor-target id="установка-acmesh-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#устанавливаем-acmesh-1">#</doc-anchor-trigger>
-        <span>Устанавливаем acme.sh</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#установка-acmesh-1">#</doc-anchor-trigger>
+        <span>Установка acme.sh</span>
     </h3>
 </doc-anchor-target>
-<p>EMAIL = Ваш email(можно любую случайную почту)</p>
+<p>EMAIL — ваш email (можно указать любой).</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">curl https://get.acme.sh | sh -s email=EMAIL</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="создаем-директорию-для-сертификатов-1">
+<doc-anchor-target id="создание-директории-для-сертификатов-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#создаем-директорию-для-сертификатов-1">#</doc-anchor-trigger>
-        <span>Создаем директорию для сертификатов</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#создание-директории-для-сертификатов-1">#</doc-anchor-trigger>
+        <span>Создание директории для сертификатов</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">sudo mkdir -p /var/lib/marzban/certs/</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="получаем-ключ-api--cloudflare">
+<doc-anchor-target id="получение-ключа-api-cloudflare">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#получаем-ключ-api--cloudflare">#</doc-anchor-trigger>
-        <span>Получаем ключ API  Cloudflare</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#получение-ключа-api-cloudflare">#</doc-anchor-trigger>
+        <span>Получение ключа API Cloudflare</span>
     </h3>
 </doc-anchor-target>
-<p>Войдите в свой аккаунт Cloudflare и получите Global API Key. Этот ключ понадобится для автоматической настройки DNS записей
-Настройка переменных окружения</p>
-<doc-anchor-target id="настраиваем-переменные-окружения">
+<p>Получите Global API Key в аккаунте Cloudflare для автоматической настройки DNS-записей.</p>
+<doc-anchor-target id="настройка-переменных-окружения">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#настраиваем-переменные-окружения">#</doc-anchor-trigger>
-        <span>Настраиваем переменные окружения</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#настройка-переменных-окружения">#</doc-anchor-trigger>
+        <span>Настройка переменных окружения</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -336,13 +347,13 @@ export CF_Email=&quot;ваш_email&quot;</code></pre>
         <span>Выпуск wildcard сертификата</span>
     </h3>
 </doc-anchor-target>
-<p>Введите ваш домен в поле <code v-pre>DOMAIN</code></p>
+<p>Замените <code v-pre>DOMAIN</code> на ваш домен.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf  \
+<pre class="language-bash"><code v-pre class="language-bash">~/.acme.sh/acme.sh --set-default-ca --server letsencrypt --issue --dns dns_cf \
 -d DOMAIN \
 -d *.DOMAIN \
 --key-file /var/lib/marzban/certs/key.pem \
---fullchain-file /var/lib/marzban/certs/fullchain.pem </code></pre>
+--fullchain-file /var/lib/marzban/certs/fullchain.pem</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
@@ -357,7 +368,7 @@ export CF_Email=&quot;ваш_email&quot;</code></pre>
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>ПОДСКАЗКА</h5>
-<p>Посмотреть список выпущенных сертификатов</p>
+<p>Для просмотра списка выпущенных сертификатов:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">~/.acme.sh/acme.sh --list</code></pre>
 </doc-codeblock></div>
@@ -377,13 +388,16 @@ export CF_Email=&quot;ваш_email&quot;</code></pre>
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>ПОДСКАЗКА</h5>
-<p>Продлить сертификаты, до момента авто продления</p>
+<p>Для ручного продления сертификатов:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">~/.acme.sh --renew -d DOMAIN --force</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">~/.acme.sh/acme.sh --renew -d DOMAIN --force</code></pre>
 </doc-codeblock></div>
         </div>
     </div>
 </div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">apt udate</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->

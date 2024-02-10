@@ -2,27 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Блог</title>
-    <link>https://docs.marzban.ru/blog/</link>
+    <link>https://docs.marzban.dev/blog/</link>
     <description>Блог</description>
     <copyright>© Copyright 2024 – Marzban</copyright>
-    <lastBuildDate>Thu, 18 Jan 2024 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Feb 2024 00:00:00 GMT</lastBuildDate>
     <generator>https://retype.com</generator>
-    <atom:link rel="self" type="application/rss+xml" href="https://docs.marzban.ru/blog/feed.xml" />
+    <atom:link rel="self" type="application/rss+xml" href="https://docs.marzban.dev/blog/feed.xml" />
     <image>
       <title>Блог</title>
-      <link>https://docs.marzban.ru/blog/</link>
-      <url>https://docs.marzban.ru/favicon.ico</url>
+      <link>https://docs.marzban.dev/blog/</link>
+      <url>https://docs.marzban.dev/favicon.ico</url>
     </image>
     <item>
+      <title>Про UDP</title>
+      <guid isPermaLink="true">https://docs.marzban.dev/blog/udp/</guid>
+      <description>Большинство людей абсолютно не имеют представления о части UDP в протоколах прокси, и в настоящее время многие опытные пользователи и даже...</description>
+      <author>rprx</author>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>Как мы находим BitTorrent трафик</title>
-      <guid isPermaLink="true">https://docs.marzban.ru/blog/how-xray-find-torrent/</guid>
+      <guid isPermaLink="true">https://docs.marzban.dev/blog/how-xray-find-torrent/</guid>
       <description>Сегодня мы рассмотрим как Xray-core определяет BitTorrent трафик на уровне пакетов и заголовков. В нашем арсенале имеется две функции:</description>
       <author>iambabyninja</author>
       <pubDate>Thu, 18 Jan 2024 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Про фрагментацию</title>
-      <guid isPermaLink="true">https://docs.marzban.ru/blog/fragmentation/</guid>
+      <guid isPermaLink="true">https://docs.marzban.dev/blog/fragmentation/</guid>
       <description>Протокол TLS обеспечивает конфиденциальность, подлинность и целостность интернет-трафика в клиент-серверной среде.</description>
       <author>nikolas</author>
       <pubDate>Thu, 18 Jan 2024 00:00:00 GMT</pubDate>

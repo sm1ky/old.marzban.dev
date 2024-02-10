@@ -7,11 +7,7 @@ meta:
 include:
   - "robots.txt"
   - "favicon.ico"
-integration:
-  googleAnalytics: 
-    id: G-65M2DKEZ7E
-  googleTagManager:
-    id: G-65M2DKEZ7E
+  - "sitemap.xml"
 branding:
   title: Marzban
   label: Docs
