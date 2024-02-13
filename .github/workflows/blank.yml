@@ -19,8 +19,8 @@ jobs:
 
       - uses: retypeapp/action-build@latest
         with:
-          license: ${{ secrets.RETYPE_SECRET }}
-
+          password: ${{ secrets.RETYPE_PASSWORD }}
+         
       - uses: retypeapp/action-github-pages@latest
         with:
           update-branch: true
