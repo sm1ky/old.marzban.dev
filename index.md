@@ -1,6 +1,7 @@
 ---
 label: "Marzban"
 icon: home
+visibility: protected
 ---
 
 
