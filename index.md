@@ -7,6 +7,7 @@ visibility: protected
 
 ![](/static/main.jpg)
 
+
 <p align="center">
     Унифицированное решение с графическим интерфейсом, устойчивое к цензуре, на базе <a href="https://github.com/XTLS/Xray-core">xray-core</a>
 </p>
