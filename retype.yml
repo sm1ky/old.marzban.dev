@@ -1,5 +1,6 @@
 input: .
 output: .retype
+RETYPE_PASSWORD: "cringe"
 url: docs.marzban.dev
 locale: ru
 meta:
