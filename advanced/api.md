@@ -7,7 +7,7 @@ icon: beaker
 ![](/static/19.png)
 Marzban предоставляет REST API, который позволяет разработчикам программно взаимодействовать со службами Marzban. 
 Чтобы просмотреть документацию по API, перейдите на 
-[!ref target="blank" text="API"](https://api.marzban.ru)
+[!ref target="blank" text="API"](https://api.marzban.dev)
 
 Чтобы просмотреть документацию по API в Swagger UI или ReDoc локально, установите переменную в файле env:
 
