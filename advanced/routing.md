@@ -15,82 +15,128 @@ visibility: hidden
 Для понимания маршрутизации необходимо осознать, что полноценная функциональность маршрутизации требует совместной работы трех компонентов: 
 ```mermaid
 erDiagram
-    ALEMBIC_VERSION {
-        varchar version_num "Version Number"
+    alembic_version {
+        string version_num PK
     }
-
-    SYSTEM {
-        integer id
-        bigint uplink "Uplink Traffic"
-        bigint downlink "Downlink Traffic"
+    system {
+        integer id PK
+        bigint uplink
+        bigint downlink
     }
-
-    JWT {
-        integer id
-        varchar secret_key "Secret Key"
+    jwt {
+        integer id PK
+        string secret_key
     }
-
-    PROXIES {
-        integer id
+    proxies {
+        integer id PK
         integer user_id
-        varchar type
+        string type
         json settings
     }
-
-    ADMINS {
-        integer id
-        varchar username
-        varchar hashed_password
+    admins {
+        integer id PK
+        string username
+        string hashed_password
         datetime created_at
         boolean is_sudo
         datetime password_reset_at
         bigint telegram_id
-        varchar discord_webhook
+        string discord_webhook
     }
-
-    INBOUNDS {
-        integer id
-        varchar tag
+    inbounds {
+        integer id PK
+        string tag
     }
-
-    EXCLUDE-INBOUNDS-ASSOCIATION {
-        integer proxy_id
-        varchar inbound_tag
+    exclude_inbounds_association {
+        integer proxy_id FK
+        string inbound_tag FK
     }
-
-    USER-USAGE-LOGS {
-        integer id
-        integer user_id
+    user_usage_logs {
+        integer id PK
+        integer user_id FK
         bigint used_traffic_at_reset
         datetime reset_at
     }
-
-    USERS {
-        integer id
-        varchar username
-        varchar status
+    hosts {
+        integer id PK
+        string remark
+        string address
+        integer port
+        string inbound_tag FK
+        string sni
+        string host
+        string security
+        string alpn
+        string fingerprint
+        boolean allowinsecure
+        boolean is_disabled
+        string path
+    }
+    template_inbounds_association {
+        integer user_template_id FK
+        string inbound_tag FK
+    }
+    node_usages {
+        integer id PK
+        integer user_id FK
+        string type
+        datetime expires_at
+        datetime created_at
+    }
+    tls {
+        integer id PK
+        string key
+        string certificate
+    }
+    nodes {
+        integer id PK
+        string name
+        string address
+        integer port
+        integer api_port
+        string status
+        datetime last_status_change
+        string message
+        datetime created_at
+        bigint uplink
+        bigint downlink
+        string xray_version
+        float usage_coefficient
+    }
+    user_templates {
+        integer id PK
+        string name
+        integer data_limit
+        integer expire_duration
+        string username_prefix
+        string username_suffix
+    }
+    users {
+        integer id PK
+        string username
+        string status
         bigint used_traffic
         bigint data_limit
         integer expire
         datetime created_at
-        integer admin_id
-        varchar data_limit_reset_strategy
+        integer admin_id FK
+        string data_limit_reset_strategy
         datetime sub_revoked_at
-        varchar note
+        string note
         datetime sub_updated_at
-        varchar sub_last_user_agent
+        string sub_last_user_agent
         datetime online_at
         datetime edit_at
         datetime on_hold_timeout
         bigint on_hold_expire_duration
     }
 
-    USERS ||--o{ ADMINS : "admin_id"
-    USERS ||--o{ PROXIES : "user_id"
-    PROXIES ||--o{ EXCLUDE-INBOUNDS-ASSOCIATION : "proxy_id"
-    INBOUNDS ||--o{ EXCLUDE-INBOUNDS-ASSOCIATION : "inbound_tag"
-    USERS ||--o{ USER-USAGE-LOGS : "user_id"
-```
+    proxies }|--|{ users : "belongsTo"
+    user_usage_logs }|--|{ users : "logsFor"
+    node_usages }|--|{ users : "usageFor"
+    exclude_inbounds_association }|--|| inbounds : "excludes"
+    template_inbounds_association }|--|| inbounds : "includes"
+    users }|--|{ admins : "managedBy"```
 1. Входящий трафик (inbound)
 2. Маршрутизация
 3. Исходящий трафик (outbound)
