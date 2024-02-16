@@ -136,7 +136,9 @@ erDiagram
     node_usages }|--|{ users : "usageFor"
     exclude_inbounds_association }|--|| inbounds : "excludes"
     template_inbounds_association }|--|| inbounds : "includes"
-    users }|--|{ admins : "managedBy"```
+    users }|--|{ admins : "managedBy"
+```
+
 1. Входящий трафик (inbound)
 2. Маршрутизация
 3. Исходящий трафик (outbound)
