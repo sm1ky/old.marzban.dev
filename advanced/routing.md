@@ -16,37 +16,57 @@ visibility: hidden
 ```mermaid
 erDiagram
     ALEMBIC_VERSION ||--o{ SYSTEM : ""
-    JWT ||--o{ SYSTEM : ""
-    EXCLUDE_INBOUNDS_ASSOCIATION {
-        string proxy_id
-        string inbound_tag
-    }
+    SYSTEM ||--o{ JWT : ""
     SYSTEM ||--o{ EXCLUDE_INBOUNDS_ASSOCIATION : ""
-    PROXIES ||--o{ EXCLUDE_INBOUNDS_ASSOCIATION : ""
-    INBOUNDS ||--o{ EXCLUDE_INBOUNDS_ASSOCIATION : ""
-    TEMPLATE_INBOUNDS_ASSOCIATION {
-        string user_template_id
-        string inbound_tag
-    }
-    USER_TEMPLATES ||--o{ TEMPLATE_INBOUNDS_ASSOCIATION : ""
-    INBOUNDS ||--o{ TEMPLATE_INBOUNDS_ASSOCIATION : ""
-    TLS ||--o{ HOSTS : ""
-    HOSTS ||--o{ INBOUNDS : ""
-    NODE_USER_USAGES {
-        string user_id
-        string node_id
-        string used_traffic
-    }
-    USERS ||--o{ NODE_USER_USAGES : ""
-    NODES ||--o{ NODE_USER_USAGES : ""
-    USERS ||--o{ PROXIES : ""
-    NODE_USAGES ||--o{ NODES : ""
+    SYSTEM ||--o{ PROXIES : ""
+    SYSTEM ||--o{ NODE_USER_USAGES : ""
+    SYSTEM ||--o{ NODES : ""
+    SYSTEM ||--o{ NOTIFICATION_REMINDERS : ""
+    SYSTEM ||--o{ USER_USAGE_LOGS : ""
+    SYSTEM ||--o{ USERS : ""
+    SYSTEM ||--o{ ADMINS : ""
+    JWT ||--o{ EXCLUDE_INBOUNDS_ASSOCIATION : ""
+    JWT ||--o{ PROXIES : ""
+    JWT ||--o{ NODE_USER_USAGES : ""
+    JWT ||--o{ NODES : ""
+    JWT ||--o{ NOTIFICATION_REMINDERS : ""
+    JWT ||--o{ USER_USAGE_LOGS : ""
+    JWT ||--o{ USERS : ""
+    JWT ||--o{ ADMINS : ""
+    EXCLUDE_INBOUNDS_ASSOCIATION ||--o{ PROXIES : ""
+    EXCLUDE_INBOUNDS_ASSOCIATION ||--o{ NODE_USER_USAGES : ""
+    EXCLUDE_INBOUNDS_ASSOCIATION ||--o{ NODES : ""
+    EXCLUDE_INBOUNDS_ASSOCIATION ||--o{ NOTIFICATION_REMINDERS : ""
+    EXCLUDE_INBOUNDS_ASSOCIATION ||--o{ USER_USAGE_LOGS : ""
+    EXCLUDE_INBOUNDS_ASSOCIATION ||--o{ USERS : ""
+    EXCLUDE_INBOUNDS_ASSOCIATION ||--o{ ADMINS : ""
+    PROXIES ||--o{ NODE_USER_USAGES : ""
+    PROXIES ||--o{ NODES : ""
+    PROXIES ||--o{ NOTIFICATION_REMINDERS : ""
+    PROXIES ||--o{ USER_USAGE_LOGS : ""
+    PROXIES ||--o{ USERS : ""
+    PROXIES ||--o{ ADMINS : ""
+    NODE_USER_USAGES ||--o{ NODES : ""
+    NODE_USER_USAGES ||--o{ NOTIFICATION_REMINDERS : ""
+    NODE_USER_USAGES ||--o{ USER_USAGE_LOGS : ""
+    NODE_USER_USAGES ||--o{ USERS : ""
+    NODE_USER_USAGES ||--o{ ADMINS : ""
+    NODES ||--o{ NOTIFICATION_REMINDERS : ""
+    NODES ||--o{ USER_USAGE_LOGS : ""
+    NODES ||--o{ USERS : ""
+    NODES ||--o{ ADMINS : ""
+    NOTIFICATION_REMINDERS ||--o{ USER_USAGE_LOGS : ""
     NOTIFICATION_REMINDERS ||--o{ USERS : ""
+    NOTIFICATION_REMINDERS ||--o{ ADMINS : ""
     USER_USAGE_LOGS ||--o{ USERS : ""
-    ADMINS ||--o{ USERS : ""
+    USER_USAGE_LOGS ||--o{ ADMINS : ""
+    USERS ||--|| ADMINS : ""
+    INBOUNDS ||--o{ HOSTS : ""
+    HOSTS ||--|| TLS : ""
+    USER_TEMPLATES ||--o{ TEMPLATE_INBOUNDS_ASSOCIATION : ""
+    TEMPLATE_INBOUNDS_ASSOCIATION ||--|| INBOUNDS : ""
 }
 ```
-
 1. Входящий трафик (inbound)
 2. Маршрутизация
 3. Исходящий трафик (outbound)
