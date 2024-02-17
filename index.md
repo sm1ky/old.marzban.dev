@@ -1,8 +1,8 @@
 ---
 label: "Marzban"
 icon: home
-
-
+breadcrumb: false
+image: https://s3.marzban.dev/og.jpg
 ---
 
 
