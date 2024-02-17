@@ -57,6 +57,7 @@ icon: eye
 {% hint style="warning" %}
 Если эта переменная не задана, ссылки на подписки в Telegram-боте не будут отправляться правильно.
 {% endhint %}
+
 ## XRAY_SUBSCRIPTION_PATH
 значение по умолчанию: `sub` 
 
