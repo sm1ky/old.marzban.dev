@@ -5,12 +5,13 @@ icon: people
 ---
 
 # Система подписки
+Marzban включает в себя уникальную возможность, предоставления конфигов для подключения пользователя в удобном формате - так называемая система подписки.
+
+Основными плюсами использования данной системы, является обеспечние единой точки входа для пользователя и безшовность проводимых изменений, а так же множеством других.
 {% hint style="warning" %}
 Статья находится в режиме написания. Со временем будет дополняться и изменяться. 
 {% endhint %}
-Marzban включает в себя уникальную возможность, предоставления конфигов для подключения пользователя в удобном формате - так называемая система подписки.
-
-## Ссылка
+## Формат ссылки
 Подписка доступна для пользователя по опредленному пути (ссылке), которая складывается из следующих частей:
 ```
 https://{XRAY_SUBSCRIPTION_URL_PREFIX}/{XRAY_SUBSCRIPTION_PATH}/{JWT_TOKEN}/{KEY}
@@ -31,11 +32,11 @@ https://{XRAY_SUBSCRIPTION_URL_PREFIX}/{XRAY_SUBSCRIPTION_PATH}/{JWT_TOKEN}/{KEY
 
 Пример: `"https://domain.com"`
 
-В случае, если Вы используете wildcard домены, Вы можете определить соль для  XRAY_SUBSCRIPTION_URL_PREFIX. 
+В случае, если Вы используете wildcard домены, Вы можете определить генерацию  случайной строки (соли) для  XRAY_SUBSCRIPTION_URL_PREFIX. 
 
 Пример: `"https://*.domain.com"`
 
-Получив при генерации случайную строку (соли) длиной 16 символов
+При  генерации  получив случайную строку длиной 16 символов
 
 Пример: `"830aa395df41ae5a.domain.com"` или `"b7559f58668ab457.domain.com"` 
 
@@ -61,8 +62,6 @@ https://{XRAY_SUBSCRIPTION_URL_PREFIX}/{XRAY_SUBSCRIPTION_PATH}/{JWT_TOKEN}/{KEY
 JWT токен
 
 Значение генерируется автоматически
-
-Пример: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJZdWV1IiwiYWNjZXNzIjoic3Vic2NyaXB0aW9uIiwiaWF0IjoxNzA3NTc5ODU3fQ.gSKSElCKb_8eZ8AeXGDh6r_ylg7KZQG6xlN-j2lDY6A`
 
 ### KEY
 {% hint style="info" %}
