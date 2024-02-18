@@ -1,6 +1,5 @@
 input: .
 output: .retype
-RETYPE_PASSWORD: "cringe"
 url: docs.marzban.dev
 locale: ru
 meta:
@@ -18,4 +17,3 @@ start:
 favicon: /static/favicon.ico
 footer:
   copyright: © Copyright {{ year }} – Marzban
-poweredByRetype: false
