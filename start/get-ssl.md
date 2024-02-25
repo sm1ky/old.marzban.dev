@@ -87,7 +87,7 @@ sudo mkdir -p /var/lib/marzban/certs/
 
 ```bash
 export CF_Key="ваш_cloudflare_api_key"
-export CF_Email="ваш_email"
+export CF_Email="ваш_cloudflare_email"
 ```
 
 ### Выпуск wildcard сертификата
