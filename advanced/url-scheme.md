@@ -45,7 +45,7 @@ sn://subscription?url=URL&name=NAME
 ### V2rayNG
 
 ```
-v2rayng://install-sub?name=NAME&url=URL
+v2rayng://install-config?url=URL&name=NAME
 ```
 
 ## PC
