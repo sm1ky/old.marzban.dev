@@ -11,7 +11,11 @@ icon: strikethrough
 ```
 streisand://import/URL#NAME
 ```
+### Karing
 
+```
+karing://install-config?url=URL&name=NAME
+```
 ### FoxRay
 
 ```
