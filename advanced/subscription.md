@@ -134,7 +134,10 @@ https://{XRAY_SUBSCRIPTION_URL_PREFIX}/{XRAY_SUBSCRIPTION_PATH}/{JWT_TOKEN}/{CLI
 protocol://$(uuid)@remote-host:remote-port?<protocol-specific fields><transport-specific fields><tls-specific fields>#$(descriptive-text)
 ```  
 Согласно утвержденного стандарта
-[!ref target="blank" text="Стандарт"](https://github.com/XTLS/Xray-core/issues/91)
+:::content-center
+[!button icon="<svg width=&quot;24&quot; height=&quot;24&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M12 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0 1.5a6 6 0 100-12 6 6 0 000 12z&quot;></path></svg>" text="Стандарт"](https://github.com/XTLS/Xray-core/issues/91)
+:::
+
 Дополнительно, будут переданны заголовки, которые, в свою очередь, в том или инном обьеме, будут интерпретированы клиентом.
 #### profile-web-page-url
 Заголовок включающий ссылку-подписки
@@ -193,9 +196,19 @@ subscription-userinfo: upload=0; download=4460105213; total=2147483648; expire=1
 ]
 ```
 Содержащий в каждом элементе массива полностью валидный json хоста, на основе базового или заданного Вами шаблона 
-[!ref target="blank" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/dev/app/templates/v2ray/default.json)
+:::content-center
+[!button icon="<svg width=&quot;24&quot; height=&quot;24&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M12 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0 1.5a6 6 0 100-12 6 6 0 000 12z&quot;></path></svg>" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/dev/app/templates/v2ray/default.json)
+:::
+
 Согласно утвержденного стандарта конфигурации json
-[!ref target="blank" text="Стандарт"](https://xtls.github.io/Xray-docs-next/en/config/)
+:::content-center
+[!button icon="<svg width=&quot;24&quot; height=&quot;24&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M12 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0 1.5a6 6 0 100-12 6 6 0 000 12z&quot;></path></svg>" text="Стандарт"](https://xtls.github.io/Xray-docs-next/en/config/)
+:::
+
+Для применения собственного шаблона, Вам необходимо использовать 2 перменные в файле `.env`:
+- `CUSTOM_TEMPLATES_DIRECTORY`
+- `V2RAY_SUBSCRIPTION_TEMPLATE`
+
 Дополнительно, будут переданны заголовки, которые, в свою очередь, в том или инном обьеме, будут интерпретированы клиентом.
 #### profile-web-page-url
 Заголовок включающий ссылку-подписки
