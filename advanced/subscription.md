@@ -87,7 +87,7 @@ C помощью данного ключа Вы можете получить в
 ```
 https://{XRAY_SUBSCRIPTION_URL_PREFIX}/{XRAY_SUBSCRIPTION_PATH}/{JWT_TOKEN}/{CLIENT_TYPE}
 ```
-Доступные типы клиентов: `sing-box`,`clash-meta`,`clash`,`outline`,`v2ray`
+Доступные типы клиентов: `sing-box`,`clash-meta`,`clash`,`outline`,`v2ray`, `v2ray-json`
 
 Получение опредленного типа подписки, сгенерированного для указанного потребителя 
 
