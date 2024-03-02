@@ -254,12 +254,17 @@ subscription-userinfo: upload=0; download=4460105213; total=2147483648; expire=1
 
 ### Sing-Box
 При запросе к ссылке через клиент на базе Sing-box, или с испольованием ключа `/sing-box`, пользователь получит валидный json, построенный на шаблоне 
-[!ref target="blank" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/master/app/templates/singbox/default.json)
+:::content-center
+[!button icon="<svg width=&quot;24&quot; height=&quot;24&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M12 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0 1.5a6 6 0 100-12 6 6 0 000 12z&quot;></path></svg>" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/master/app/templates/singbox/default.json)
+:::
 Для применения собственного шаблона, Вам необходимо использовать 2 перменные в файле `.env`:
 - `CUSTOM_TEMPLATES_DIRECTORY`
 - `SINGBOX_SUBSCRIPTION_TEMPLATE`
 
 ### Clash
-[!ref target="blank" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/master/app/templates/clash/default.yml )
+:::content-center
+[!button icon="<svg width=&quot;24&quot; height=&quot;24&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M12 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0 1.5a6 6 0 100-12 6 6 0 000 12z&quot;></path></svg>" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/master/app/templates/clash/default.yml)
+:::
+
 ### OUTLINE
 
