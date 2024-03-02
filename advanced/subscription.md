@@ -99,7 +99,9 @@ https://{XRAY_SUBSCRIPTION_URL_PREFIX}/{XRAY_SUBSCRIPTION_PATH}/{JWT_TOKEN}/{CLI
 ### WEB
 Получая в `accept_header` значение `"text/html"`, мы понимаем, что запрос к ссылке исходит от веб браузера,
 предоставляя ему на выходе рендер шаблона по умолчанию (или заданного Вами, кастомного шаблона) в виде html файла.
-[!ref target="blank" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/master/app/templates/subscription/index.html)
+:::content-center
+[!button icon="<svg width=&quot;24&quot; height=&quot;24&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M12 16.5a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0 1.5a6 6 0 100-12 6 6 0 000 12z&quot;></path></svg>" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/master/app/templates/subscription/index.html)
+:::
 
 Для применения собственного шаблона, Вам необходимо использовать 2 перменные в файле `.env`:
 - `CUSTOM_TEMPLATES_DIRECTORY`
