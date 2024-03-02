@@ -133,14 +133,7 @@ protocol://$(uuid)@remote-host:remote-port?<protocol-specific fields><transport-
 ```  
 Согласно утвержденного стандарта
 [!ref target="blank" text="Стандарт"](https://github.com/XTLS/Xray-core/issues/91)
-
-### V2ray-json
-Доступный ключ `/v2ray-json`.
-При запросе к ссылке с испольованием ключа `/v2ray-json`, на выходе, Вы получите сгенерированный json файл
-
-
-
-Так же, вместе с ссылками, будут переданны заголовки, которые, в свою очередь, в том или инном обьеме, будут интерпретированы клиентом.
+Дополнительно, будут переданны заголовки, которые, в свою очередь, в том или инном обьеме, будут интерпретированы клиентом.
 #### profile-web-page-url
 Заголовок включающий ссылку-подписки
 
@@ -182,6 +175,68 @@ profile-update-interval: 1
 ```
 subscription-userinfo: upload=0; download=4460105213; total=2147483648; expire=1710442799
 ```
+### V2ray-json
+Доступный ключ `/v2ray-json`.
+{% hint style="warning" %}
+Данный вариант распространения находится в разработке.
+Доступен только в `dev` ветке панели.
+Совместим на данный момент только с Streisand >= `1.6.12` и v2rayNG >= `1.8.16`
+{% endhint %}
+При запросе к ссылке с использованием ключа `/v2ray-json`, на выходе, Вы получите сгенерированный json файл вида
+```json
+[
+    {},
+    {},
+    {}
+]
+```
+Содержащий в каждом элементе массива полностью валидный json хоста, на основе базового или заданного Вами шаблона 
+[!ref target="blank" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/dev/app/templates/v2ray/default.json)
+Согласно утвержденного стандарта конфигурации json
+[!ref target="blank" text="Стандарт"](https://xtls.github.io/Xray-docs-next/en/config/)
+Дополнительно, будут переданны заголовки, которые, в свою очередь, в том или инном обьеме, будут интерпретированы клиентом.
+#### profile-web-page-url
+Заголовок включающий ссылку-подписки
+
+Пример:
+```
+profile-web-page-url: https://{XRAY_SUBSCRIPTION_URL_PREFIX}/{XRAY_SUBSCRIPTION_PATH}/{JWT_TOKEN}
+```
+#### support-url
+Заголовок включающий ссылку позволяющая пользователю перейти на соответствующую домашнюю страницу.
+
+Для применения собственного значения, Вам необходимо задать перменную `SUB_SUPPORT_URL` в файле `.env`:
+
+Пример:
+```
+support-url: https://mybestvpnintheworld.com
+```
+#### profile-title
+Имя профиля в кодировке base64 UTF8
+
+Пример:
+```
+profile-title: base64:0YXRg9C5
+```
+#### profile-update-interval
+Интервал автоматического обновления файла конфигурации
+
+Для применения собственного значения, Вам необходимо задать перменную `SUB_UPDATE_INTERVAL` в файле `.env`:
+
+Пример:
+```
+profile-update-interval: 1
+```
+#### subscription-userinfo
+Информация о трафике и истечении срока действия
+
+Значения генерируются автоматическии
+
+Пример:
+```
+subscription-userinfo: upload=0; download=4460105213; total=2147483648; expire=1710442799
+```
+
 ### Sing-Box
 При запросе к ссылке через клиент на базе Sing-box, или с испольованием ключа `/sing-box`, пользователь получит валидный json, построенный на шаблоне 
 [!ref target="blank" text="Шаблон по умолчанию"](https://github.com/Gozargah/Marzban/blob/master/app/templates/singbox/default.json)
