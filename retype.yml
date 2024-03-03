@@ -16,4 +16,4 @@ branding:
 start:
 favicon: /static/favicon.ico
 footer:
-  copyright: © Copyright {{ year }} – Marzban
+  copyright: contact: mail@marzban.dev
