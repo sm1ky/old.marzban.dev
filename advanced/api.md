@@ -18,7 +18,7 @@ sudo nano /opt/marzban/.env
 Изменяем в нем следующие переменные
 
 ```
-`DOCS=True`
+DOCS=True
 ```
 Перейдите в браузере  `http://YOUR_DOMAIN/docs` или `http://YOUR_DOMAIN/redoc`.
 
