@@ -45,3 +45,40 @@ nano docker-compose.yml
 ```bash
 marzban update 
 ```
+## Переход на стабильную версию (latest)
+Для перехода на стабильную версию, после перехода на dev, Вам необходимо выполнить downgrade базы данных к ранней структуре.
+Для осуществления downgrade, Вам необходим номер последней ревизии актуальной ветки, что бы его узнать, Вам необходимо открыть 
+
+https://github.com/Gozargah/Marzban/commits/master/app/db/migrations/versions
+
+например `dd725e4d3628`.
+
+Войдите на свой сервер и выполните следующие команды
+
+```bash
+cd /opt/marzban
+```
+Загружаемся в контейнер
+```bash
+sudo docker compose exec marzban bash
+```
+Выполняем downgrade базы данных к актуальной ревизии 
+```bash
+alembic downgrade `REVISION_ID`
+```
+где `REVISION_ID` - актуальное значение, полученное ранее, например `dd725e4d3628`
+
+Далее, меняем ветку на latest 
+```bash
+nano docker-compose.yml
+```
+
+Измените третью строку с `marzban:dev` на `marzban:latest`  и сохраните изменения
+
+выполните обновление
+
+```bash
+marzban update 
+```
+
+
