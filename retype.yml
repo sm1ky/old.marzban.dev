@@ -4,8 +4,6 @@ url: docs.marzban.dev
 locale: ru
 meta:
   title: " | MARZBAN | XRAY-CORE"
-include:
-  - "favicon.ico"
 branding:
   title: Marzban
   label: Docs
