@@ -10,6 +10,10 @@ icon: broadcast
 ### :star: Streisand 
 [Streisand](https://apps.apple.com/app/id6450534064) (iOS 14+)
 
+## Sing-box
+### :star: Sing-box 
+[Sing-box](https://apps.apple.com/app/id6451272673) (iOS 14+)
+
 ### Shadowrocket 
 [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118) (iOS 11+)
 
