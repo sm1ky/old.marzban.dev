@@ -1,7 +1,3 @@
-<p align="center">
-  <a href="https://github.com/gozargah/marzban" target="_blank" rel="noopener noreferrer">
-  </a>
-</p>
 <h1 align="center"/>Документация Marzban на Русском</h1>
 <p align="center">
     <a href="#">
