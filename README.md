@@ -1,8 +1,7 @@
 <p align="center">
   <a href="https://github.com/gozargah/marzban" target="_blank" rel="noopener noreferrer">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Gozargah/Marzban-docs/raw/master/screenshots/logo-dark.png">
-      <img width="160" height="160" src="https://github.com/Gozargah/Marzban-docs/raw/master/screenshots/logo-light.png">
+      <img src="https://github.com/Iambabyninja/docs.marzban.dev/blob/a96a3df710f7511cd219126ceb3b6a61c1e9b7a2/static/main.jpg">
     </picture>
   </a>
 </p>
