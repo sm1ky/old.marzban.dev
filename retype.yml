@@ -5,9 +5,7 @@ locale: ru
 meta:
   title: " | MARZBAN | XRAY-CORE"
 include:
-  - "robots.txt"
   - "favicon.ico"
-  - "sitemap.xml"
 branding:
   title: Marzban
   label: Docs
