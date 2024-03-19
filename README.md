@@ -1,8 +1,5 @@
 <p align="center">
   <a href="https://github.com/gozargah/marzban" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <img src="https://github.com/Iambabyninja/docs.marzban.dev/blob/a96a3df710f7511cd219126ceb3b6a61c1e9b7a2/static/main.jpg">
-    </picture>
   </a>
 </p>
 <h1 align="center"/>Документация Marzban на Русском</h1>
