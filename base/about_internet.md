@@ -1,5 +1,5 @@
 ---
-order: 599
+order: 590
 label: Как работает интернет?
 icon: log
 ---

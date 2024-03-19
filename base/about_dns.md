@@ -1,5 +1,5 @@
 ---
-order: 598
+order: 580
 label: Поговорим о DNS
 icon: log
 ---

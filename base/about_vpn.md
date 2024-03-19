@@ -1,5 +1,5 @@
 ---
-order: 596
+order: 560
 label: Что такое VPN?
 icon: log
 ---

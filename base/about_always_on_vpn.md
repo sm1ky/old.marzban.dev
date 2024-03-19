@@ -1,5 +1,5 @@
 ---
-order: 595
+order: 550
 label: Недостатки VPN
 icon: log
 ---

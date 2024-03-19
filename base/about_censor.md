@@ -1,5 +1,5 @@
 ---
-order: 597
+order: 570
 label: Поговорим о цензуре
 icon: log
 ---
