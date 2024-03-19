@@ -1,5 +1,5 @@
 ---
-order: 998
+order: 980
 label: Подключение SSL
 icon: shield-check
 ---

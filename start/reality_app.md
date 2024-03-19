@@ -1,5 +1,5 @@
 ---
-order: 992
+order: 900
 label: Подключение к серверу
 icon: broadcast
 ---

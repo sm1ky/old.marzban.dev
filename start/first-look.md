@@ -1,5 +1,5 @@
 ---
-order: 997
+order: 970
 label: Первое знакомство
 icon: rocket
 ---

@@ -1,5 +1,5 @@
 ---
-order: 994
+order: 940
 label: Настройки узла
 icon: apps
 ---

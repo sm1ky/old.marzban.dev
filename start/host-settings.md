@@ -1,5 +1,5 @@
 ---
-order: 995
+order: 950
 label: Настройки хоста
 icon: server
 ---

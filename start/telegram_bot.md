@@ -1,5 +1,5 @@
 ---
-order: 992
+order: 920
 label: Telegram бот
 icon: paper-airplane
 ---

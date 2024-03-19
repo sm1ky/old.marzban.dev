@@ -1,5 +1,5 @@
 ---
-order: 996
+order: 960
 label: Создание пользователей
 icon: people
 ---
