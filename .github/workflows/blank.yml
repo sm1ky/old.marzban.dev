@@ -1,4 +1,4 @@
-name: RELEASE HTML
+name: PUBLISH
 on:
   workflow_dispatch:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    name: Publish to retype branch
+    name: CREATE HTML IN RETYPE BRANCH
 
     runs-on: ubuntu-latest
 
