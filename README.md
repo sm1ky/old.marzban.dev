@@ -1,8 +1,12 @@
-[](/static/main.jpg)
 <p align="center">
-    Документация панели Marzban на Русском языке 🇷🇺
+  <a href="https://github.com/gozargah/marzban" target="_blank" rel="noopener noreferrer">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Gozargah/Marzban-docs/raw/master/screenshots/logo-dark.png">
+      <img width="160" height="160" src="https://github.com/Gozargah/Marzban-docs/raw/master/screenshots/logo-light.png">
+    </picture>
+  </a>
 </p>
-
+<h1 align="center"/>Документация Marzban на Русском</h1>
 <p align="center">
     <a href="#">
         <img src="https://img.shields.io/github/actions/workflow/status/gozargah/marzban/build.yml?style=flat-square" />
