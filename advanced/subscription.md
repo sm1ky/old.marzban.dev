@@ -87,7 +87,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
 * iat (issued at time): время выдачи токена в формате Unix timestamp
 Например:
 
-```
+```json
 {
   "sub": "VPutin",
   "access": "subscription",
