@@ -58,11 +58,67 @@ https://{XRAY_SUBSCRIPTION_URL_PREFIX}/{XRAY_SUBSCRIPTION_PATH}/{JWT_TOKEN}/{KEY
 {% hint style="info" %}
 Является обязательным значением.
 {% endhint %}
-
-JWT токен
-
 Значение генерируется автоматически
 
+JWT токен состоит из трех частей, разделенных точкой, закодированных с использованием Base64URL:
+
+**HEADER**
+Заголовок содержит метаданные о типе токена (typ: JWT) и используемом алгоритме подписи (alg: HS256, то есть HMAC с SHA-256).
+
+Например:
+
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+
+После кодирования Base64URL: 
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+```
+
+**PAYLOAD**
+Полезная нагрузка содержит claims с данными, закодированными в JWT. В этом случае, она включает:
+* sub (subject): имя пользователя 
+* access: права доступа 
+* iat (issued at time): время выдачи токена в формате Unix timestamp
+Например:
+
+```
+{
+  "sub": "VPutin",
+  "access": "subscription",
+  "iat": 1621357861
+}
+```
+
+После кодирования Base64URL:
+
+```
+eyJzdWIiOiJ1c2VyMTIzIiwiYWNjZXNzIjoic3Vic2NyaXB0aW9uIiwiaWF0IjoxNjIxMzU3ODYxfQ
+```
+
+**SIGNATURE**
+Создается на основе закодированных заголовка, полезной нагрузки и секретного ключа с использованием указанного в заголовке алгоритма и служит для проверки целостности токена.
+
+Результат может выглядеть так:
+
+```
+V0mqTFVz6S_av6UxZ5MFEskUThxHbLaXHxmEEvbxczM
+```
+
+Таким образом, полный JWT токен будет выглядеть следующим образом:
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIiwiYWNjZXNzIjoic3Vic2NyaXB0aW9uIiwiaWF0IjoxNjIxMzU3ODYxfQ.V0mqTFVz6S_av6UxZ5MFEskUThxHbLaXHxmEEvbxczM
+```
+
+Заголовок и полезная нагрузка могут быть легко расшифрованы, поскольку они закодированы Base64URL. Подпись служит для проверки целостности токена.
+
+Токены передаются между клиентом и сервером идентификации пользователя без необходимости постоянно хранить эту информацию на сервере.
 ### KEY
 {% hint style="info" %}
 Опциональное значение
