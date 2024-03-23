@@ -84,9 +84,9 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
 **PAYLOAD**
 
 Полезная нагрузка содержит claims с данными, закодированными в JWT. В этом случае, она включает:
-* sub (subject): имя пользователя 
+* sub: имя пользователя 
 * access: права доступа 
-* iat (issued at time): время выдачи токена в формате Unix timestamp
+* iat: время выдачи токена в формате Unix timestamp
 
 Пример:
 
