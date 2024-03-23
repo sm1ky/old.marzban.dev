@@ -108,7 +108,7 @@ eyJzdWIiOiJ1c2VyMTIzIiwiYWNjZXNzIjoic3Vic2NyaXB0aW9uIiwiaWF0IjoxNjIxMzU3ODYxfQ
 
 Создается на основе закодированных заголовка, полезной нагрузки и секретного ключа с использованием указанного в заголовке алгоритма и служит для проверки целостности токена.
 
-Результат может выглядеть так:
+Пример:
 
 ```
 V0mqTFVz6S_av6UxZ5MFEskUThxHbLaXHxmEEvbxczM
