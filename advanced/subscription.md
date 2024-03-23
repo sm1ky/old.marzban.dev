@@ -119,9 +119,6 @@ V0mqTFVz6S_av6UxZ5MFEskUThxHbLaXHxmEEvbxczM
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIiwiYWNjZXNzIjoic3Vic2NyaXB0aW9uIiwiaWF0IjoxNjIxMzU3ODYxfQ.V0mqTFVz6S_av6UxZ5MFEskUThxHbLaXHxmEEvbxczM
 ```
-
-Заголовок и полезная нагрузка могут быть легко расшифрованы, поскольку они закодированы Base64URL. Подпись служит для проверки целостности токена.
-
 Токены передаются между клиентом и сервером для идентификации пользователя без необходимости постоянно хранить эту информацию на сервере.
 ### KEY
 {% hint style="info" %}
