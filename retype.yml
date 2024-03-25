@@ -9,6 +9,9 @@ branding:
   label: Docs
   logo: /static/white_logo.svg
   logoDark: /static/logo.svg
+edit:
+  repo: "https://github.com/iambabyninja/docs.marzban.dev/"          
+  branch: "main"
 start:
 favicon: /static/favicon.ico
 footer:
