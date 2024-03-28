@@ -3,155 +3,266 @@ label: Переход на MySQL
 icon: database
 ---
 
-Если у Вас есть потребность в использовании базы данных MySQL, а не SQLite, Вы можете сделать следующим образом
+Этот документ представляет собой руководство по настройке и запуску MySQL для использования с Marzban. Рассмотрены различные варианты настройки, включая MariaDB и Percona Server.
 
-## Подключение к внешней БД
-Откройте файл окружения
+MySQL, Percona Server и MariaDB — три популярных системы управления базами данных (СУБД), основанные на открытом коде. Все они происходят от одного и того же исходного кода MySQL, но с течением времени развились в разные направления с уникальными особенностями. 
 
-```bash
-nano /opt/marzban/.env
+## Предварительные требования
+Прежде чем начать, убедитесь, что вы добавили себя в группу `docker`, чтобы избежать необходимости использования `sudo` при каждом вызове команд Docker:
+
+```shell
+sudo addgroup $(whoami) docker
 ```
 
-Прокомментируйте строку ниже `#SQLALCHEMY_DATABASE_URL="sqlite:////var/lib/marzban/db.sqlite3"`
+## Шаги настройки
 
-Поместите следующую строку в `env` заполнив ее, своими данными
+### Шаг 1: Создание тома для данных MySQL
+
+```shell
+docker volume create mysql
+```
+
+### Шаг 2: Инициализация базы данных
+
+Для инициализации базы данных необходимо запустить контейнер с MySQL, задав следующие переменные окружения:
 {% hint style="warning" %}
-Обратите внимание, что для обьявления значения строки мы должны использовать символ `'`, а не `"`
-т.к. может быть проблема при использовании спец символов в пароле
+Данные значения приведены справочно.
+
+Заполните содержимое своими значениями.
 {% endhint %}
 
-SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://username:password@host:port/database'
+| Переменная     | Значение                 | Описание                 |
+| -------------- | ------------------------ |------------------------ |
+| MYSQL_ROOT_PASSWORD | super-puper-password |пароль для суперпользователя MySQL |
+| MYSQL_USER   | marzban         |имя пользователя базы данных для Marzban |
+| MYSQL_PASSWORD | super-password    |пароль для пользователя базы данных |
+| MYSQL_DATABASE  | marzban        |имя базы данных для Marzban |
+| MYSQL_ROOT_HOST | 127.0.0.1            |адрес хоста, с которого разрешено подключение суперпользователя. Изменять не требуется. |
 
-Здесь:
-
-	•	mysql+pymysql: это диалект и драйвер, используемые SQLAlchemy для подключения к MySQL. pymysql - это один из драйверов, которые вы можете использовать.
-	•	<username>: имя пользователя для вашей базы данных MySQL.
-	•	<password>: пароль для указанного пользователя.
-	•	<host>: адрес хоста, где размещена ваша база данных (например, localhost, IP-адрес или доменное имя).
-	•	<port>: порт, на котором работает сервер MySQL. Стандартный порт для MySQL - 3306.
-	•	<database>: имя базы данных, к которой вы хотите подключиться.
-
-Пример:
-
-SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://myuser:mypassword@228.228.228.228:3306/mydatabase'
+#### Варианты запуска контейнера:
 {% hint style="info" %}
-Не забудьте заменить myuser, mypassword, 228.228.228.228, 3306 и mydatabase на реальные данные вашей базы 
+Рекомендуется использовать LTS версию MariaDB, и стабильные версии других СУБД
 {% endhint %}
 
-Перезапустите контейнер
+Ниже приведены примеры запуска контейнера для каждого из вариантов MySQL, MariaDB и Percona Server.
 
-```bash
-marzban restart
+**MySQL:**
+
+```shell
+docker run -d --rm --name mysql -v mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=super-puper-password -e MYSQL_ROOT_HOST=127.0.0.1 -e MYSQL_DATABASE=marzban -e MYSQL_PASSWORD=super-password -e MYSQL_USER=marzban mysql:8.3 --character_set_server=utf8mb4 --collation_server=utf8mb4_unicode_ci --innodb-redo-log-capacity=134217728 --disable-log-bin --mysqlx=OFF
 ```
 
-## Подключение к локальной БД
-Обновление Linux:
+**MariaDB:**
 
-```bash
-apt-get update
+```shell
+docker run -d --rm --name mysql -v mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=super-puper-password -e MYSQL_ROOT_HOST=127.0.0.1 -e MYSQL_DATABASE=marzban -e MYSQL_PASSWORD=super-password -e MYSQL_USER=marzban mariadb:lts --character_set_server=utf8mb4 --collation_server=utf8mb4_unicode_ci --innodb-log-file-size=67108864
 ```
 
-Изменение содержимого файла `docker-compose.yml`:
+**Percona Server:**
 
-```bash
-nano /opt/marzban/docker-compose.yml
+```shell
+docker run -d --rm --name mysql -v mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=super-puper-password -e MYSQL_ROOT_HOST=127.0.0.1 -e MYSQL_DATABASE=marzban -e MYSQL_PASSWORD=super-password -e MYSQL_USER=marzban percona/percona-server:8.2 --character_set_server=utf8mb4 --collation_server=utf8mb4_unicode_ci --disable-log-bin --innodb-redo-log-capacity=134217728 --mysqlx=OFF
 ```
 
-Замените содержимое файла на
+### Шаг 3: Остановка контейнера
+
+После инициализации базы данных контейнер необходимо остановить контейнер, использовав следующую команду, введя пароль суперпользователя по запросу:
+
+```shell
+docker exec -it mysql mysqladmin shutdown -u root -p
+```
+
+### Шаг 4: Интеграция
+
+Для интеграции MySQL с приложением Marzban через `docker-compose`, необходимо добавить соответствующие сервисы в `docker-compose.yml` файл.
+```shell
+sudo nano /opt/marzban/docker-compose.yml
+```
+
+Ниже приведены примеры конфигураций для каждого из вариантов MySQL, MariaDB и Percona Server.
+
+#### MySQL:
 
 ```yaml
 services:
   marzban:
     image: gozargah/marzban:latest
-    restart: always
     env_file: .env
     network_mode: host
     volumes:
       - /var/lib/marzban:/var/lib/marzban
     depends_on:
       - mysql
-
   mysql:
-    image: mysql:latest
-    restart: always
-    env_file: .env
+    image: mysql:8.3
     network_mode: host
-    command: --bind-address=127.0.0.1 --mysqlx-bind-address=127.0.0.1
-    environment:
-      MYSQL_DATABASE: marzban
+    command:
+      - --mysqlx=OFF
+      - --bind-address=127.0.0.1
+      - --character_set_server=utf8mb4
+      - --collation_server=utf8mb4_unicode_ci
+      - --disable-log-bin
+      - --host-cache-size=0
+      - --innodb-open-files=1024
+      - --innodb-buffer-pool-size=268435456
     volumes:
-      - /var/lib/marzban/mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:
+    external: true
+    name: mysql
+```
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    restart: always
+#### MariaDB:
+
+```yaml
+services:
+  marzban:
+    image: gozargah/marzban:latest
     env_file: .env
     network_mode: host
-    environment:
-      PMA_HOST: 127.0.0.1
-      APACHE_PORT: 8010
+    volumes:
+      - /var/lib/marzban:/var/lib/marzban
     depends_on:
       - mysql
-
+  mysql:
+    image: mariadb:lts
+    network_mode: host
+    command:
+      - --bind-address=127.0.0.1
+      - --character_set_server=utf8mb4
+      - --collation_server=utf8mb4_unicode_ci
+      - --host-cache-size=0
+      - --innodb-open-files=1024
+      - --innodb-buffer-pool-size=268435456
+    volumes:
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:
+    external: true
+    name: mysql
 ```
 
-Обновление Marzban
+#### Percona Server:
 
-```
-marzban update
-```
-
-Перезагрузка Marzban
-
-```
-marzban restart
-```
-
-Подождите 1 минуту, пока старая база данных не будет перенесена (Если вы видите ошибку, игнорируйте ее)
-
-Подключение к базе данных mysql и удаление соединения с помощью sqlite:
-
-Откройте файл окружения
-
-```bash
-nano /opt/marzban/.env
-```
-
-Прокомментируйте строку ниже `#SQLALCHEMY_DATABASE_URL="sqlite:////var/lib/marzban/db.sqlite3"`
-
-Поместите следующий код в `env` и введите желаемый пароль вместо слова `DB_PASSWORD` (повторяется дважды).
-
-`SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:DB_PASSWORD@127.0.0.1/marzban"`&#x20;
-
-`MYSQL_ROOT_PASSWORD = DB_PASSWORD`
-
-Остановите и запустите Marzban и подождите 1 минуту (не обращайте внимания на ошибки)
-
-```bash
-marzban restart
+```yaml
+services:
+  marzban:
+    image: gozargah/marzban:latest
+    env_file: .env
+    network_mode: host
+    volumes:
+      - /var/lib/marzban:/var/lib/marzban
+    depends_on:
+      - mysql
+  mysql:
+    image: percona/percona-server:8.2
+    network_mode: host
+    command:
+      - --mysqlx=OFF
+      - --bind-address=127.0.0.1
+      - --character_set_server=utf8mb4
+      - --collation_server=utf8mb4_unicode_ci
+      - --disable-log-bin
+      - --host-cache-size=0
+      - --innodb-open-files=1024
+      - --innodb-buffer-pool-size=268435456
+    volumes:
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:
+    external: true
+    name: mysql
 ```
 
-Создание дампа из старой базы:
+Здесь мы устанавливаем некоторые параметры, рассмотрим их немного подробнее:
 
-```bash
+| Параметр     | Описание                 |
+| -------------- | ------------------------ |
+| disable-log-bin  | отключает бинарный лог, что может ускорить работу MySQL, так как уменьшается количество операций записи на диск. Важно отметить, что отключение бинарного лога может повлиять на возможности репликации и восстановления данных. |
+| host-cache-size=0   | отключает кэширование информации о хостах, с которых поступают подключения. Это может ускорить MySQL, уменьшая задержку при новых соединениях, особенно в средах с большим количеством подключений         |
+| innodb-open-files=1024 | увеличивает количество файлов, которые InnoDB может открыть одновременно. Это позволяет более эффективно управлять параллелизмом, ускоряя обработку запросов, особенно при работе с большим количеством таблиц.    |
+| innodb-buffer-pool-size=268435456  | устанавливает размер буфера InnoDB в 256MB (по умолчанию 128MB). Увеличение этого параметра позволяет хранить больше данных и индексов в памяти, что существенно может ускорить чтение и запись, особенно для интенсивных операций. Однако стоит учитывать, что увеличение этого размера на системах с ограниченным объемом RAM может привести к проблемам с производительностью.        |
+
+
+### Шаг 5: Установка строки подключения к базе данных
+
+В файле `.env`, необходимом для работы вашего приложения, следует указать строку подключения к базе данных, используя данные, заданные при инициализации контейнера:
+```shell
+sudo nano /opt/marzban/.env
+```
+
+Перед заполнением строки подключения, убедитесь, что вы используете правильные учетные данные, заданные в шаге 2, при инициализации контейнера MySQL:
+{% hint style="info" %}
+Данные значения приведены справочно.
+{% endhint %}
+
+| Переменная     | Значение                 | Описание                 |
+| -------------- | ------------------------ |------------------------ |
+| MYSQL_USER   | marzban         |имя пользователя базы данных для Marzban |
+| MYSQL_PASSWORD | super-password    |пароль для пользователя базы данных |
+| MYSQL_ROOT_HOST | 127.0.0.1            |адрес хоста |
+| MYSQL_DATABASE  | marzban        |имя базы данных для Marzban |
+
+```env
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://<имя пользователя для базы Marzban>:<пароль пользователя для базы Marzban>@127.0.0.1:3306/<имя базы Marzban>"
+```
+Эта строка позволит вашему приложению подключаться к базе данных MySQL, настроенной в Docker, обеспечивая безопасное и удобное управление данными.
+
+Перезапускаем контейнер
+```shell
+sudo marzban restart
+```
+### Шаг 6: Перенос данных из SQLite в MySQL
+
+Процедура переноса данных включает создание дампа данных из вашей старой базы данных SQLite, предоставление этого дампа контейнеру MySQL и, наконец, перенос данных из SQLite в MySQL. Ниже представлены шаги и команды для выполнения этих задач.
+
+#### Создание дампа из старой базы SQLite:
+Для выполнения дампа базы данных SQLite, нам потребуется пакет для работы с ней
+```shell
+sudo apt install sqlite3
+```
+Создадим дамп с данными из вашей базы данных SQLite, используя следующую команду:
+
+```shell
 sqlite3 /var/lib/marzban/db.sqlite3 '.dump --data-only' | sed "s/INSERT INTO \([^ ]*\)/REPLACE INTO \`\\1\`/g" > /tmp/dump.sql
 ```
-Представляем путь дампа к mysql:
 
-```
+Эта команда выполняет дамп данных из файла db.sqlite3, находящегося в каталоге /var/lib/marzban, конвертирует инструкции INSERT INTO в REPLACE INTO для обеспечения совместимости с MySQL и сохраняет результат в файл /tmp/dump.sql.
+
+#### Предоставление пути к дампу для MySQL:
+
+Далее, перенесите созданный дамп в контейнер MySQL с помощью команды:
+
+```shell
 cd /opt/marzban && docker compose cp /tmp/dump.sql mysql:/dump.sql
 ```
 
-Переносим данные из sqlite в mysql:
+Переходите в каталог вашего проекта Marzban /opt/marzban и используйте docker compose cp для копирования файла дампа в контейнер mysql.
 
-```bash
-docker compose exec mysql mysql -u root -p -h 127.0.0.1 marzban -e "SET FOREIGN_KEY_CHECKS = 0; SET NAMES utf8mb4; SOURCE dump.sql;"
+####  Перенос данных из SQLite в MySQL:
+
+Перед выполнением переноса данных, убедитесь, что вы используете правильные учетные данные, заданные в шаге 2, при инициализации контейнера MySQL:
+{% hint style="info" %}
+Данные значения приведены справочно.
+{% endhint %}
+
+| Переменная     | Значение                 | Описание                 |
+| -------------- | ------------------------ |------------------------ |
+| MYSQL_USER   | marzban         |имя пользователя базы данных для Marzban |
+| MYSQL_PASSWORD | super-password    |пароль для пользователя базы данных |
+| MYSQL_ROOT_HOST | 127.0.0.1            |адрес хоста |
+| MYSQL_DATABASE  | marzban        |имя базы данных для Marzban |
+
+
+{% hint style="info" %}
+Важно, что в этой команде пароль указывается непосредственно после -p без пробела, что является стандартной практикой для MySQL.
+{% endhint %}
+
+Теперь вы можете выполнить перенос данных, запустив следующую команду в контейнере MySQL:
+
+```shell
+docker compose exec mysql mysql -u <имя пользователя для базы Marzban> -p<пароль пользователя для базы Marzban> -h 127.0.0.1 <имя базы Marzban> -e "SET FOREIGN_KEY_CHECKS = 0; SET NAMES utf8mb4; SOURCE /dump.sql;"
 ```
 
-Введите свой пароль, чтобы начать процесс изменения базы данных
-
-После окончания работы перезапустите Marzban
-
-Адрес панели phpmyadmin (управление базой данных): `http://ваш домен:8010`
-
-Будьте внимательны, чтобы адрес страницы не содержал https.
+После выполнения команды начнется процесс переноса данных. 
